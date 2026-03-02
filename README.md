@@ -5,3 +5,170 @@
 [![DOI](https://img.shields.io/badge/DOI-10.21428%2F39829d0b.1129de25-blue)](https://doi.org/10.21428/39829d0b.1129de25)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--6634--3351-green)](https://orcid.org/0000-0002-6634-3351)
+
+---
+
+## Descripción
+
+Este repositorio contiene el pipeline completo para generar datasets de imágenes de polígonos polares ternarios y entrenar redes neuronales convolucionales (ResNet) para la clasificación automática de vectores del sistema SVcustos.
+
+Cada vector ternario de *n* parámetros (valores: 0, 1, U) se transforma en un polígono polar y se clasifica como **INTRUSIÓN**, **INDETERMINADO** o **NORMAL** según la regla estricta del sistema.
+
+### Niveles soportados
+
+| Documento | n | Capas | Espacio 3ⁿ | Umbral | Clase minoritaria |
+|-----------|---:|------:|------------:|-------:|------------------:|
+| Doc 2     | 16 | 4×4   | 43.046.721  | n₁≥12  | 34.113            |
+| Doc 3     | 25 | 5×5   | ~847×10⁹    | n₁≥19  | 13.256.611        |
+| Doc 4     | 36 | 6×6   | ~1,5×10¹⁷   | n₁≥28  | ~8,9×10⁹          |
+
+---
+
+## Inicio rápido
+
+### 1. Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+Para GPU (recomendado para entrenamiento):
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+```
+
+### 2. Generar el dataset
+
+```bash
+python generate_dataset.py --level n16
+```
+
+Esto crea 3.000 imágenes (1.000 por clase) en `data/n16/` con estructura ImageFolder:
+
+```
+data/n16/
+  train/
+    INTRUSION/        (700 imágenes)
+    INDETERMINADO/    (700 imágenes)
+    NORMAL/           (700 imágenes)
+  val/
+    INTRUSION/        (150 imágenes)
+    INDETERMINADO/    (150 imágenes)
+    NORMAL/           (150 imágenes)
+  test/
+    INTRUSION/        (150 imágenes)
+    INDETERMINADO/    (150 imágenes)
+    NORMAL/           (150 imágenes)
+```
+
+### 3. Entrenar el modelo
+
+```bash
+python train_resnet.py --level n16
+```
+
+### 4. Evaluar
+
+```bash
+python evaluate.py --level n16 --model models/svcustos_n16_resnet34_*.pth
+```
+
+---
+
+## Diseño del dataset
+
+### Imágenes neutrales
+
+Las imágenes de los polígonos polares usan un **estilo visual neutro** idéntico para todas las clases. La CNN debe aprender a clasificar a partir del **patrón geométrico** del polígono, no de colores de clase.
+
+- **Fondo**: oscuro uniforme (#0D1B2A)
+- **Polígono**: contorno y relleno dorado (mismo para todas las clases)
+- **Vértices**: coloreados por *valor* del parámetro (0=verde, 1=rojo, U=amarillo)
+- **Anillos de referencia**: tres círculos discontinuos a radio 1, 2, 3
+- **Resolución**: 224×224 px (entrada nativa de ResNet)
+
+### Regla de clasificación
+
+Para un vector de *n* parámetros con valores ternarios {0, 1, U}:
+
+- **INTRUSIÓN**: n₁ ≥ umbral (donde n₁ = número de parámetros con valor 1)
+- **NORMAL**: n₀ ≥ umbral (donde n₀ = número de parámetros con valor 0)
+- **INDETERMINADO**: resto
+
+El umbral para cada nivel se calcula como ⌊7n/9⌋.
+
+### Reproducibilidad
+
+Toda la generación es **determinista** con `seed=42`. Ejecutar `generate_dataset.py` en cualquier máquina con las mismas dependencias produce exactamente las mismas imágenes.
+
+---
+
+## Estructura del repositorio
+
+```
+SVcustos-dataset/
+├── README.md                 ← Este archivo
+├── LICENSE                   ← CC BY-NC-ND 4.0
+├── requirements.txt          ← Dependencias Python
+├── .gitignore                ← Excluye data/, models/, results/
+│
+├── generate_dataset.py       ← Genera imágenes polares por nivel
+├── train_resnet.py           ← Entrenamiento ResNet34/50
+├── evaluate.py               ← Evaluación + matriz de confusión
+│
+├── config/
+│   ├── n16.yaml              ← Configuración Doc 2 (n=16)
+│   ├── n25.yaml              ← Configuración Doc 3 (n=25)
+│   └── n36.yaml              ← Configuración Doc 4 (n=36)
+│
+├── data/                     ← (generado, no en git)
+├── models/                   ← (generado, no en git)
+└── results/                  ← (generado, no en git)
+```
+
+**Nota**: Las carpetas `data/`, `models/` y `results/` están excluidas de git (son regenerables). Solo se versionan los scripts, configs y documentación.
+
+---
+
+## Escalabilidad
+
+El mismo pipeline funciona para cualquier nivel de la serie SVcustos. Para añadir un nuevo nivel:
+
+1. Crear `config/nXX.yaml` con los parámetros del nivel
+2. Ejecutar `python generate_dataset.py --level nXX`
+3. Entrenar con `python train_resnet.py --level nXX`
+
+No hace falta modificar ningún script.
+
+---
+
+## Serie documental
+
+Este dataset forma parte de la serie *«De SVcustos, el marco (framework) de intrusión, hasta SVperitus: agentes especializados»*, compuesta por 8 documentos que describen la evolución del sistema vectorial ternario de detección de intrusiones.
+
+---
+
+## Cita
+
+```bibtex
+@misc{lloret2026svcustos,
+  author       = {Lloret Egea, Juan Antonio},
+  title        = {SVcustos: Framework de detección de intrusiones
+                  mediante vectores ternarios y clasificación visual},
+  year         = {2026},
+  doi          = {10.21428/39829d0b.1129de25},
+  license      = {CC BY-NC-ND 4.0},
+  url          = {https://doi.org/10.21428/39829d0b.1129de25}
+}
+```
+
+---
+
+## Autor
+
+**Juan Antonio Lloret Egea**
+ORCID: [0000-0002-6634-3351](https://orcid.org/0000-0002-6634-3351)
+
+---
+
+*Serie documental: De SVcustos, el marco (framework) de intrusión, hasta SVperitus: agentes especializados*
