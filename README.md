@@ -14,6 +14,15 @@ Este repositorio contiene el pipeline completo para generar datasets de imágene
 
 Cada vector ternario de *n* parámetros (valores: 0, 1, U) se transforma en un polígono polar y se clasifica como **INTRUSIÓN**, **INDETERMINADO** o **NORMAL** según la regla estricta del sistema.
 
+### Ejemplos de imágenes del dataset (n=16)
+
+Cada vector ternario se transforma en un polígono polar de 16 ejes. Los vértices se colorean por valor: 🔴 1 (activo) · 🟢 0 (normal) · 🟡 U (indeterminado). El estilo visual es idéntico para todas las clases — la CNN aprende del patrón geométrico, no del color de clase.
+
+| INTRUSIÓN (n₁ ≥ 12) | INDETERMINADO | NORMAL (n₀ ≥ 12) |
+|:---:|:---:|:---:|
+| ![](samples/sample_intrusion_1.png) | ![](samples/sample_indeterminado_1.png) | ![](samples/sample_normal_1.png) |
+| ![](samples/sample_intrusion_2.png) | ![](samples/sample_indeterminado_2.png) | ![](samples/sample_normal_2.png) |
+
 ### Niveles soportados
 
 | Documento | n | Capas | Espacio 3ⁿ | Umbral | Clase minoritaria |
@@ -120,6 +129,8 @@ SVcustos-dataset/
 │   ├── n16.yaml              ← Configuración Doc 2 (n=16)
 │   ├── n25.yaml              ← Configuración Doc 3 (n=25)
 │   └── n36.yaml              ← Configuración Doc 4 (n=36)
+│
+├── samples/                  ← Muestras visuales (6 imágenes)
 │
 ├── data/                     ← (generado, no en git)
 ├── models/                   ← (generado, no en git)
