@@ -1,0 +1,16 @@
+# SVcustos Dataset — Dependencies
+# ================================
+
+# Dataset generation (required)
+numpy>=1.24
+matplotlib>=3.7
+pyyaml>=6.0
+
+# Training and evaluation (required for train/eval steps)
+torch>=2.0
+torchvision>=0.15
+scikit-learn>=1.3
+
+# Optional: for GPU acceleration
+# Install PyTorch with CUDA support:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
