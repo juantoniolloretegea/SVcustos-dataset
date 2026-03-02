@@ -1,0 +1,129 @@
+# Guía: Subir el repositorio a GitHub
+## (sin usar terminal — todo desde el navegador)
+
+---
+
+### Paso 1: Accede a tu cuenta
+
+1. Ve a **https://github.com** y haz login con tu cuenta
+2. Si no recuerdas la contraseña, usa "Forgot password" y te llegará un email
+
+---
+
+### Paso 2: Crea el repositorio
+
+1. En la esquina superior derecha, haz clic en el **+** → **New repository**
+2. Rellena:
+   - **Repository name**: `SVcustos-dataset`
+   - **Description**: `Dataset de polígonos polares ternarios para entrenamiento de ResNet — Serie SVcustos`
+   - **Visibility**: elige **Public** (para que otros investigadores accedan)
+   - **NO** marques "Add a README" (ya lo tenemos)
+   - **NO** marques "Add .gitignore" (ya lo tenemos)
+   - En **License** selecciona "None" (ya tenemos el archivo LICENSE)
+3. Haz clic en **Create repository**
+
+---
+
+### Paso 3: Sube los archivos
+
+Después de crear el repo, GitHub te muestra una página con instrucciones.
+Busca el enlace que dice **"uploading an existing file"** y haz clic.
+
+Esto te lleva a una pantalla de subida donde puedes **arrastrar archivos**.
+
+**Sube estos archivos** (arrastra todos a la vez):
+
+```
+README.md
+LICENSE
+requirements.txt
+.gitignore
+generate_dataset.py
+train_resnet.py
+evaluate.py
+```
+
+Haz clic en **Commit changes** (con el mensaje por defecto está bien).
+
+---
+
+### Paso 4: Crea la carpeta config/
+
+GitHub no permite crear carpetas vacías, pero sí puedes crear un archivo dentro.
+
+1. En la página del repo, haz clic en **Add file** → **Create new file**
+2. En el campo de nombre escribe: `config/n16.yaml`
+   (al poner la barra `/`, GitHub crea la carpeta automáticamente)
+3. Pega el contenido del archivo `config/n16.yaml`
+4. Haz clic en **Commit changes**
+5. Repite para `config/n25.yaml` y `config/n36.yaml`
+
+---
+
+### Paso 5: Crea las carpetas models/ y results/
+
+1. **Add file** → **Create new file**
+2. Nombre: `models/.gitkeep`
+3. Deja el contenido vacío
+4. **Commit changes**
+5. Repite con `results/.gitkeep`
+
+---
+
+### Paso 6: Verifica
+
+Tu repositorio debería verse así:
+
+```
+SVcustos-dataset/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── generate_dataset.py
+├── train_resnet.py
+├── evaluate.py
+├── config/
+│   ├── n16.yaml
+│   ├── n25.yaml
+│   └── n36.yaml
+├── models/
+│   └── .gitkeep
+└── results/
+    └── .gitkeep
+```
+
+---
+
+### Paso 7 (opcional): Añade el DOI al repo
+
+1. Ve a **Settings** (pestaña superior del repo)
+2. En la sección **About** (sidebar derecha de la página principal), haz clic en el engranaje ⚙️
+3. En **Website** pon: `https://doi.org/10.21428/39829d0b.981b7276`
+4. En **Topics** añade: `svcustos`, `ternary-vectors`, `intrusion-detection`, `resnet`, `polar-polygon`, `cnn`
+
+---
+
+### Usar el repositorio (tú o cualquier investigador)
+
+```bash
+# Clonar
+git clone https://github.com/TU_USUARIO/SVcustos-dataset.git
+cd SVcustos-dataset
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Generar el dataset (n=16)
+python generate_dataset.py --level n16
+
+# Entrenar
+python train_resnet.py --level n16
+
+# Evaluar
+python evaluate.py --level n16 --model models/svcustos_n16_resnet34_*.pth
+```
+
+---
+
+*Si necesitas ayuda en cualquier paso, pide asistencia en el chat del proyecto.*
