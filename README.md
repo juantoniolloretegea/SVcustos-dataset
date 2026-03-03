@@ -2,7 +2,6 @@
 
 **Clasificación visual de vectores ternarios de intrusión mediante polígonos polares y ResNet**
 
-[![DOI](https://img.shields.io/badge/DOI-10.21428%2F39829d0b.1129de25-blue)](https://doi.org/10.21428/39829d0b.1129de25)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--6634--3351-green)](https://orcid.org/0000-0002-6634-3351)
 
@@ -25,11 +24,14 @@ Cada vector ternario se transforma en un polígono polar de 16 ejes. Los vértic
 
 ### Niveles soportados
 
-| Documento | n | Capas | Espacio 3ⁿ | Umbral | Clase minoritaria |
-|-----------|---:|------:|------------:|-------:|------------------:|
-| Doc 2     | 16 | 4×4   | 43.046.721  | n₁≥12  | 34.113            |
-| Doc 3     | 25 | 5×5   | ~847×10⁹    | n₁≥19  | 13.256.611        |
-| Doc 4     | 36 | 6×6   | ~1,5×10¹⁷   | n₁≥28  | ~8,9×10⁹          |
+| Documento | n | Capas | Espacio 3ⁿ | Umbral (T = ⌊7n/9⌋) | Clase minoritaria |
+|-----------|---:|------:|------------:|--------------------:|------------------:|
+| Doc 2     | 16 | 4×4   | 43.046.721  | n₁ ≥ 12             | 34.113            |
+| Doc 3     | 25 | 5×5   | ~847×10⁹    | n₁ ≥ 19             | 13.256.611        |
+| Doc 4     | 36 | 6×6   | ~1,5×10¹⁷   | n₁ ≥ 28             | ~8,9×10⁹          |
+
+El umbral de cada nivel coincide con el campo `threshold_intrusion` de los ficheros
+de configuración `config/n16.yaml`, `config/n25.yaml` y `config/n36.yaml`.
 
 ---
 
@@ -42,19 +44,30 @@ pip install -r requirements.txt
 ```
 
 Para GPU (recomendado para entrenamiento):
+
 ```bash
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
 
 ### 2. Generar el dataset
 
+Ejemplo para el nivel n=16 (Doc 2):
+
 ```bash
 python generate_dataset.py --level n16
 ```
 
-Esto crea 3.000 imágenes (1.000 por clase) en `data/n16/` con estructura ImageFolder:
+Ejemplos análogos para n=25 y n=36 (Doc 3 y Doc 4):
 
+```bash
+python generate_dataset.py --level n25
+python generate_dataset.py --level n36
 ```
+
+Por defecto se crean 3.000 imágenes (1.000 por clase) en `data/nXX/` con estructura
+tipo `ImageFolder`. Para n=16, la estructura es:
+
+```text
 data/n16/
   train/
     INTRUSION/        (700 imágenes)
@@ -72,15 +85,28 @@ data/n16/
 
 ### 3. Entrenar el modelo
 
+Ejemplo para n=16:
+
 ```bash
 python train_resnet.py --level n16
 ```
 
+Para otros niveles:
+
+```bash
+python train_resnet.py --level n25
+python train_resnet.py --level n36
+```
+
 ### 4. Evaluar
+
+Ejemplo para n=16:
 
 ```bash
 python evaluate.py --level n16 --model models/svcustos_n16_resnet34_*.pth
 ```
+
+(Análogo para n=25 y n=36 cambiando `--level` y el nombre del modelo.)
 
 ---
 
@@ -104,17 +130,24 @@ Para un vector de *n* parámetros con valores ternarios {0, 1, U}:
 - **NORMAL**: n₀ ≥ umbral (donde n₀ = número de parámetros con valor 0)
 - **INDETERMINADO**: resto
 
-El umbral para cada nivel se calcula como ⌊7n/9⌋.
+Con:
+
+> umbral T = ⌊7n/9⌋
+
+Este mismo valor se fija en el campo `threshold_intrusion` de cada fichero
+`config/nXX.yaml` para garantizar coherencia entre la teoría y la generación
+automática de etiquetas.
 
 ### Reproducibilidad
 
-Toda la generación es **determinista** con `seed=42`. Ejecutar `generate_dataset.py` en cualquier máquina con las mismas dependencias produce exactamente las mismas imágenes.
+Toda la generación es **determinista** con `seed=42`. Ejecutar `generate_dataset.py`
+en cualquier máquina con las mismas dependencias produce exactamente las mismas imágenes.
 
 ---
 
 ## Estructura del repositorio
 
-```
+```text
 SVcustos-dataset/
 ├── README.md                 ← Este archivo
 ├── LICENSE                   ← CC BY-NC-ND 4.0
@@ -128,7 +161,7 @@ SVcustos-dataset/
 ├── config/
 │   ├── n16.yaml              ← Configuración Doc 2 (n=16)
 │   ├── n25.yaml              ← Configuración Doc 3 (n=25)
-│   └── n36.yaml              ← Configuración Doc 4 (n=36)
+│   └── n36.yaml              ← Configuración Doc 4 (n=36, previsto)
 │
 ├── samples/                  ← Muestras visuales (6 imágenes)
 │
@@ -137,7 +170,8 @@ SVcustos-dataset/
 └── results/                  ← (generado, no en git)
 ```
 
-**Nota**: Las carpetas `data/`, `models/` y `results/` están excluidas de git (son regenerables). Solo se versionan los scripts, configs y documentación.
+**Nota**: Las carpetas `data/`, `models/` y `results/` están excluidas de git (son regenerables).
+Solo se versionan los scripts, configs y documentación.
 
 ---
 
@@ -145,11 +179,12 @@ SVcustos-dataset/
 
 El mismo pipeline funciona para cualquier nivel de la serie SVcustos. Para añadir un nuevo nivel:
 
-1. Crear `config/nXX.yaml` con los parámetros del nivel
-2. Ejecutar `python generate_dataset.py --level nXX`
-3. Entrenar con `python train_resnet.py --level nXX`
+1. Crear `config/nXX.yaml` con los parámetros del nivel (incluyendo `threshold_intrusion = ⌊7n/9⌋`).
+2. Ejecutar `python generate_dataset.py --level nXX`.
+3. Entrenar con `python train_resnet.py --level nXX`.
 
-No hace falta modificar ningún script.
+No hace falta modificar ningún script: el número de radios del polígono se deriva siempre
+de la longitud del vector ternario.
 
 ---
 
@@ -161,25 +196,28 @@ Este dataset forma parte de la serie *«De SVcustos, el marco (framework) de int
 
 ## Cita
 
+Si desea citar este repositorio en un trabajo académico, puede usar un esquema genérico como:
+
 ```bibtex
-@misc{lloret2026svcustos,
+@misc{lloret_svcustos_dataset,
   author       = {Lloret Egea, Juan Antonio},
-  title        = {SVcustos: Framework de detección de intrusiones
-                  mediante vectores ternarios y clasificación visual},
+  title        = {SVcustos-dataset: generación de imágenes polares ternarias
+                  y entrenamiento de CNN para detección de intrusiones},
   year         = {2026},
-  doi          = {10.21428/39829d0b.1129de25},
-  license      = {CC BY-NC-ND 4.0},
-  url          = {https://doi.org/10.21428/39829d0b.1129de25}
+  note         = {Repositorio de código y datos sintéticos asociado a la serie
+                  «De SVcustos, el marco de intrusión, hasta SVperitus: agentes especializados»}
 }
 ```
+
+*(Sin DOI mientras el identificador oficial no esté definitivamente activado.)*
 
 ---
 
 ## Autor
 
-**Juan Antonio Lloret Egea**
+**Juan Antonio Lloret Egea**  
 ORCID: [0000-0002-6634-3351](https://orcid.org/0000-0002-6634-3351)
 
 ---
 
-*Serie documental: De SVcustos, el marco (framework) de intrusión, hasta SVperitus: agentes especializados*
+*Serie documental: «De SVcustos, el marco (framework) de intrusión, hasta SVperitus: agentes especializados»*
