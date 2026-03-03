@@ -1,5 +1,26 @@
-# Placeholder – no utilizado todavía.
-# El dataset actual solo implementa el nivel n = 16 (Documento 2).
-level: {}
-dataset: {}
-training: {}
+level:
+  document: 3              # Documento 3 de 8 (n = 25)
+  n: 25                    # Número de parámetros
+  b: 5                     # Base (n = b² = 25)
+  layers: 5                # 5 capas de 5 parámetros
+  threshold_intrusion: 19  # ⌊7 * 25 / 9⌋ = 19
+  axis_angle: 14.4         # 360° / 25
+
+dataset:
+  samples_per_class: 1000  # 1000 imágenes por clase → 3000 en total
+  image_size: 224          # Tamaño en píxeles
+  seed: 42                 # Semilla para reproducibilidad
+
+  split:
+    train: 0.7             # 70 % entrenamiento
+    val: 0.15              # 15 % validación
+    # test = 0.15 implícito (lo calcula generate_dataset.py)
+
+training:
+  model: "resnet34"        # Modelo base (ResNet34)
+  epochs: 25               # Épocas de entrenamiento
+  batch_size: 32
+  learning_rate: 1.0e-4
+  lr_step_size: 7
+  lr_gamma: 0.1
+  num_workers: 4
