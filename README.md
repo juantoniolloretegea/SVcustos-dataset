@@ -245,7 +245,6 @@ Si desea citar este repositorio en un trabajo académico, puede usar un esquema 
 }
 ```
 
-(Sin DOI mientras el identificador oficial no esté definitivamente activado.)
 
 ## Autor
 
