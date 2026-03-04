@@ -3,7 +3,7 @@
 
 > ▶ **Previsualización del vídeo** — Al hacer clic se descarga el archivo MP4, calidad original.
 
-[![SVcustos — Células SV en par · Documento 5 de 8](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/assets/thumbnail_Github_par.png)](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/assets/SVcustos_Documento5_video.mp4)
+[![SVcustos — Células SV en par · Documento 5 de 8](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/assets/thumbnail_par.png)](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/assets/SVcustos_Documento5_video.mp4)
 *Arquitectura dual-cell · SV(36,6) + SV(9,3) · 45 parámetros · Documento 5 de 8*
 
 ## Relación con la serie documental
