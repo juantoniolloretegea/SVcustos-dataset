@@ -1,0 +1,38 @@
+# Configuración del par SV(36,6) + SV(9,3) — Documento 5 de 8
+# Regla de composición: SV(par) = max(cls_36, cls_9)
+# Orden de severidad: INTRUSIÓN (2) > INDETERMINADO (1) > NORMAL (0)
+
+pair:
+  name: "SV(36,6) + SV(9,3)"
+  document: 5
+  rule: "max"                    # supremo en el retículo {N, U, I}
+  severity_order:
+    INTRUSION: 2
+    INDETERMINADO: 1
+    NORMAL: 0
+
+cells:
+  principal:
+    config: "config/n36.yaml"    # célula principal — comportamiento observable
+    n: 36
+    b: 6
+    threshold_intrusion: 28      # ⌊7 * 36 / 9⌋
+  integrity:
+    config: "config/n9.yaml"     # célula de integridad — fiabilidad del SO
+    n: 9
+    b: 3
+    threshold_intrusion: 7       # ⌊7 * 9 / 9⌋
+
+composed_space:
+  total_parameters: 45           # 36 + 9 (no es célula única)
+  combinatorial: "3^45 ≈ 2.95e21"
+  note: >
+    Este fichero NO define una célula SV(45). Define un par de dos
+    células independientes cuyas salidas ternarias se combinan con max().
+    Cada célula mantiene su propio dataset y su propia instancia de ResNet34.
+
+dataset:
+  samples_per_class: 1000
+  image_size: 224
+  seed: 42
+  output_dir: "data/pairs/n36_n9"
