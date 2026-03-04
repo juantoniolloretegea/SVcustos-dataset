@@ -21,9 +21,9 @@ Cada vector ternario de *n* parámetros (valores: 0, 1, U) se transforma en un p
 Cada vector ternario se transforma en un polígono polar de 16 ejes. Los vértices se colorean por valor: 🔴 1 (activo) · 🟢 0 (normal) · 🟡 U (indeterminado). El estilo visual es idéntico para todas las clases — la CNN aprende del patrón geométrico, no del color de clase.
 
 | INTRUSIÓN (n₁ ≥ 12) | INDETERMINADO | NORMAL (n₀ ≥ 12) |
-|---|---|---|
-| ![intrusion1](samples/sample_intrusion_1.png) | ![indet1](samples/sample_indeterminado_1.png) | ![normal1](samples/sample_normal_1.png) |
-| ![intrusion2](samples/sample_intrusion_2.png) | ![indet2](samples/sample_indeterminado_2.png) | ![normal2](samples/sample_normal_2.png) |
+| --- | --- | --- |
+| ![](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/samples/sample_intrusion_1.png) | ![](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/samples/sample_indeterminado_1.png) | ![](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/samples/sample_normal_1.png) |
+| ![](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/samples/sample_intrusion_2.png) | ![](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/samples/sample_indeterminado_2.png) | ![](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/samples/sample_normal_2.png) |
 
 ## Niveles soportados
 
