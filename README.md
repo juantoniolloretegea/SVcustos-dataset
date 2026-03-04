@@ -1,10 +1,9 @@
 # SVcustos — Dataset para Entrenamiento de CNN
 ## Visualización del espacio vectorial
-
+> ▶ **Previsualización del vídeo** — Al hacer clic se descarga el archivo MP4 (5.5 MB, calidad original). Reproductor local recomendado: VLC.
 [![SVcustos — SV(49,7) · Documento 6 de 8](assets/thumbnail_Github_n49.png)](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/assets/SVcustos_Doc6_n49_video.mp4)
-
 *Polígono polar ternario · SV(49,7) · 7 capas × 7 parámetros · Documento 6 de 8*
-**Clasificación visual de vectores ternarios de intrusión mediante polígonos polares y ResNet**
+***Clasificación visual de vectores ternarios de intrusión mediante polígonos polares y ResNet**
 
 ![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--6634--3351-green.svg)](https://orcid.org/0000-0002-6634-3351)
