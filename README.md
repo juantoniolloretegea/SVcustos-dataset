@@ -1,4 +1,9 @@
 # SVcustos — Dataset para Entrenamiento de CNN
+## Visualización del espacio vectorial
+
+[![SVcustos — SV(49,7) · Documento 6 de 8](assets/thumbnail_Github_n49.png)](https://drive.google.com/file/d/19LSGXaocuZxs9x3VYY_Wroui6_sj5mYZ/view?usp=sharing)
+
+*Polígono polar ternario · SV(49,7) · 7 capas × 7 parámetros · Documento 6 de 8*
 
 **Clasificación visual de vectores ternarios de intrusión mediante polígonos polares y ResNet**
 
