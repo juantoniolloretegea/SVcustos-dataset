@@ -223,11 +223,11 @@ directas: niveles n = 9, 16, 25, 36, 49 y el par SV(36,6)+SV(9,3) del Documento 
 Su objetivo es proporcionar datasets sintéticos y experimentos de visión
 por computador para la detección de intrusiones en dispositivos.
 
-El sistema **SVperitus** reutilizará la misma lógica algebraica
+El sistema **SVperitus** reutiliza la misma lógica algebraica
 (células n = b² y composición ternaria), pero aplicado a **agentes
 especializados de conocimiento** (por ejemplo, dominios clínicos).
-Por claridad arquitectónica, SVperitus se desarrollará en un **subproyecto
-específico**, hermano de este repositorio, que definirá sus propias
+Por claridad arquitectónica, SVperitus se desarrolla en un **repositorio
+hermano específico**, [SVperitus-dataset](https://github.com/juantoniolloretegea/SVperitus-dataset), que define sus propias
 células, datasets y reglas de composición, tomando como referencia los
 patrones ya establecidos aquí para SVcustos y para el módulo `pairs/`.
 
