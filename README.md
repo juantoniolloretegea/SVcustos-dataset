@@ -2,6 +2,23 @@
 ## Visualización del espacio vectorial
 > ▶ **Previsualización del vídeo** — Al hacer clic se descarga el archivo MP4 (5.5 MB, calidad original). Reproductor local recomendado: VLC.
 
+## Ecosistema SV — ubicación de esta sede
+
+**Función de la sede:** origen observacional e histórico del vector `SVcustos → SVperitus`, con datasets, generación visual y entrenamiento CNN aplicados al marco de intrusión.
+
+**Distribución vigente de sedes**
+- **Doctrina, jerarquía y puerta general del ecosistema:** `SV-matematica-semantica`
+- **Lenguaje, contrato técnico y sede operativa del manual SVP:** `SV-lenguaje-de-computacion`
+- **Origen observacional, datasets e intrusión:** `SVcustos-dataset`
+- **Agentes especializados, fases, artefactos y aplicaciones de uso:** `SVperitus-dataset`
+
+**Regla de no sustitución**  
+Este repositorio no sustituye la sede doctrinal ni la sede de agentes especializados. Conserva el papel de origen observacional, dataset y genealogía del tránsito hacia `SVperitus`.
+
+> **Remisión**
+> Para una vista global del ecosistema SV, consulte la puerta general materializada en `SV-matematica-semantica/docs/index.html`.
+
+
 [![SVcustos — SV(49,7) · Documento 6 de 8](assets/thumbnail_Github_n49.png)](https://raw.githubusercontent.com/juantoniolloretegea/SVcustos-dataset/main/assets/SVcustos_Doc6_n49_video.mp4)
 
 *Polígono polar ternario · SV(49,7) · 7 capas × 7 parámetros · Documento 6 de 8*
