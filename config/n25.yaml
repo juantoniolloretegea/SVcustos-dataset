@@ -1,26 +1,23 @@
 level:
-  document: 3              # Documento 3 de 8 (n = 25)
-  n: 25                    # Número de parámetros
-  b: 5                     # Base (n = b² = 25)
-  layers: 5                # 5 capas de 5 parámetros
-  threshold_intrusion: 19  # ⌊7 * 25 / 9⌋ = 19
-  axis_angle: 14.4         # 360° / 25
-
+  document: 3
+  n: 25
+  b: 5
+  layers: 5
+  threshold_intrusion: 19
+  axis_angle: 14.4
 dataset:
-  samples_per_class: 1000  # 1000 imágenes por clase → 3000 en total
-  image_size: 224          # Tamaño en píxeles
-  seed: 42                 # Semilla para reproducibilidad
-
+  samples_per_class: 1000
+  image_size: 224
+  seed: 42
   split:
-    train: 0.7             # 70 % entrenamiento
-    val: 0.15              # 15 % validación
-    # test = 0.15 implícito (lo calcula generate_dataset.py)
-
+    train: 0.7
+    val: 0.15
 training:
-  model: "resnet34"        # Modelo base (ResNet34)
-  epochs: 25               # Épocas de entrenamiento
+  model: convnext_tiny
+  epochs: 25
   batch_size: 32
-  learning_rate: 1.0e-4
+  learning_rate: 0.0001
   lr_step_size: 7
   lr_gamma: 0.1
   num_workers: 4
+  historical_baseline: resnet34
