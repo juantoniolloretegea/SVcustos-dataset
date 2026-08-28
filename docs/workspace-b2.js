@@ -1,6 +1,11 @@
 "use strict";
 
 (() => {
+  const stylesheet = document.createElement("link");
+  stylesheet.rel = "stylesheet";
+  stylesheet.href = "workspace-b2.css";
+  document.head.append(stylesheet);
+
   const buttons = [...document.querySelectorAll("[data-workspace-target]")];
   const views = [...document.querySelectorAll("[data-workspace-view]")];
 
