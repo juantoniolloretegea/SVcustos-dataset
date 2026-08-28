@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; connect-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>SV — Laboratorio del Lenguaje</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-ui-lang="es" data-source-profile="es">
+  <header class="site-header">
+    <div class="brand-block">
+      <p class="eyebrow" data-i18n="laboratory">LABORATORIO SV</p>
+      <h1 data-i18n="title">Lenguaje de Computación SV</h1>
+      <p class="subtitle" data-i18n="subtitle">Entorno experimental de programación y verificación en navegador.</p>
+    </div>
+    <nav class="top-links" aria-label="Accesos externos">
+      <a href="https://lenguaje-sv.itvia.online/" target="_blank" rel="noopener noreferrer" data-i18n="stableEnvironment">Entorno estable</a>
+      <a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion" target="_blank" rel="noopener noreferrer" data-i18n="canonicalGithub">GitHub canónico</a>
+    </nav>
+  </header>
+
+  <div class="experimental-notice" role="status">
+    <strong data-i18n="experimentalTitle">Entorno experimental.</strong>
+    <span data-i18n="experimentalText">Las funciones aquí expuestas están sometidas a validación y no constituyen por sí solas una versión normativa del Lenguaje SV.</span>
+  </div>
+
+  <main>
+    <section class="control-panel" aria-labelledby="controls-title">
+      <h2 id="controls-title" class="sr-only" data-i18n="configuration">Configuración</h2>
+
+      <div class="control-group">
+        <span class="control-label" data-i18n="interfaceLanguage">Interfaz</span>
+        <div class="segmented" role="group" aria-label="Idioma de la interfaz">
+          <button type="button" data-ui-choice="es" aria-pressed="true">Español</button>
+          <button type="button" data-ui-choice="en" aria-pressed="false">English</button>
+        </div>
+      </div>
+
+      <div class="control-group profile-control">
+        <span class="control-label" data-i18n="sourceLanguage">Código SV</span>
+        <div class="segmented profile-segmented" role="group" aria-label="Perfil lingüístico del código SV">
+          <button type="button" data-profile-choice="es" aria-pressed="true">Español · SVP-ES</button>
+          <button type="button" data-profile-choice="en" aria-pressed="false">English · SVP-EN</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-banner" aria-live="polite">
+      <div>
+        <span class="profile-kicker" data-i18n="activeProfile">Perfil de código activo</span>
+        <strong id="profile-label">ESPAÑOL · SVP-ES</strong>
+      </div>
+      <p id="profile-explanation" data-i18n="profileExplanationEs">El compilador interpretará el texto como SVP-ES. Cambiar el perfil no traduce ni modifica el contenido del editor.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="editor-column">
+        <section class="editor-shell" aria-labelledby="editor-title">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker" data-i18n="sourceCode">Código fuente</p>
+              <h2 id="editor-title" data-i18n="editor">Editor SVP</h2>
+            </div>
+            <span class="profile-chip" id="editor-profile-chip">SVP-ES</span>
+          </div>
+
+          <div class="file-row">
+            <label for="file-name" data-i18n="fileName">Archivo</label>
+            <input id="file-name" value="programa.svp" spellcheck="false" autocomplete="off">
+            <button type="button" id="download-source" class="secondary" data-i18n="download">Descargar .svp</button>
+          </div>
+
+          <textarea id="source-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Editor de código SVP"></textarea>
+
+          <div class="source-metadata">
+            <span><strong>SHA-256</strong> <code id="source-sha">—</code></span>
+            <span><strong data-i18n="selectedProfile">Perfil</strong> <code id="source-profile-code">es</code></span>
+          </div>
+
+          <div class="editor-actions">
+            <button type="button" id="run-source" class="primary" data-i18n="run">Ejecutar</button>
+            <button type="button" id="clear-output" class="secondary" data-i18n="clearOutput">Limpiar resultado</button>
+          </div>
+          <p id="editor-status" class="status-line" aria-live="polite"></p>
+        </section>
+
+        <section class="result-shell" aria-labelledby="result-title">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker" data-i18n="execution">Ejecución local</p>
+              <h2 id="result-title" data-i18n="result">Resultado</h2>
+            </div>
+            <span id="result-state" class="result-state" data-state="idle" data-i18n="notExecuted">Sin ejecutar</span>
+          </div>
+          <pre id="result-output" tabindex="0" aria-live="polite"></pre>
+        </section>
+      </div>
+
+      <aside class="examples-panel" aria-labelledby="examples-title">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker" data-i18n="library">Biblioteca</p>
+            <h2 id="examples-title" data-i18n="examples">Ejemplos</h2>
+          </div>
+          <span class="profile-chip" id="examples-profile-chip">SVP-ES</span>
+        </div>
+        <p class="examples-help" data-i18n="examplesHelp">Los ejemplos se cargan en el editor sólo cuando usted lo solicita. Cambiar el perfil no transforma el código existente.</p>
+        <div id="examples-list" class="examples-list"></div>
+      </aside>
+    </section>
+
+    <section class="architecture-note" aria-labelledby="architecture-title">
+      <h2 id="architecture-title" data-i18n="architectureTitle">Una sola identidad computacional</h2>
+      <div class="architecture-flow" aria-label="Flujo de canonicalización">
+        <div><strong>SVP-ES</strong><span data-i18n="surfaceEs">superficie española</span></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div><strong data-i18n="canonicalIds">identidades canónicas</strong><span>TerminalId / valores cerrados</span></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div><strong data-i18n="singleCore">analizador e IR únicos</strong><span>sv_core</span></div>
+      </div>
+      <div class="architecture-flow second-flow" aria-label="Flujo de canonicalización inglés">
+        <div><strong>SVP-EN</strong><span data-i18n="surfaceEn">superficie inglesa</span></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div><strong data-i18n="sameCanonicalIds">las mismas identidades canónicas</strong><span>TerminalId / valores cerrados</span></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div><strong data-i18n="sameCore">el mismo analizador e IR</strong><span>sv_core</span></div>
+      </div>
+      <p data-i18n="scalabilityClosed">La arquitectura permite estudiar perfiles lingüísticos adicionales sin duplicar el núcleo semántico. En este entorno sólo SVP-ES y SVP-EN están constituidos. Ningún otro perfil forma parte del Lenguaje SV por el mero hecho de ser técnicamente realizable.</p>
+    </section>
+
+    <section class="build-panel" aria-labelledby="build-title">
+      <h2 id="build-title" data-i18n="reproducibility">Identidad del experimento</h2>
+      <dl>
+        <div><dt data-i18n="sourceCut">Corte fuente</dt><dd><code id="build-source-commit">—</code></dd></div>
+        <div><dt>WebAssembly SHA-256</dt><dd><code id="build-wasm-sha">—</code></dd></div>
+        <div><dt data-i18n="wasmSize">Tamaño WebAssembly</dt><dd><code id="build-wasm-bytes">—</code></dd></div>
+        <div><dt data-i18n="grammarVersion">Gramática</dt><dd><code id="build-grammar">—</code></dd></div>
+        <div><dt>IR</dt><dd><code id="build-ir">—</code></dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footerText">La interfaz web transporta bytes e invoca el módulo WebAssembly local. No interpreta ni modifica la semántica SV.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
