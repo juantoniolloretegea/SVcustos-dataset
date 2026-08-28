@@ -16,9 +16,11 @@
       <h1 data-i18n="title">Lenguaje de Computación SV</h1>
       <p class="subtitle" data-i18n="subtitle">Entorno experimental de programación y verificación en navegador.</p>
     </div>
-    <nav class="top-links" aria-label="Accesos externos">
+    <nav class="top-links" aria-label="Accesos externos y documentación de la Beta">
       <a href="https://lenguaje-sv.itvia.online/" target="_blank" rel="noopener noreferrer" data-i18n="stableEnvironment">Entorno estable</a>
-      <a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion" target="_blank" rel="noopener noreferrer" data-i18n="canonicalGithub">GitHub canónico</a>
+      <a id="canonical-repository-link" href="https://lectura-sv.itvia.online/lenguaje" target="_blank" rel="noopener noreferrer">Repositorio canónico</a>
+      <a id="version-features-link" href="caracteristicas.html">Características de esta versión</a>
+      <a id="beta-history-link" href="historial-beta.html">Historial Beta</a>
     </nav>
   </header>
 
@@ -134,12 +136,16 @@
     <section class="build-panel" aria-labelledby="build-title">
       <h2 id="build-title" data-i18n="reproducibility">Identidad del experimento</h2>
       <dl>
+        <div><dt>Versión del laboratorio</dt><dd><strong>Beta B1</strong></dd></div>
+        <div><dt>Estado</dt><dd><strong>Experimental · no promovida</strong></dd></div>
+        <div><dt>Fecha de constitución</dt><dd><code>28/08/2026</code></dd></div>
         <div><dt data-i18n="sourceCut">Corte fuente</dt><dd><code id="build-source-commit">—</code></dd></div>
         <div><dt>WebAssembly SHA-256</dt><dd><code id="build-wasm-sha">—</code></dd></div>
         <div><dt data-i18n="wasmSize">Tamaño WebAssembly</dt><dd><code id="build-wasm-bytes">—</code></dd></div>
         <div><dt data-i18n="grammarVersion">Gramática</dt><dd><code id="build-grammar">—</code></dd></div>
         <div><dt>IR</dt><dd><code id="build-ir">—</code></dd></div>
       </dl>
+      <p class="status-line"><a href="programacion-metricas.html">Programación y métricas de Beta B1</a></p>
     </section>
   </main>
 
@@ -148,5 +154,6 @@
   </footer>
 
   <script src="app.js" defer></script>
+  <script src="beta-meta.js" defer></script>
 </body>
 </html>
