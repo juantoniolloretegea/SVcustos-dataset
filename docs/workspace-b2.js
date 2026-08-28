@@ -6,6 +6,15 @@
   stylesheet.href = "workspace-b2.css";
   document.head.append(stylesheet);
 
+  const referenceTargets = {
+    "GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md": "https://lectura-sv.itvia.online/lenguaje/?file=GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md",
+    "IR_CANONICA_BIENFORMACION_SV_v0_3.md": "https://lectura-sv.itvia.online/lenguaje/?file=IR_CANONICA_BIENFORMACION_SV_v0_3.md"
+  };
+  for (const link of document.querySelectorAll("a.rail-link")) {
+    const fileName = link.querySelector("small code")?.textContent?.trim();
+    if (fileName && referenceTargets[fileName]) link.href = referenceTargets[fileName];
+  }
+
   const buttons = [...document.querySelectorAll("[data-workspace-target]")];
   const views = [...document.querySelectorAll("[data-workspace-view]")];
 
