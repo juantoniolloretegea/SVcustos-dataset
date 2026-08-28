@@ -6,6 +6,11 @@
   stylesheet.href = "workspace-b2.css";
   document.head.append(stylesheet);
 
+  const staticI18n = document.createElement("script");
+  staticI18n.src = "i18n-static-b2.js";
+  staticI18n.defer = true;
+  document.head.append(staticI18n);
+
   const referenceTargets = {
     "GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md": "https://lectura-sv.itvia.online/lenguaje/?file=GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md",
     "IR_CANONICA_BIENFORMACION_SV_v0_3.md": "https://lectura-sv.itvia.online/lenguaje/?file=IR_CANONICA_BIENFORMACION_SV_v0_3.md"
