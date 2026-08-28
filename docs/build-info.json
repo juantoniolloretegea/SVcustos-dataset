@@ -1,5 +1,8 @@
 {
   "status": "experimental",
+  "beta_id": "B1",
+  "beta_constituted_on": "2026-08-28",
+  "promotion_status": "not_promoted",
   "source_commit": "f6b704e819e7d08589f00e9e3f9550deab21d0b1",
   "wasm_sha256": "da37c14e0b5f4e8b0a66756427e7ddc006b7823a0b45737a35fdeeaef3ac3754",
   "wasm_bytes": 355221,
