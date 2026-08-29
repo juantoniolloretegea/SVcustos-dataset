@@ -20,19 +20,21 @@
   </header>
 
   <main class="doc-main">
-    <nav class="doc-nav" aria-label="Navegación de Beta B1">
-      <a href="./">Playground Beta</a>
+    <nav class="doc-nav" aria-label="Navegación del historial Beta">
+      <a href="./?ui=es#editor">Playground Beta</a>
       <a href="caracteristicas.html">Características de esta versión</a>
       <a href="programacion-metricas.html">Programación y métricas</a>
+      <a href="seguridad-b2.html">Seguridad</a>
+      <a href="diagnosticos.html">Diagnósticos</a>
       <a href="https://lectura-sv.itvia.online/lenguaje" target="_blank" rel="noopener noreferrer">Repositorio canónico</a>
     </nav>
 
-    <div class="experimental-notice"><strong>Registro de laboratorio.</strong> Este historial distingue expresamente despliegue Beta de integración soberana y no anticipa la decisión de promoción.</div>
+    <div class="experimental-notice"><strong>Registro de laboratorio.</strong> Este historial distingue expresamente despliegue Beta de integración soberana. La presencia pública de una Beta no la convierte en versión vigente de producción ni anticipa una decisión de promoción.</div>
 
     <section class="doc-section">
       <h2>1. Regla de registro</h2>
       <p>Cada Beta pública significativa conserva una identidad independiente de los números de Gramática e IR. La serie <code>B1</code>, <code>B2</code>, <code>B3</code>… identifica realizaciones experimentales y no sustituye el versionado normativo del Lenguaje.</p>
-      <p>Una Beta puede estar desplegada sin estar integrada. Sólo una promoción acreditada podrá relacionar una Beta concreta con un commit soberano de producción.</p>
+      <p>Una Beta puede estar desplegada y ser técnicamente funcional sin estar integrada. Sólo una promoción acreditada puede relacionar una Beta concreta con un corte soberano de producción.</p>
     </section>
 
     <section class="doc-section">
@@ -40,18 +42,18 @@
       <div class="doc-table-wrap"><table class="doc-table"><tbody>
         <tr><th>Identificador</th><td>Beta B1</td></tr>
         <tr><th>Fecha</th><td>28/08/2026</td></tr>
-        <tr><th>Estado</th><td><span class="status-badge">Desplegada · experimental</span></td></tr>
+        <tr><th>Estado</th><td><span class="status-badge">Histórica · experimental · no promovida</span></td></tr>
         <tr><th>Gramática</th><td>0.2</td></tr>
         <tr><th>IR</th><td>0.3</td></tr>
         <tr><th>Perfiles</th><td>SVP-ES · SVP-EN</td></tr>
         <tr><th>Perfil predeterminado</th><td>ES</td></tr>
-        <tr><th>Corte fuente</th><td><code>f6b704e819e7d08589f00e9e3f9550deab21d0b1</code></td></tr>
+        <tr><th>Corte fuente soberano</th><td><code>f6b704e819e7d08589f00e9e3f9550deab21d0b1</code></td></tr>
         <tr><th>WASM SHA-256</th><td><code>da37c14e0b5f4e8b0a66756427e7ddc006b7823a0b45737a35fdeeaef3ac3754</code></td></tr>
         <tr><th>WASM</th><td>355221 bytes</td></tr>
         <tr><th>Cambio material</th><td>Primera realización pública experimental con superficies ES/EN, selección explícita de perfil e identidad computacional canónica compartida.</td></tr>
-        <tr><th>Resultado</th><td>Arquitectura experimental y batería final del laboratorio superadas en el alcance declarado.</td></tr>
+        <tr><th>Resultado</th><td>Arquitectura experimental y batería final superadas en el alcance declarado.</td></tr>
         <tr><th>Producción</th><td><strong>No promovida.</strong></td></tr>
-        <tr><th>Sustituida por</th><td>—</td></tr>
+        <tr><th>Sustituida en el laboratorio por</th><td><strong>Beta B2</strong></td></tr>
       </tbody></table></div>
 
       <h3>Evidencia material de B1</h3>
@@ -61,19 +63,69 @@
         <li>Rechazo cruzado 12/12 EN→ES y 12/12 ES→EN.</li>
         <li>Selección cerrada de perfil, sin autodetección.</li>
         <li>0 incremento medido de memoria dinámica al añadir el segundo perfil en el contraste causal declarado.</li>
-        <li>WebAssembly de B1 identificado por hash y tamaño exactos.</li>
+        <li>WebAssembly identificado por hash y tamaño exactos.</li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2>3. Condición de promoción Beta → producción</h2>
+      <h2>3. Beta B2</h2>
+      <div class="doc-table-wrap"><table class="doc-table"><tbody>
+        <tr><th>Identificador</th><td><strong>Beta B2</strong></td></tr>
+        <tr><th>Constitución material</th><td>28/08/2026</td></tr>
+        <tr><th>Actualización pública de interfaz y documentación</th><td>29/08/2026</td></tr>
+        <tr><th>Estado</th><td><span class="status-badge">Desplegada · experimental · no promovida</span></td></tr>
+        <tr><th>Gramática</th><td>0.2</td></tr>
+        <tr><th>IR</th><td>0.3</td></tr>
+        <tr><th>Proyección</th><td>0.1.0</td></tr>
+        <tr><th>Perfiles</th><td>SVP-ES · SVP-EN</td></tr>
+        <tr><th>Interfaz predeterminada</th><td>ES</td></tr>
+        <tr><th>Perfil fuente predeterminado</th><td>ES</td></tr>
+        <tr><th>Corte fuente soberano</th><td><code>f6b704e819e7d08589f00e9e3f9550deab21d0b1</code></td></tr>
+        <tr><th>Corte de realización experimental</th><td><code>fa43dc49adf9da8cff72d1a03c981c77d27ed93f</code></td></tr>
+        <tr><th>Ejecución de evidencia</th><td><code>33207042268</code></td></tr>
+        <tr><th>Digest del artefacto de evidencia</th><td><code>sha256:0542d58430f530c8fb3ca47c7a089b9dd0a4d7a365b14a8f52c50dcd12dd3568</code></td></tr>
+        <tr><th>WASM SHA-256</th><td><code>03a958e5c24a23aebfab6d68aaa24e40d83085127b7a2bc7d23fd27a27ac6e03</code></td></tr>
+        <tr><th>WASM</th><td>377812 bytes</td></tr>
+        <tr><th>Cambio material principal</th><td>Ensamblaje experimental de dos unidades fuente con perfiles independientes y validación global tras convergencia canónica, sin concatenación de texto ni de flujos de tokens entre archivos.</td></tr>
+        <tr><th>Producción</th><td><strong>No promovida.</strong></td></tr>
+      </tbody></table></div>
+
+      <h3>Capacidades constituidas en B2</h3>
+      <ul>
+        <li>Dos unidades fuente visibles en el navegador, cada una con selección independiente <code>SVP-ES</code>/<code>SVP-EN</code>.</li>
+        <li>Ensamblaje posterior al análisis de cada unidad; la interfaz no concatena fuentes ni flujos de tokens para fabricar un tercer programa.</li>
+        <li>Convergencia en una única IR 0.3 y comprobación global de bienformación después de reunir la representación canónica.</li>
+        <li>Editor y resultado en paneles paralelos en pantallas anchas, con desplazamiento interno de la salida; disposición apilada en anchos reducidos.</li>
+        <li>Acciones principales situadas antes del contenido tanto en el editor como en el ensamblador.</li>
+        <li>Biblioteca de seis ejemplos con variantes ES y EN. Un ejemplo intacto de biblioteca cambia a su variante homóloga cuando se cambia el perfil; el código propio o modificado se conserva sin transformación.</li>
+        <li>Marcador de modificación de fuente para distinguir el ejemplo intacto del contenido editado.</li>
+        <li>Navegación documental bilingüe para Seguridad, Diagnósticos, Características, Historial Beta y Programación y métricas, con conservación explícita del idioma de interfaz al regresar al Playground.</li>
+        <li>Selección explícita de perfil y ausencia de autodetección lingüística.</li>
+      </ul>
+
+      <h3>Fronteras que B2 no cruza</h3>
+      <ul>
+        <li>B2 no constituye todavía un sistema general de proyectos o módulos ni un número arbitrario de unidades.</li>
+        <li>No define punto de entrada, programa principal ni semántica de importación.</li>
+        <li>No fabrica una fuente <code>.svp</code> única a partir de unidades escritas en superficies diferentes.</li>
+        <li>No convierte la documentación de Seguridad en certificación general ni sustituye el contraste de seguridad exigido antes de una promoción.</li>
+        <li>No promueve SVP-ES ni el ensamblaje multifuente al repositorio soberano.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>4. Condición de promoción Beta → producción</h2>
       <pre class="doc-code">Beta Bn identificada
    ↓
 corte exacto + evidencia reproducible
    ↓
-regresión completa y contraste de seguridad
+regresión completa
    ↓
-límites conocidos documentados
+identidad de artefactos y WebAssembly verificada
+   ↓
+contraste e informe de seguridad de la Beta
+   ↓
+límites y divergencias conocidas documentados
    ↓
 comparación contra main soberano
    ↓
@@ -84,71 +136,45 @@ integración gobernada
 despliegue estable
    ↓
 entrada trazable en el historial soberano</pre>
-      <p>La presencia pública de una Beta no la convierte en versión vigente. Si B1 o una sucesora es promovida, el registro deberá conservar la Beta de origen, la fecha de promoción y el commit soberano resultante.</p>
+      <p>La presencia pública de B2 no la convierte en versión vigente. Una promoción futura deberá conservar como mínimo la Beta de origen, el corte exacto de evidencia, el informe de seguridad aplicable y el corte soberano finalmente integrado.</p>
     </section>
 
     <section class="doc-section">
-      <h2>4. Propuestas abiertas para una Beta posterior</h2>
-      <p>Las propuestas siguientes conservan trabajo futuro material identificado durante B1. Su registro evita perderlo, pero no constituye compromiso de implementación ni apertura automática de alcance.</p>
+      <h2>5. Propuestas y deuda para Betas posteriores</h2>
+      <p>Las entradas siguientes conservan trabajo futuro material sin convertirlo en compromiso automático de implementación. Cuando B2 ha realizado sólo una parte de una propuesta, el alcance restante queda expresamente visible.</p>
       <ul class="proposal-list">
-        <li>
-          <h3><code>LAB-P001</code> · Entorno integrado de desarrollo</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p>
-          <p>Proyecto y archivos múltiples, pestañas, árbol de proyecto, navegación entre fuentes y símbolos, ejecución, inspección de IR y trazas, guardado local y reutilización de la API soberana del compilador. Queda prohibido introducir un segundo analizador sintáctico independiente en la interfaz.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P002</code> · Estado de edición y archivo modificado</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p>
-          <p>Distinguir un ejemplo cargado del contenido posteriormente modificado, por ejemplo mediante <code>archivo.svp *</code> o un indicador equivalente de modificación, integrado después en el modelo del entorno de desarrollo.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P003</code> · Diagnósticos estructurados y presentación localizable</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p>
-          <p>Separar código diagnóstico, posición o intervalo, argumentos estructurados y texto de presentación. El idioma de los diagnósticos no deberá alterar el perfil de la fuente ni la identidad del error.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P004</code> · Procedencia persistente del perfil de fuente</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p>
-          <p>Conservar por unidad, cuando proceda, identidad y versión del perfil, catálogo y gramática, sin adulterar <code>source_sha256</code>. La identidad de compilación deberá distinguir los bytes fuente de las dependencias lingüísticas que los interpretaron.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P005</code> · Infraestructura multifuente y módulos</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p>
-          <p>Estudiar proyectos o módulos compuestos por varias unidades fuente y cerrar compatibilidad de perfiles/versiones antes de afirmar composición. B1 no promete mezcla ES/EN entre módulos ni una semántica multifuente ya realizada.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P006</code> · Herramientas de edición derivadas del catálogo canónico</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p>
-          <p>Resaltado sintáctico, completado y navegación deberán derivarse del mismo catálogo canónico o de artefactos generados de él, evitando vocabularios laterales que puedan divergir del compilador.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P007</code> · Evolución versionada a perfiles lingüísticos adicionales</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">EN ESTUDIO</span></p>
-          <p>Conservar la posibilidad de estudiar nuevas superficies sin reservar retroactivamente palabras que rompan programas anteriores. Portugués, francés, italiano y alemán fueron identificados como candidatos de viabilidad de ingeniería, no como perfiles constituidos ni como orden de implementación comprometido.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P008</code> · Estrategia de huella estática al crecer los perfiles</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">EN ESTUDIO</span></p>
-          <p>Si el crecimiento de tablas vuelve material la huella WebAssembly, comparar estrategias de distribución o carga sin introducir traducción remota, bases de datos activas ni servicios externos capaces de decidir significado.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P009</code> · Seguridad visual Unicode</h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p>
-          <p>Gobernar expresamente controles Unicode invisibles o direccionales y riesgos de presentación en código, cadenas y comentarios antes de formular garantías de seguridad visual de la experiencia ES/EN.</p>
-        </li>
-        <li>
-          <h3><code>LAB-P010</code> · Revisión específica de paridad <code>trajectory</code>/<code>Trajectory</code></h3>
-          <p class="proposal-meta">Estado: <span class="status-badge status-open">COMPROBACIÓN PENDIENTE</span></p>
-          <p>Antes de ampliar afirmaciones de equivalencia entre realizaciones, efectuar una comprobación específica y reproducible del doble uso gramatical de las grafías <code>trajectory</code> y <code>Trajectory</code>. Esta entrada registra una comprobación pendiente; no declara por sí sola un defecto vigente.</p>
-        </li>
+        <li><h3><code>LAB-P001</code> · Entorno integrado de desarrollo</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p><p>B2 reserva visualmente un espacio para la evolución hacia proyectos, varios archivos, pestañas, símbolos, diagnósticos, IR y trazas, pero no constituye todavía esas capacidades. El futuro entorno deberá reutilizar el compilador soberano y no introducir un segundo analizador sintáctico.</p></li>
+
+        <li><h3><code>LAB-P002</code> · Estado de edición y archivo modificado</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">EN BETA</span></p><p>B2 distingue los ejemplos intactos de biblioteca del contenido modificado y muestra un marcador de modificación. La integración en un modelo completo de proyecto o entorno de desarrollo queda pendiente.</p></li>
+
+        <li><h3><code>LAB-P003</code> · Diagnósticos estructurados y presentación localizable</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p><p>La existencia de páginas bilingües de Diagnósticos no constituye todavía un diagnóstico estructurado. Sigue pendiente separar código, posición o intervalo, argumentos y texto de presentación sin alterar la identidad del error ni el perfil fuente.</p></li>
+
+        <li><h3><code>LAB-P004</code> · Procedencia persistente del perfil de fuente</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">EN BETA</span></p><p>B2 conserva por unidad el perfil activo y la huella SHA-256 de la fuente en la interfaz de ensamblaje. Sigue pendiente constituir una procedencia completa y persistente que incluya versión del perfil, catálogo y gramática sin adulterar <code>source_sha256</code>.</p></li>
+
+        <li><h3><code>LAB-P005</code> · Infraestructura multifuente, proyectos y módulos</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">EN BETA</span></p><p>B2 realiza el caso experimental de dos unidades con perfiles independientes y validación global. Siguen abiertos el modelo general de proyecto, un número arbitrario de unidades, compatibilidad versionada, dependencias, eventual punto de entrada y la posible exportación de una IR o manifiesto de ensamblaje. B2 no fabrica una fuente fusionada.</p></li>
+
+        <li><h3><code>LAB-P006</code> · Herramientas de edición derivadas del catálogo canónico</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p><p>Resaltado sintáctico, completado y navegación deberán derivarse del catálogo canónico o de artefactos generados a partir de él, evitando vocabularios laterales que puedan divergir del compilador.</p></li>
+
+        <li><h3><code>LAB-P007</code> · Evolución versionada a perfiles lingüísticos adicionales</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">EN ESTUDIO</span></p><p>Se conserva la posibilidad de estudiar nuevas superficies sin reservar retroactivamente palabras que rompan programas anteriores. No existe en B2 un tercer perfil constituido ni un orden de implementación comprometido.</p></li>
+
+        <li><h3><code>LAB-P008</code> · Estrategia de huella estática al crecer los perfiles</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">EN ESTUDIO</span></p><p>Si el crecimiento de tablas vuelve material la huella WebAssembly, deberán compararse estrategias de distribución o carga sin trasladar decisiones semánticas a traducción remota, bases de datos activas o servicios externos.</p></li>
+
+        <li><h3><code>LAB-P009</code> · Seguridad visual Unicode</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p><p>Sigue pendiente gobernar expresamente controles Unicode invisibles o direccionales y riesgos de presentación en código, cadenas y comentarios antes de formular garantías de seguridad visual de la experiencia ES/EN.</p></li>
+
+        <li><h3><code>LAB-P010</code> · Revisión específica de paridad <code>trajectory</code>/<code>Trajectory</code></h3><p class="proposal-meta">Estado: <span class="status-badge status-open">COMPROBACIÓN PENDIENTE</span></p><p>Se conserva como comprobación específica hasta que exista evidencia reproducible suficiente para cerrarla o descartarla. Esta entrada no declara por sí sola un defecto vigente.</p></li>
+
+        <li><h3><code>LAB-P011</code> · Manual estable del Lenguaje mediante GitHub Wiki</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">PROPUESTA</span></p><p>Se propone iniciar el manual de usuario y programación en el entorno estable, comenzando por el Playground cuando las capacidades correspondientes hayan sido promovidas. El manual no forma parte de la autoridad experimental de B2.</p></li>
+
+        <li><h3><code>LAB-P012</code> · Expediente de seguridad por Beta y promoción</h3><p class="proposal-meta">Estado: <span class="status-badge status-open">EN BETA</span></p><p>B2 dispone de una página específica de Seguridad en español e inglés para sus controles observables y límites. Antes de cualquier promoción deberá existir un contraste de seguridad completo, versionado y trazable, conservado junto con la identidad exacta de la Beta y de los artefactos evaluados.</p></li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2>5. Regla de continuidad de propuestas</h2>
-      <p>Una propuesta que sobreviva a varias Betas conserva su identificador y estado. Los estados previstos son <code>PROPUESTA</code>, <code>EN ESTUDIO</code>, <code>APTA PARA PROTOTIPO</code>, <code>EN BETA</code>, <code>DESCARTADA</code> y <code>PROMOVIDA</code>. Una propuesta descartada debe conservar la razón técnica de descarte; una promovida debe enlazar la evidencia de integración.</p>
+      <h2>6. Regla de continuidad de propuestas</h2>
+      <p>Una propuesta que sobreviva a varias Betas conserva su identificador y estado. Los estados operativos de este registro son <code>PROPUESTA</code>, <code>EN ESTUDIO</code>, <code>APTA PARA PROTOTIPO</code>, <code>EN BETA</code>, <code>DESCARTADA</code> y <code>PROMOVIDA</code>. Una propuesta descartada debe conservar su razón técnica; una promovida debe enlazar la evidencia de integración.</p>
+      <p>La marca <code>EN BETA</code> significa únicamente que existe una realización experimental dentro del alcance declarado; no equivale a integración soberana ni a promoción.</p>
     </section>
   </main>
-  <footer><p>Lenguaje de Computación SV · Historial Beta · B1.</p></footer>
+  <footer><p>Lenguaje de Computación SV · Historial Beta · B1 → B2 · actualización 29/08/2026.</p></footer>
 </body>
 </html>
