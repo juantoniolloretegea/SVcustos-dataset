@@ -3,7 +3,7 @@
 (() => {
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
-  stylesheet.href = "workspace-b2.css?v=b2-scroll-20260829-3";
+  stylesheet.href = "workspace-b2.css?v=b2-assembly-toolbar-20260829-1";
   document.head.append(stylesheet);
 
   const staticI18n = document.createElement("script");
@@ -24,6 +24,16 @@
   for (const link of document.querySelectorAll("a.rail-link")) {
     const fileName = link.querySelector("small code")?.textContent?.trim();
     if (fileName && referenceTargets[fileName]) link.href = referenceTargets[fileName];
+  }
+
+  const assemblyShell = document.querySelector("#view-assembly .assembly-shell");
+  const assemblyGrid = document.querySelector("#view-assembly .assembly-grid");
+  const assemblyActions = document.querySelector("#view-assembly .assembly-actions");
+  if (assemblyShell && assemblyGrid && assemblyActions) {
+    assemblyActions.classList.add("assembly-actions-top");
+    assemblyActions.setAttribute("role", "toolbar");
+    assemblyActions.setAttribute("aria-label", "Acciones de ensamblaje / Assembly actions");
+    assemblyShell.insertBefore(assemblyActions, assemblyGrid);
   }
 
   const buttons = [...document.querySelectorAll("[data-workspace-target]")];
