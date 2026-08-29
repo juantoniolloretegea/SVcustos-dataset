@@ -11,11 +11,28 @@
   staticI18n.defer = true;
   document.head.append(staticI18n);
 
+  const requestedUi = new URLSearchParams(window.location.search).get("ui");
+
   window.addEventListener("load", () => {
+    if (["es", "en"].includes(requestedUi)) {
+      const uiButton = document.querySelector(`[data-ui-choice="${requestedUi}"]`);
+      if (uiButton && uiButton.getAttribute("aria-pressed") !== "true") uiButton.click();
+    }
+
     const profileSync = document.createElement("script");
     profileSync.src = "example-profile-sync-b2.js?v=b2-profile-sync-20260829-1";
     document.body.append(profileSync);
   }, { once: true });
+
+  for (const uiButton of document.querySelectorAll("[data-ui-choice]")) {
+    uiButton.addEventListener("click", () => {
+      const lang = uiButton.dataset.uiChoice;
+      const url = new URL(window.location.href);
+      if (lang === "en") url.searchParams.set("ui", "en");
+      else url.searchParams.delete("ui");
+      history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+    });
+  }
 
   const referenceTargets = {
     "GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md": "https://lectura-sv.itvia.online/lenguaje/?file=GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md",
