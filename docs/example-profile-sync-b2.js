@@ -29,6 +29,7 @@
 
   let examples = [];
   let baseline = null;
+  let lastProfile = document.body.dataset.sourceProfile === "en" ? "en" : "es";
 
   function profileLabel(profile) {
     return profile === "es" ? "SVP-ES" : "SVP-EN";
@@ -66,6 +67,10 @@
       source: sourceFor(example, profile)
     };
     updateModifiedMarker();
+  }
+
+  function captureBaselineIfNeeded() {
+    if (!baseline && matchExactLibraryExample()) setBaselineFromCurrent();
   }
 
   function ensureModifiedMarker() {
@@ -154,6 +159,8 @@
     .then(data => {
       examples = Array.isArray(data) ? data : [];
       setBaselineFromCurrent();
+      setTimeout(captureBaselineIfNeeded, 250);
+      setTimeout(captureBaselineIfNeeded, 1000);
     })
     .catch(() => {
       examples = [];
@@ -164,12 +171,12 @@
   for (const button of document.querySelectorAll("[data-profile-choice]")) {
     button.addEventListener("click", () => {
       const targetProfile = button.dataset.profileChoice;
+      if (targetProfile === lastProfile) return;
+      lastProfile = targetProfile;
       queueMicrotask(() => {
         clearStaleResult();
         if (!switchMatchingExample(targetProfile)) {
-          if (baseline && (editor.value !== baseline.source || fileName.value !== baseline.fileName)) {
-            status.textContent = tx().preserved;
-          }
+          status.textContent = tx().preserved;
           updateModifiedMarker();
         }
         updateExplanation();
@@ -181,6 +188,8 @@
     button.addEventListener("click", () => queueMicrotask(updateExplanation));
   }
 
+  editor.addEventListener("focus", captureBaselineIfNeeded);
+  fileName.addEventListener("focus", captureBaselineIfNeeded);
   editor.addEventListener("input", updateModifiedMarker);
   fileName.addEventListener("input", updateModifiedMarker);
 
