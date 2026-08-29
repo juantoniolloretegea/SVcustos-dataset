@@ -7,7 +7,7 @@
   document.head.append(stylesheet);
 
   const staticI18n = document.createElement("script");
-  staticI18n.src = "i18n-static-b2.js?v=b2-doc-links-20260829-1";
+  staticI18n.src = "i18n-static-b2.js?v=b2-lexical-polish-20260829-1";
   staticI18n.defer = true;
   document.head.append(staticI18n);
 
