@@ -3,7 +3,7 @@
 (() => {
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
-  stylesheet.href = "workspace-b2.css";
+  stylesheet.href = "workspace-b2.css?v=b2-scroll-20260829-3";
   document.head.append(stylesheet);
 
   const staticI18n = document.createElement("script");
