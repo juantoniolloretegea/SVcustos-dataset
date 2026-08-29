@@ -148,6 +148,11 @@
   font-weight: 800;
 }
 
+.assembly-actions.assembly-actions-top {
+  margin: 0 0 14px;
+  align-items: center;
+}
+
 .examples-details {
   margin-top: 16px;
   border: 1px solid var(--line);
@@ -238,5 +243,6 @@
     border-radius: 0 0 10px 10px;
     box-shadow: none;
   }
+  .assembly-actions.assembly-actions-top button { flex: 1 1 100%; }
   .compact-build dl div { grid-template-columns: 1fr; gap: 3px; }
 }
