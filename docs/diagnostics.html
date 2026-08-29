@@ -13,27 +13,27 @@
 <body data-source-profile="en">
   <header class="site-header">
     <div class="brand-block">
-      <p class="eyebrow">SV LABORATORY · BETA B2</p>
+      <p class="eyebrow">SV · BETA B2</p>
       <h1>Diagnostics</h1>
-      <p class="subtitle">Relationship between the B2 experimental interface and the canonical SV Language error catalogue.</p>
+      <p class="subtitle">Relationship between the B2 experimental interface and the SV Language reference error catalogue.</p>
     </div>
   </header>
 
   <main class="doc-main">
     <nav class="doc-nav" aria-label="Beta B2 navigation">
-      <a href="./?ui=en#editor">Back to Playground</a>
+      <a href="./?ui=en#editor">Back to the work environment</a>
       <a href="security-b2.html">Security</a>
       <a href="features.html">Features</a>
       <a href="beta-history.html">Beta history</a>
-      <a href="programming-metrics.html">Programming and metrics</a>
-      <a href="https://lectura-sv.itvia.online/lenguaje" target="_blank" rel="noopener noreferrer">Canonical repository</a>
+      <a href="programming-metrics.html">Methodology and metrics</a>
+      <a href="https://lectura-sv.itvia.online/lenguaje" target="_blank" rel="noopener noreferrer">Language repository</a>
     </nav>
 
     <div class="experimental-notice"><strong>Experimental state.</strong> Beta B2 presents diagnostics emitted by the compiler; it does not redefine their identifiers or normative meaning.</div>
 
     <section class="doc-section">
       <h2>1. Applicable catalogue</h2>
-      <p>The sovereign reference cut for B2 is <code>f6b704e819e7d08589f00e9e3f9550deab21d0b1</code>. For Grammar 0.2 and IR 0.3, the public reference document is <code>docs/referencia/ERRORES_CANONICOS_SV_v0_3.md</code>.</p>
+      <p>The B2 reference version is <code>f6b704e819e7d08589f00e9e3f9550deab21d0b1</code>. For Grammar 0.2 and IR 0.3, the public reference document is <code>docs/referencia/ERRORES_CANONICOS_SV_v0_3.md</code>.</p>
       <p>That effective catalogue contains <strong>50 codes</strong>. Version 0.3 preserves the 0.2 catalogue and adds <code>E110</code>, <code>E305</code> and <code>E308</code>.</p>
     </section>
 
@@ -52,17 +52,17 @@
     <section class="doc-section">
       <h2>3. Compiler/interface separation</h2>
       <p><code>E...</code> codes belong to the compiler catalogue. Browser messages concerning WebAssembly loading, source-size limits, UTF-8, hashes or transport are Beta-interface conditions and must not be confused with semantic diagnostics of the Language.</p>
-      <p>B2 preserves the structured output returned by WebAssembly and does not assign an alternative meaning to a canonical code.</p>
+      <p>B2 preserves the structured output returned by WebAssembly and does not assign an alternative meaning to catalogue codes.</p>
     </section>
 
     <section class="doc-section">
       <h2>4. Known divergence</h2>
-      <p>The public catalogue explicitly preserves a historical divergence for <code>E204</code>: the historical canonical IR identifies it as <code>MissingConflictOperator</code>, while the effective front-end catalogue uses it as <code>QueryMissingContext</code>. B2 neither hides nor laterally rewrites that divergence.</p>
+      <p>The public catalogue explicitly preserves a historical divergence for <code>E204</code>: the historical IR identifies it as <code>MissingConflictOperator</code>, while the effective initial-compilation catalogue uses it as <code>QueryMissingContext</code>. B2 neither hides nor locally rewrites that divergence.</p>
     </section>
 
     <section class="doc-section">
       <h2>5. Scope of this page</h2>
-      <p>This page provides a Beta-facing access point. The exhaustive definition of each code, its emission points and maintenance obligations remain in the canonical document of the sovereign repository.</p>
+      <p>This page provides access from the Beta. The exhaustive definition of each code, its emission points and maintenance obligations remain in the reference document of the main Language repository.</p>
     </section>
   </main>
 
