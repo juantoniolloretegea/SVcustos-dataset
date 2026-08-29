@@ -87,22 +87,28 @@
             <section class="editor-shell" aria-labelledby="editor-title">
               <div class="panel-heading"><div><p class="panel-kicker" data-i18n="sourceCode">Código fuente</p><h3 id="editor-title" data-i18n="editor">Editor SVP</h3></div><span class="profile-chip" id="editor-profile-chip">SVP-ES</span></div>
               <div class="file-row"><label for="file-name" data-i18n="fileName">Archivo</label><input id="file-name" value="programa.svp" spellcheck="false" autocomplete="off" maxlength="240"><button type="button" id="download-source" class="secondary" data-i18n="download">Descargar .svp</button></div>
+
+              <div class="editor-commandbar" role="toolbar" aria-label="Acciones del editor">
+                <div class="editor-actions editor-actions-top">
+                  <button type="button" id="run-source" class="primary" data-i18n="run">Compilar</button>
+                  <button type="button" id="clear-output" class="secondary" data-i18n="clearOutput">Limpiar resultado</button>
+                </div>
+                <details class="examples-details examples-menu">
+                  <summary><span><strong data-i18n="library">Biblioteca</strong> · <span data-i18n="examples">Ejemplos</span> <span class="examples-count">6</span></span><span class="profile-chip" id="examples-profile-chip">SVP-ES</span></summary>
+                  <div class="examples-panel examples-panel-collapsed">
+                    <p class="examples-help" data-i18n="examplesHelp">Los ejemplos se cargan sólo cuando usted lo solicita. El idioma de la interfaz y el perfil del código son independientes.</p>
+                    <div id="examples-list" class="examples-list examples-list-grid"></div>
+                  </div>
+                </details>
+              </div>
+
               <textarea id="source-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Editor de código SVP"></textarea>
               <div class="source-metadata"><span><strong>SHA-256</strong> <code id="source-sha">—</code></span><span><strong data-i18n="selectedProfile">Perfil</strong> <code id="source-profile-code">es</code></span></div>
-              <div class="editor-actions"><button type="button" id="run-source" class="primary" data-i18n="run">Ejecutar</button><button type="button" id="clear-output" class="secondary" data-i18n="clearOutput">Limpiar resultado</button></div>
               <p id="editor-status" class="status-line" aria-live="polite"></p>
             </section>
-            <section class="result-shell" aria-labelledby="result-title"><div class="panel-heading"><div><p class="panel-kicker" data-i18n="execution">Ejecución local</p><h3 id="result-title" data-i18n="result">Resultado</h3></div><span id="result-state" class="result-state" data-state="idle" data-i18n="notExecuted">Sin ejecutar</span></div><pre id="result-output" tabindex="0" aria-live="polite"></pre></section>
+            <section class="result-shell" aria-labelledby="result-title"><div class="panel-heading"><div><p class="panel-kicker" data-i18n="execution">Compilación local</p><h3 id="result-title" data-i18n="result">Resultado</h3></div><span id="result-state" class="result-state" data-state="idle" data-i18n="notExecuted">Sin ejecutar</span></div><pre id="result-output" tabindex="0" aria-live="polite"></pre></section>
           </div>
         </section>
-
-        <details class="examples-details">
-          <summary><span><strong data-i18n="library">Biblioteca</strong> · <span data-i18n="examples">Ejemplos</span></span><span class="profile-chip" id="examples-profile-chip">SVP-ES</span></summary>
-          <div class="examples-panel examples-panel-collapsed">
-            <p class="examples-help" data-i18n="examplesHelp">Los ejemplos se cargan sólo cuando usted lo solicita. El idioma de la interfaz y el perfil del código son independientes.</p>
-            <div id="examples-list" class="examples-list examples-list-grid"></div>
-          </div>
-        </details>
 
         <section class="architecture-compact"><h3 data-i18n="architectureTitle">Una sola identidad computacional</h3><p data-i18n="architectureText">SVP-ES y SVP-EN se canonicalizan antes del análisis sintáctico y convergen en el mismo analizador, IR y semántica. Los identificadores, cadenas, comentarios y datos del usuario no se traducen.</p></section>
       </section>
