@@ -11,6 +11,12 @@
   staticI18n.defer = true;
   document.head.append(staticI18n);
 
+  window.addEventListener("load", () => {
+    const profileSync = document.createElement("script");
+    profileSync.src = "example-profile-sync-b2.js?v=b2-profile-sync-20260829-1";
+    document.body.append(profileSync);
+  }, { once: true });
+
   const referenceTargets = {
     "GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md": "https://lectura-sv.itvia.online/lenguaje/?file=GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md",
     "IR_CANONICA_BIENFORMACION_SV_v0_3.md": "https://lectura-sv.itvia.online/lenguaje/?file=IR_CANONICA_BIENFORMACION_SV_v0_3.md"
