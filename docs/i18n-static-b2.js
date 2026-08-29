@@ -83,6 +83,19 @@
     button.append(span);
   }
 
+  function setDocumentLinks(lang) {
+    const features = q('a.rail-link[data-i18n="features"]');
+    const history = q('a.rail-link[data-i18n="history"]');
+    if (features) features.href = lang === "en" ? "features.html" : "caracteristicas.html";
+    if (history) history.href = lang === "en" ? "beta-history.html" : "historial-beta.html";
+
+    const programming = qa("a.rail-link").find(link => {
+      const href = link.getAttribute("href") ?? "";
+      return href === "programacion-metricas.html" || href === "programming-metrics.html";
+    });
+    if (programming) programming.href = lang === "en" ? "programming-metrics.html" : "programacion-metricas.html";
+  }
+
   function apply() {
     const lang = document.documentElement.lang === "en" ? "en" : "es";
     const c = COPY[lang];
@@ -106,7 +119,8 @@
 
     setReference("GRAMATICA_SUPERFICIAL_MINIMA_SV_v0_2.md", c.grammar, c.reader);
     setReference("IR_CANONICA_BIENFORMACION_SV_v0_3.md", "IR 0.3", c.reader);
-    setText('a.rail-link[href="programacion-metricas.html"]', c.programmingMetrics);
+    setText('a.rail-link[href="programacion-metricas.html"], a.rail-link[href="programming-metrics.html"]', c.programmingMetrics);
+    setDocumentLinks(lang);
 
     setText("#view-editor .view-heading h2", c.editorHeading);
     setText("#view-editor .view-heading p:not(.eyebrow)", c.editorIntro);
