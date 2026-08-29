@@ -6,44 +6,44 @@
   <meta name="color-scheme" content="light">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>SV — Programación y métricas · Beta B1</title>
+  <title>SV — Metodología y métricas · Beta B1</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="info.css">
 </head>
 <body data-source-profile="es">
   <header class="site-header">
     <div class="brand-block">
-      <p class="eyebrow">LABORATORIO SV · BETA B1</p>
-      <h1>Programación y métricas</h1>
-      <p class="subtitle">Descripción técnica del motor bilingüe experimental y de la evidencia de rendimiento reproducible.</p>
+      <p class="eyebrow">SV · BETA B1</p>
+      <h1>Metodología y métricas</h1>
+      <p class="subtitle">Descripción técnica del soporte bilingüe experimental y de la evidencia reproducible de rendimiento.</p>
     </div>
   </header>
 
   <main class="doc-main">
     <nav class="doc-nav" aria-label="Navegación de Beta B1">
-      <a href="./">Playground Beta</a>
+      <a href="./">Entorno de trabajo Beta</a>
       <a href="caracteristicas.html">Características de esta versión</a>
       <a href="historial-beta.html">Historial Beta</a>
-      <a href="https://lectura-sv.itvia.online/lenguaje" target="_blank" rel="noopener noreferrer">Repositorio canónico</a>
+      <a href="https://lectura-sv.itvia.online/lenguaje" target="_blank" rel="noopener noreferrer">Repositorio del Lenguaje</a>
     </nav>
 
-    <div class="experimental-notice"><strong>Documento de Beta.</strong> Las cifras siguientes pertenecen al corte y al entorno de medida declarados. No son constantes universales del Lenguaje.</div>
+    <div class="experimental-notice"><strong>Documento de Beta.</strong> Las cifras siguientes pertenecen a la versión y al entorno de medida declarados. No son constantes universales del Lenguaje.</div>
 
     <section class="doc-section">
-      <h2>1. Frontera lingüística</h2>
-      <p>La arquitectura experimental establece una frontera deliberada: la lengua de superficie se resuelve antes del analizador sintáctico. El analizador, la IR y la semántica no reciben una segunda gramática dependiente de idioma.</p>
+      <h2>1. Procesamiento de los perfiles lingüísticos</h2>
+      <p>La arquitectura experimental resuelve la forma lingüística de entrada antes del análisis sintáctico. El analizador, la IR y la semántica siguen siendo únicos y no dependen del idioma seleccionado.</p>
       <pre class="doc-code">fuente UTF-8
   ├─ perfil es → grafía española ─┐
   └─ perfil en → grafía inglesa  ─┤
                                   ↓
-                      índice conjunto de superficie
+                      índice conjunto de grafías
                                   ↓
-                        identidad canónica compacta
+                         identidad interna común
                                   ↓
                          analizador sintáctico único
                                   ↓
                           AST / IR / semántica</pre>
-      <p>Una entrada del índice conjunto contiene la identidad canónica del terminal y la máscara de perfiles en los que esa grafía está admitida. Una grafía compartida entre ES y EN sólo es admisible si representa la misma identidad canónica en ambos perfiles.</p>
+      <p>Cada entrada del índice conjunto relaciona una grafía con la identidad interna del terminal y con los perfiles en los que está admitida. Una grafía compartida entre ES y EN sólo es válida si representa la misma identidad en ambos perfiles.</p>
     </section>
 
     <section class="doc-section">
@@ -60,10 +60,10 @@
 
     <section class="doc-section">
       <h2>3. Identidad y procedencia</h2>
-      <p>La equivalencia computacional no identifica los bytes de origen. La Beta conserva la huella de la fuente concreta y permite comprobar que dos formulaciones ES/EN pueden descender a la misma carga computacional sin perder su procedencia.</p>
+      <p>La equivalencia computacional no identifica los bytes de origen. La Beta conserva la huella de cada fuente concreta y permite comprobar que dos formulaciones ES/EN pueden producir la misma carga computacional sin perder su procedencia.</p>
       <pre class="doc-code">SemanticPayload(IR_ES) = SemanticPayload(IR_EN)
 source_sha256(ES)       ≠ source_sha256(EN)</pre>
-      <p>Los identificadores del usuario, las cadenas, los comentarios, los naturales y los datos no son objeto de traducción superficial.</p>
+      <p>Los identificadores del usuario, las cadenas, los comentarios, los naturales y los datos no son objeto de traducción.</p>
     </section>
 
     <section class="doc-section">
@@ -71,8 +71,8 @@ source_sha256(ES)       ≠ source_sha256(EN)</pre>
       <div class="doc-table-wrap"><table class="doc-table">
         <thead><tr><th>Comprobación</th><th>Resultado final</th></tr></thead>
         <tbody>
-          <tr><td>Identidades de catálogo gobernadas</td><td>154/154</td></tr>
-          <tr><td>Formas realizables positivamente</td><td>147</td></tr>
+          <tr><td>Identidades del catálogo cubiertas</td><td>154/154</td></tr>
+          <tr><td>Formas actualmente realizables</td><td>147</td></tr>
           <tr><td>Formas protegidas sin producción positiva</td><td>7</td></tr>
           <tr><td>Fuentes válidas emparejadas ES/EN</td><td>19</td></tr>
           <tr><td>Carga semántica de pares</td><td>Igual en la batería</td></tr>
@@ -85,28 +85,28 @@ source_sha256(ES)       ≠ source_sha256(EN)</pre>
 
     <section class="doc-section">
       <h2>5. Método de medida</h2>
-      <p>El cierre final se ejecutó sobre <code>SV-lenguaje-de-computacion@f6b704e819e7d08589f00e9e3f9550deab21d0b1</code>, con <code>rustc 1.98.0</code> y <code>cargo 1.98.0</code>, en Linux x86-64 sobre AMD EPYC 7763 virtualizado. La comparación causal de arquitectura alternó todos los órdenes de ejecución durante 42 rondas; la comparación por superficie utilizó 36 rondas.</p>
-      <p>Se compararon tres realizaciones: monoperfil EN canónica, bilingüe secuencial y bilingüe con índice conjunto. El control de longitud creó un corpus inglés artificial con el mismo número de bytes archivo por archivo que el corpus español de rendimiento.</p>
+      <p>La medición final se ejecutó sobre <code>SV-lenguaje-de-computacion@f6b704e819e7d08589f00e9e3f9550deab21d0b1</code>, con <code>rustc 1.98.0</code> y <code>cargo 1.98.0</code>, en Linux x86-64 sobre AMD EPYC 7763 virtualizado. La comparación de las configuraciones alternó todos los órdenes de ejecución durante 42 rondas; la comparación por idioma utilizó 36 rondas.</p>
+      <p>Se compararon tres configuraciones: un único perfil EN, una versión bilingüe secuencial y una versión bilingüe con índice conjunto. El control de longitud creó un corpus inglés artificial con el mismo número de bytes, archivo por archivo, que el corpus español de rendimiento.</p>
     </section>
 
     <section class="doc-section">
-      <h2>6. CPU de arquitectura</h2>
+      <h2>6. CPU de las configuraciones</h2>
       <div class="doc-table-wrap"><table class="doc-table">
-        <thead><tr><th>Realización</th><th>Mediana</th><th>MAD</th></tr></thead>
+        <thead><tr><th>Configuración</th><th>Mediana</th><th>MAD</th></tr></thead>
         <tbody>
-          <tr><td>Monoperfil EN</td><td>17406,804 ns/compilación</td><td>72,984 ns</td></tr>
+          <tr><td>Un perfil EN</td><td>17406,804 ns/compilación</td><td>72,984 ns</td></tr>
           <tr><td>ES/EN secuencial</td><td>16670,737 ns/compilación</td><td>93,848 ns</td></tr>
-          <tr><td><strong>ES/EN índice conjunto</strong></td><td><strong>16924,057 ns/compilación</strong></td><td>111,689 ns</td></tr>
+          <tr><td><strong>ES/EN con índice conjunto</strong></td><td><strong>16924,057 ns/compilación</strong></td><td>111,689 ns</td></tr>
         </tbody>
       </table></div>
-      <p>Índice conjunto frente a monoperfil: mediana −2,671 %. Índice conjunto frente a secuencial: +1,315 %, con 33/42 rondas en esa dirección. La diferencia frente al secuencial se acepta por la propiedad arquitectónica del índice conjunto: una sola clasificación lógica de la grafía, sin recorrido explícito por perfiles.</p>
+      <p>Índice conjunto frente a un perfil: mediana −2,671 %. Índice conjunto frente a secuencial: +1,315 %, con 33/42 rondas en esa dirección. La diferencia frente a la configuración secuencial se acepta porque el índice conjunto clasifica cada grafía una sola vez, sin recorrer explícitamente una lista de perfiles.</p>
       <p>No se interpreta el −2,671 % como aceleración causada por el bilingüismo.</p>
     </section>
 
     <section class="doc-section">
       <h2>7. Memoria dinámica</h2>
       <div class="doc-table-wrap"><table class="doc-table">
-        <thead><tr><th>Magnitud</th><th>Mono EN</th><th>Secuencial ES/EN</th><th>Índice conjunto ES/EN</th></tr></thead>
+        <thead><tr><th>Magnitud</th><th>Un perfil EN</th><th>Secuencial ES/EN</th><th>Índice conjunto ES/EN</th></tr></thead>
         <tbody>
           <tr><td>Asignaciones/compilación</td><td>135,75</td><td>135,75</td><td>135,75</td></tr>
           <tr><td>Bytes asignados/compilación</td><td>33706,916667</td><td>33706,916667</td><td>33706,916667</td></tr>
@@ -114,26 +114,26 @@ source_sha256(ES)       ≠ source_sha256(EN)</pre>
           <tr><td>Memoria viva final</td><td>0 B</td><td>0 B</td><td>0 B</td></tr>
         </tbody>
       </table></div>
-      <p>Dentro del camino y corpus ensayados, el segundo perfil y el índice conjunto no añadieron memoria dinámica medible frente al monoperfil.</p>
+      <p>Dentro del camino y corpus ensayados, el segundo perfil y el índice conjunto no añadieron memoria dinámica medible frente a la configuración de un solo perfil.</p>
     </section>
 
     <section class="doc-section">
-      <h2>8. Huella estática</h2>
+      <h2>8. Tamaño de los artefactos</h2>
       <div class="doc-table-wrap"><table class="doc-table">
-        <thead><tr><th>Artefacto</th><th>Mono EN</th><th>Secuencial</th><th>Índice conjunto</th></tr></thead>
+        <thead><tr><th>Artefacto</th><th>Un perfil EN</th><th>Secuencial</th><th>Índice conjunto</th></tr></thead>
         <tbody>
           <tr><td>Nativo</td><td>919056 B</td><td>926576 B</td><td>927584 B</td></tr>
           <tr><td>WebAssembly</td><td>343378 B</td><td>354952 B</td><td>355221 B</td></tr>
         </tbody>
       </table></div>
-      <p>Índice conjunto frente a secuencial: +1008 B nativos (+0,109 %) y +269 B WebAssembly (+0,076 %). Índice conjunto ES/EN frente a monoperfil: +0,928 % nativo y +3,449 % WebAssembly.</p>
+      <p>Índice conjunto frente a secuencial: +1008 B nativos (+0,109 %) y +269 B WebAssembly (+0,076 %). Índice conjunto ES/EN frente a un solo perfil: +0,928 % nativo y +3,449 % WebAssembly.</p>
     </section>
 
     <section class="doc-section">
-      <h2>9. Coste observado de la superficie española</h2>
+      <h2>9. Coste observado de la forma española</h2>
       <p>En el corpus de rendimiento, el inglés original ocupó 11865 bytes y el español 13371 bytes (+12,693 %). El control inglés se rellenó con espacio léxicamente neutro hasta igualar exactamente la longitud del español archivo por archivo.</p>
       <div class="doc-table-wrap"><table class="doc-table">
-        <thead><tr><th>Superficie</th><th>CPU mediana</th><th>MAD</th></tr></thead>
+        <thead><tr><th>Idioma de entrada</th><th>CPU mediana</th><th>MAD</th></tr></thead>
         <tbody>
           <tr><td>EN original</td><td>16950,629 ns</td><td>78,614 ns</td></tr>
           <tr><td>EN igualado en bytes</td><td>17034,798 ns</td><td>76,173 ns</td></tr>
@@ -148,18 +148,18 @@ source_sha256(ES)       ≠ source_sha256(EN)</pre>
       <h2>10. Escalabilidad y límites</h2>
       <ul>
         <li>La arquitectura evita un recorrido explícito por N perfiles mediante un índice conjunto, pero no afirma coste físico matemáticamente constante para un número arbitrario de idiomas.</li>
-        <li>Cada perfil futuro deberá ser completo, inyectivo, versionado y compatible con el espacio nominal constituido de su familia.</li>
-        <li>Una misma grafía compartida por perfiles no podrá representar identidades canónicas diferentes.</li>
-        <li>La compatibilidad de versiones entre unidades y módulos deberá gobernarse antes de afirmar composición multifuente.</li>
-        <li>Si la huella estática WebAssembly se volviera material al crecer el número de perfiles, deberá evaluarse una estrategia de distribución o carga sin trasladar decisiones semánticas a recursos remotos no gobernados.</li>
+        <li>Cada perfil futuro deberá ser completo, inyectivo, versionado y compatible con el espacio nominal definido para su familia.</li>
+        <li>Una misma grafía compartida por perfiles no podrá representar identidades internas diferentes.</li>
+        <li>La compatibilidad de versiones entre unidades y módulos deberá definirse antes de afirmar composición entre varios archivos.</li>
+        <li>Si el tamaño de WebAssembly se volviera material al crecer el número de perfiles, deberá evaluarse una estrategia de distribución o carga sin trasladar decisiones semánticas a recursos remotos.</li>
       </ul>
     </section>
 
     <section class="doc-section">
       <h2>11. Estado</h2>
-      <p class="callout"><strong>Beta B1 permanece experimental.</strong> El laboratorio demuestra viabilidad de la arquitectura ES/EN y proporciona una realización visible y auditable. La promoción requiere un proceso posterior y no queda autorizada por este documento.</p>
+      <p class="callout"><strong>Beta B1 permanece experimental.</strong> Las pruebas demuestran la viabilidad de la arquitectura ES/EN en el alcance descrito. Su incorporación a la versión estable requiere un proceso posterior y no queda determinada por este documento.</p>
     </section>
   </main>
-  <footer><p>Lenguaje de Computación SV · Beta B1 · Programación y métricas.</p></footer>
+  <footer><p>Lenguaje de Computación SV · Beta B1 · Metodología y métricas.</p></footer>
 </body>
 </html>
