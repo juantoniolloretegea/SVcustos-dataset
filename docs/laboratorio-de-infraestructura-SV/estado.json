@@ -1,0 +1,120 @@
+{
+  "schema": "sv-infrastructure-public-review/1",
+  "state": "17 testigos verificados · Garantías completas abiertas",
+  "commit": "3b0187445bf8e5d9aec33c59b7852641af6842b2",
+  "run": "34009279507",
+  "hardware": "GitHub Actions · Ubuntu 24.04 x86-64 · AMD EPYC 9V45 · 2 CPU lógicas disponibles · 7,75 GiB de RAM visible. Es un servidor alojado, no un PC de usuario.",
+  "performance": "35 muestras tras 5 de calentamiento: mediana 1.85 ms; máximo observado 77.81 ms. Incluye arranque del cliente Rust, loopback, criptografía y efecto SQLite; no mide el núcleo SV.",
+  "cases": [
+    {
+      "id": "I01",
+      "description": "Alteración de bytes",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "I02",
+      "description": "Fabricación por el bus",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "I03",
+      "description": "Repetición por el bus",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "I04",
+      "description": "Identidad repetida con contenido distinto",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "I05",
+      "description": "Destinatario sustituido",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "I06",
+      "description": "Acuse de éxito falsificado",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "I09",
+      "description": "Firma inválida dentro de sobre de prueba",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "I10",
+      "description": "Recibo auténtico vinculado a otra petición",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "NI",
+      "description": "Retirada deliberada de verificación de firma",
+      "status": "PASS",
+      "negative_control": true
+    },
+    {
+      "id": "C01",
+      "description": "Captura de tráfico con canario excluido",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "C02-C03",
+      "description": "Apertura de claves, estado y memoria desde otro UID",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "NC",
+      "description": "Retirada deliberada de cifrado",
+      "status": "PASS",
+      "negative_control": true
+    },
+    {
+      "id": "A01",
+      "description": "Caída antes de entrega",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "A02-A03",
+      "description": "Caída después de compromiso y reenvío tras reinicio",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "A04",
+      "description": "Revocación durante caída",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "A06",
+      "description": "Terminación del receptor dentro de la transacción",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "NA",
+      "description": "Retirada deliberada de deduplicación y control de revisión",
+      "status": "PASS",
+      "negative_control": true
+    }
+  ],
+  "pending": [
+    "Orden causal y revocación sincronizada con compromiso",
+    "Errores, volcados, aislamiento entre participantes y restos persistidos",
+    "Saturación agregada, cancelación autorizada e indisponibilidad sostenida",
+    "Equipos físicos de usuario, Windows, ARM y cliente/servidor LAN"
+  ],
+  "three_guarantees_closed": false,
+  "approval": "NOT_GRANTED"
+}

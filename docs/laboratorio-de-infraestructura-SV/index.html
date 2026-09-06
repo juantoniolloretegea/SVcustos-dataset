@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>SV · Revisión de infraestructura</title><link rel="stylesheet" href="styles.css">
+  <script src="panel.js" defer></script>
+</head>
+<body>
+<header><div class="brand">SV <span>LABORATORIO / INFRAESTRUCTURA</span></div><a href="../">Abrir Playground ↗</a></header>
+<main>
+  <p class="eyebrow">REVISIÓN EXPERIMENTAL · VERSIÓN 0.1</p>
+  <h1>¿Resiste la frontera<br>si el bus está comprometido?</h1>
+  <p class="lead">Integridad, confidencialidad y recuperación observadas desde el receptor. Evidencia separada de la aprobación humana.</p>
+  <div class="notice"><strong id="campaign-state">Cargando estado verificable…</strong><span>Este panel no constituye ni autoriza la arquitectura SV.</span></div>
+  <section class="cards" aria-label="Garantías">
+    <article><div class="number">01</div><h2>Integridad</h2><p>Alteración, fabricación, repetición y autenticidad del recibo.</p><strong class="pending">Garantía abierta</strong></article>
+    <article><div class="number">02</div><h2>Confidencialidad</h2><p>Contenido cifrado y acceso a claves, estado y memoria desde el bus.</p><strong class="pending">Garantía abierta</strong></article>
+    <article><div class="number">03</div><h2>Recuperación</h2><p>Caída antes y después del efecto, reintento y revocación.</p><strong class="pending">Garantía abierta</strong></article>
+  </section>
+  <section><div class="section-title"><h2>Resultados de la tanda</h2><label>Mostrar <select id="filter"><option value="all">Todos</option><option value="test">Pruebas del prototipo</option><option value="negative">Controles negativos</option></select></label></div>
+    <p id="counts">No se presupone un resultado.</p>
+    <div class="table-wrap"><table><thead><tr><th>Testigo</th><th>Qué se intentó</th><th>Resultado del oráculo</th></tr></thead><tbody id="cases"></tbody></table></div>
+    <p class="small">En los controles negativos, “defecto detectado” significa que el verificador encontró la inseguridad introducida deliberadamente. Esas variantes no se consideran seguras.</p>
+  </section>
+  <section class="columns"><div><h2>Hardware y alcance</h2><p id="hardware">Pendiente de incorporar el manifiesto del ejecutor.</p><p>Las medidas alojadas no equivalen a haber probado un PC de usuario. CPU, RAM física, Windows, ARM y LAN requieren sus propios registros.</p><p id="performance"></p></div><div><h2>Qué falta por resolver</h2><ul id="pending"><li>La carga de resultados no modifica el estado de aprobación.</li></ul></div></section>
+  <section class="review"><p class="eyebrow">DECISIÓN HUMANA</p><h2>Revisar una versión concreta</h2><p>Identifique el commit y la ejecución antes de aceptar o rechazar su continuidad. La autorización se registra expresamente fuera de esta página. No hay un botón que otorgue facultades al sistema.</p><dl><dt>Commit examinado</dt><dd id="commit">Pendiente</dd><dt>Ejecución</dt><dd id="run">Pendiente</dd><dt>Estado de aprobación</dt><dd><strong>Pendiente de decisión humana</strong></dd></dl><a class="button" href="https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/pull/2" target="_blank" rel="noopener noreferrer">Revisar fuentes y registros privados ↗</a><a class="download" href="estado.json" download>Descargar resumen público</a></section>
+</main><footer>SV · Efectos exclusivamente sintéticos · Sin conexión con datos clínicos ni ejecución del núcleo.<br>Proyección pública estática. Los registros completos se custodian en el laboratorio privado.</footer>
+</body></html>
