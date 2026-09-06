@@ -1,10 +1,10 @@
 {
   "schema": "sv-infrastructure-public-review/1",
   "state": "17 testigos verificados · Garantías completas abiertas",
-  "commit": "3b0187445bf8e5d9aec33c59b7852641af6842b2",
-  "run": "34009279507",
-  "hardware": "GitHub Actions · Ubuntu 24.04 x86-64 · AMD EPYC 9V45 · 2 CPU lógicas disponibles · 7,75 GiB de RAM visible. Es un servidor alojado, no un PC de usuario.",
-  "performance": "35 muestras tras 5 de calentamiento: mediana 1.85 ms; máximo observado 77.81 ms. Incluye arranque del cliente Rust, loopback, criptografía y efecto SQLite; no mide el núcleo SV.",
+  "commit": "81ea274f700aee7213a341a817da289b947fcdf1",
+  "run": "34009531885 (compilador y dependencias fijados)",
+  "hardware": "Dos ejecutores GitHub Actions Ubuntu 24.04 x86-64: AMD EPYC 9V45 y AMD EPYC 7763. Ambos exponen 2 CPU lógicas y 7,75 GiB de RAM. Los dos produjeron el mismo binario byte por byte.",
+  "performance": "35 muestras por ejecución tras 5 de calentamiento. EPYC 9V45: mediana 1,85 ms, máximo 77,81 ms. EPYC 7763: mediana 2,49 ms, máximo 5,44 ms. Incluye proceso cliente Rust, loopback, cifrado, firma y efecto SQLite. No es una comparación controlada entre CPU ni un SLO. El sellado previo y la verificación final del recibo quedan fuera del intervalo medido.",
   "cases": [
     {
       "id": "I01",
