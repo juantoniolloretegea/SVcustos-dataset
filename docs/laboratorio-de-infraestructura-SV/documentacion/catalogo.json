@@ -414,5 +414,19 @@
       "CS05"
     ],
     "next_link_precondition": "Fixture legítima por API pública trazada y frontera material especificada; CS03 conserva su dependencia de contratos constituidos."
+  },
+  "acta_calidad_perfiles": {
+    "date": "2026-09-06",
+    "status": "MARCO_CANONICO_EN_CALIDAD",
+    "canonical_url": "https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/main/docs/calidad/ACTA_TECNICA_DE_PERFILES_CONTRATOS_Y_ENSAMBLAJE_DEL_LENGUAJE_SV_2026_09_06.md",
+    "immutable_url": "https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/605d900fc535aec4b0010820499b93e44d111f5c/docs/calidad/ACTA_TECNICA_DE_PERFILES_CONTRATOS_Y_ENSAMBLAJE_DEL_LENGUAJE_SV_2026_09_06.md",
+    "core_commit": "605d900fc535aec4b0010820499b93e44d111f5c",
+    "retp": "RETP-2026-075",
+    "pr": 63,
+    "relationship": "VINCULO_EXPLICITO_SIN_SEGUNDA_COPIA_NORMATIVA",
+    "prior_laboratory_testing_required": true,
+    "profile020_status": "CANDIDATA_DOCUMENTAL",
+    "runtime_tests_added": 0,
+    "receipt": "registros/022-recepcion-acta-calidad.json"
   }
 }
