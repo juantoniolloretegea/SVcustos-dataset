@@ -172,8 +172,8 @@
     },
     {
       "front": "Hardware, núcleo y dominios",
-      "status": "Integración no ejecutada",
-      "remaining": "PC físicos, Windows, ARM, LAN; raíz de confianza, corrupción y retroceso de almacenamiento. Contratos SV, OP-IMM-001, ciberseguridad, agentes e IA siguen en sus sedes; .NET/WASM/FFI no se seleccionan aquí."
+      "status": "Comparación .NET/FFI y WASM acotada en Linux",
+      "remaining": "Registro 018: núcleo exacto, 79 pares, costes y fallos. Faltan PC físicos, Windows, ARM, LAN, contratos de dominio/agente, enlace R1 y plataforma final."
     },
     {
       "front": "Enlace con ejecución gobernada SV",
@@ -182,8 +182,8 @@
     },
     {
       "front": "Autonomía de construcción, ensayo y custodia",
-      "status": "DEUDA_IDENTIFICADA",
-      "remaining": "Reproducción sin programación de Actions, dependencias conservadas y restauración fuera del proveedor no acreditadas. Sin migración."
+      "status": "Ejecución local de 018 acreditada; autonomía integral pendiente",
+      "remaining": "La tanda 018 compila y ejecuta sin Actions. Adquisición de herramientas y custodia remota siguen dependiendo de proveedores; restauración integral fuera del proveedor y migración no acreditadas."
     }
   ],
   "phase02": {
@@ -368,5 +368,21 @@
       "status": "CORREGIDO_Y_VERIFICADO"
     },
     "existing_runtime_cases_repeated": 41
+  },
+  "comparacion018": {
+    "date": "2026-09-06",
+    "status": "COMPARACION_MATERIAL_REALIZADA_CON_LIMITES",
+    "source_commit": "0189c4c2a38453826b450e7b201d8946055fd77c",
+    "control_source_commit": "73b452169ef1d848dadf0b5395abbb84341fb9ee",
+    "core_commit": "230a205b08f4c54c9c8d9c1c7ad35b2f6ddbbfc4",
+    "corpus_pairs": 79,
+    "samples": 36000,
+    "github_actions_used_for_execution": false,
+    "page": "ffi-dotnet-wasm.html",
+    "record": "registros/018-COMPARACION_DOTNET_FFI_WASM_2026_09_06.md",
+    "archive_sha256": "d8ba12907e0fabf779c5f75694e43e955053b34f24b681140d536571cfb574f0",
+    "architecture_selected": false,
+    "r1_exercised": false,
+    "core_modified": false
   }
 }
