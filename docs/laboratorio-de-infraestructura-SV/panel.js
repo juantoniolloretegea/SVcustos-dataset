@@ -15,7 +15,8 @@ function draw(){
 }
 fetch('estado.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('estado');return r.json();}).then(v=>{
   data=v;el('campaign-state').textContent=v.state;
-  el('counts').textContent=v.cases.length+' testigos registrados. Las garantías completas siguen abiertas.';
+  const counts={};for(const c of v.cases)counts[c.status]=(counts[c.status]||0)+1;
+  el('counts').textContent=v.cases.length+' registros: '+Object.entries(counts).map(([s,n])=>n+' '+s).join(' · ')+'. Los controles negativos están incluidos; BLOCKED no es una prueba superada.';
   el('hardware').textContent=v.hardware;el('performance').textContent=v.performance;
   el('commit').textContent=v.commit||'Pendiente';el('run').textContent=v.run||'Pendiente';
   el('pending').replaceChildren();for(const p of v.pending){const li=document.createElement('li');li.textContent=p;el('pending').append(li);}draw();

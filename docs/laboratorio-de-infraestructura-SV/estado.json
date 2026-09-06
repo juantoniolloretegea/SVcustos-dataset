@@ -1,10 +1,10 @@
 {
   "schema": "sv-infrastructure-public-review/1",
-  "state": "17 testigos verificados · Garantías completas abiertas",
-  "commit": "81ea274f700aee7213a341a817da289b947fcdf1",
-  "run": "34009531885 (compilador y dependencias fijados)",
-  "hardware": "Dos ejecutores GitHub Actions Ubuntu 24.04 x86-64: AMD EPYC 9V45 y AMD EPYC 7763. Ambos exponen 2 CPU lógicas y 7,75 GiB de RAM. Los dos produjeron el mismo binario byte por byte.",
-  "performance": "35 muestras por ejecución tras 5 de calentamiento. EPYC 9V45: mediana 1,85 ms, máximo 77,81 ms. EPYC 7763: mediana 2,49 ms, máximo 5,44 ms. Incluye proceso cliente Rust, loopback, cifrado, firma y efecto SQLite. No es una comparación controlada entre CPU ni un SLO. El sellado previo y la verificación final del recibo quedan fuera del intervalo medido.",
+  "state": "Primera tanda: 17 PASS · Continuación: 7 PASS, 1 FAIL y 1 BLOCKED",
+  "commit": "f973904d58cd2a9f28cb93e9c41fe2c5893dce68",
+  "run": "34010741314 · fallo de disponibilidad reproducido",
+  "hardware": "La continuación 34010741314 se ejecutó en GitHub Actions Ubuntu 24.04 x86-64: AMD EPYC 9V74, 2 CPU lógicas y 7,75 GiB de RAM visible. El binario coincide byte por byte con el de la primera tanda. Las medidas históricas siguientes pertenecen a los ejecutores EPYC 9V45 y 7763.",
+  "performance": "Medidas históricas de la primera tanda: 35 muestras por ejecución tras 5 de calentamiento. Ejecución 34009279507 / EPYC 9V45: mediana 1,85 ms y máximo 77,81 ms. Ejecución 34009531885 / EPYC 7763: mediana 2,49 ms y máximo 5,44 ms. No son medidas de la continuación ni un SLO. El sellado previo y la verificación final del recibo quedan fuera del intervalo medido.",
   "cases": [
     {
       "id": "I01",
@@ -107,14 +107,81 @@
       "description": "Retirada deliberada de deduplicación y control de revisión",
       "status": "PASS",
       "negative_control": true
+    },
+    {
+      "id": "I07-revision",
+      "description": "La precondición de revisión impide adelantar una modificación dependiente",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "I08-lock",
+      "description": "Revocación persistida antes de que el receptor pueda obtener la transacción de escritura",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "C04-logs",
+      "description": "Los registros y capturas examinados no contienen el canario excluido ni las claves binarias",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "C05-keys",
+      "description": "Un segundo juego independiente de credenciales no abre el recibo del primer participante",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "C06-captures",
+      "description": "Las capturas persistidas tras reiniciar el bus no contienen el canario en claro",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "A05-deadline",
+      "description": "Comprobar si el plazo de 2 s limita la interacción completa",
+      "status": "FAIL",
+      "negative_control": false
+    },
+    {
+      "id": "A07-invalid",
+      "description": "Un campo de cancelación ajeno al contrato se rechaza y no cancela otra petición",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "id": "A07-authorized",
+      "description": "Cancelación autorizada y correlacionada con una petición",
+      "status": "BLOCKED",
+      "negative_control": false
+    },
+    {
+      "id": "A08-bounded",
+      "description": "Tres intentos con bus detenido no generan efectos; el restablecimiento permite un compromiso",
+      "status": "PASS",
+      "negative_control": false
     }
   ],
   "pending": [
-    "Orden causal y revocación sincronizada con compromiso",
-    "Errores, volcados, aislamiento entre participantes y restos persistidos",
-    "Saturación agregada, cancelación autorizada e indisponibilidad sostenida",
-    "Equipos físicos de usuario, Windows, ARM y cliente/servidor LAN"
+    "A05 · Espera absoluta: Cinco bytes espaciados mantienen ocupada una conexión; otra petición agota su espera y puede comprometerse después. Faltan plazo absoluto, admisión agregada y reserva de control.",
+    "A07 · Cancelación autorizada: No existe operación válida de cancelación. El rechazo de un campo extraño no acredita el caso positivo ni cancelación por identidad.",
+    "I07 · Orden causal general: La revisión protege la dependencia ensayada; no representa precedencia general ni desempate explícito de peticiones incompatibles con igual revisión.",
+    "I08 · Carrera en compromiso: Se prueba revocación antes de obtener la transacción de escritura; falta instrumentar la barrera exacta entre validación y compromiso.",
+    "C04–C06 · Confidencialidad completa: Se examinan registros, claves independientes y capturas tras reinicio. Faltan volcados, políticas con credenciales compartidas y otros residuos.",
+    "A08 · Continuidad sostenida: Tres intentos durante caída y una recuperación. Un único camino caído permanentemente no puede sostener continuidad.",
+    "Hardware e integración: PC físicos, Windows, ARM, LAN e integración .NET/WASM; alimentación, corrupción y retroceso de almacenamiento fuera del alcance."
   ],
   "three_guarantees_closed": false,
-  "approval": "NOT_GRANTED"
+  "approval": "NOT_GRANTED",
+  "continuation": {
+    "results": 9,
+    "pass": 7,
+    "fail": 1,
+    "blocked": 1,
+    "error": 0,
+    "hardware": "Ubuntu 24.04 x86-64 alojado; mismo binario experimental que la primera tanda",
+    "finding": "El plazo por lectura no limita la interacción completa; la espera agotada del cliente no cancela el efecto."
+  },
+  "source_scope": "Los 17 primeros testigos se repitieron en esta ejecución. Las medidas de rendimiento descritas siguen siendo las dos ejecuciones históricas identificadas."
 }

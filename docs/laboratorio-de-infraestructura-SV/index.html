@@ -8,9 +8,9 @@
   <script src="panel.js" defer></script>
 </head>
 <body>
-<header><div class="brand">SV <span>LABORATORIO / INFRAESTRUCTURA</span></div><a href="../">Abrir Playground ↗</a></header>
+<header><div class="brand">SV <span>LABORATORIO / INFRAESTRUCTURA</span></div><nav aria-label="Navegación del laboratorio"><a href="documentacion/">Documentación por fichas</a> · <a href="../">Abrir Playground ↗</a></nav></header>
 <main>
-  <p class="eyebrow">REVISIÓN EXPERIMENTAL · VERSIÓN 0.1</p>
+  <p class="eyebrow">REVISIÓN EXPERIMENTAL · CONTINUACIÓN 06/09/2026</p>
   <h1>¿Resiste la frontera<br>si el bus está comprometido?</h1>
   <p class="lead">Integridad, confidencialidad y recuperación observadas desde el receptor. Evidencia separada de la aprobación humana.</p>
   <div class="notice"><strong id="campaign-state">Cargando estado verificable…</strong><span>Este panel no constituye ni autoriza la arquitectura SV.</span></div>
@@ -19,7 +19,7 @@
     <article><div class="number">02</div><h2>Confidencialidad</h2><p>Contenido cifrado y acceso a claves, estado y memoria desde el bus.</p><strong class="pending">Garantía abierta</strong></article>
     <article><div class="number">03</div><h2>Recuperación</h2><p>Caída antes y después del efecto, reintento y revocación.</p><strong class="pending">Garantía abierta</strong></article>
   </section>
-  <section><div class="section-title"><h2>Resultados de la tanda</h2><label>Mostrar <select id="filter"><option value="all">Todos</option><option value="test">Pruebas del prototipo</option><option value="negative">Controles negativos</option></select></label></div>
+  <section><div class="section-title"><h2>Resultados de las pruebas</h2><label>Mostrar <select id="filter"><option value="all">Todos</option><option value="test">Pruebas del prototipo</option><option value="negative">Controles negativos</option></select></label></div>
     <p id="counts">No se presupone un resultado.</p>
     <div class="table-wrap"><table><thead><tr><th>Testigo</th><th>Qué se intentó</th><th>Resultado del oráculo</th></tr></thead><tbody id="cases"></tbody></table></div>
     <p class="small">En los controles negativos, “defecto detectado” significa que el verificador encontró la inseguridad introducida deliberadamente. Esas variantes no se consideran seguras.</p>

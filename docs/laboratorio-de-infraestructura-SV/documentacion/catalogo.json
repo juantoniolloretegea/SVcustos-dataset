@@ -1,0 +1,179 @@
+{
+  "schema": "sv-laboratory-documentation/1",
+  "date": "2026-09-06",
+  "source_commit": "f973904d58cd2a9f28cb93e9c41fe2c5893dce68",
+  "public_baseline": "e101cede95e2094875123bef36bef4254ed2010b",
+  "run_id": "34010741314",
+  "continuation_status": "7 PASS · 1 FAIL · 1 BLOCKED · 0 ERROR",
+  "continuation_results": [
+    {
+      "id": "I07-revision",
+      "status": "PASS",
+      "claim": "La precondición de revisión impide adelantar una modificación dependiente",
+      "remaining": [
+        "Orden causal general no representado por el protocolo"
+      ]
+    },
+    {
+      "id": "I08-lock",
+      "status": "PASS",
+      "claim": "Revocación persistida antes de que el receptor pueda obtener la transacción de escritura",
+      "remaining": [
+        "No hay barrera instrumentada entre validación y compromiso; esa carrera exacta permanece pendiente"
+      ]
+    },
+    {
+      "id": "C04-logs",
+      "status": "PASS",
+      "claim": "Los registros y capturas examinados no contienen el canario excluido ni las claves binarias",
+      "remaining": [
+        "Volcados de memoria, codificaciones alternativas y canales laterales no examinados"
+      ]
+    },
+    {
+      "id": "C05-keys",
+      "status": "PASS",
+      "claim": "Un segundo juego independiente de credenciales no abre el recibo del primer participante",
+      "remaining": [
+        "No acredita aislamiento de varios participantes con credenciales compartidas ni políticas por participante"
+      ]
+    },
+    {
+      "id": "C06-captures",
+      "status": "PASS",
+      "claim": "Las capturas persistidas tras reiniciar el bus no contienen el canario en claro",
+      "remaining": [
+        "No examina disco no asignado, intercambio ni memoria residual"
+      ]
+    },
+    {
+      "id": "A05-deadline",
+      "status": "FAIL",
+      "claim": "Comprobar si el plazo de 2 s limita la interacción completa",
+      "remaining": [
+        "FAIL indica bloqueo reproducido: el plazo por lectura no es un plazo absoluto ni un presupuesto agregado",
+        "Reserva de control y capacidad agregada no implementadas"
+      ]
+    },
+    {
+      "id": "A07-invalid",
+      "status": "PASS",
+      "claim": "Un campo de cancelación ajeno al contrato se rechaza y no cancela otra petición",
+      "remaining": []
+    },
+    {
+      "id": "A07-authorized",
+      "status": "BLOCKED",
+      "claim": "Cancelación autorizada y correlacionada con una petición",
+      "remaining": [
+        "Requiere contrato experimental explícito y realización antes de evaluarse"
+      ]
+    },
+    {
+      "id": "A08-bounded",
+      "status": "PASS",
+      "claim": "Tres intentos con bus detenido no generan efectos; el restablecimiento permite un compromiso",
+      "remaining": [
+        "La observación es finita; un único camino permanentemente caído no puede acreditar continuidad"
+      ]
+    }
+  ],
+  "evidence_url": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/registros/005-CONTINUACION_2026_09_06.md",
+  "archive_sha256": "d07309baecc2ab7372a3ca28c4d43086786714d119ebb9a53dac2192ec229e22",
+  "references": {
+    "playground_private": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/tree/c74740c289be27af4add1badcf93543c02b3c5de/laboratorio/playground_web",
+    "beta_lab": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/tree/fa43dc49adf9da8cff72d1a03c981c77d27ed93f",
+    "protocol": "https://github.com/juantoniolloretegea/SVcustos-dataset/blob/e101cede95e2094875123bef36bef4254ed2010b/docs/PROTOCOLO_V2_1_DE_CLASIFICACION_TRANSITO_VALIDACION_PROMOCION_Y_DESPLIEGUE_DEL_LENGUAJE_SV_2026_08_29.md",
+    "rector": "https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/230a205b08f4c54c9c8d9c1c7ad35b2f6ddbbfc4/docs/calidad/PILARES_Y_RESTRICCIONES_DE_DISENO_DEL_LENGUAJE_DE_COMPUTACION_SV_2026_09_05.md",
+    "architecture": "https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/230a205b08f4c54c9c8d9c1c7ad35b2f6ddbbfc4/docs/calidad/ACTA_TECNICA_DE_ARQUITECTURA_DE_SOFTWARE_NUCLEO_FRONTERA_Y_HOST_SV_2026_09_04.md",
+    "private_index": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/documentacion/INDICE.md"
+  },
+  "locations": [
+    {
+      "object": "Lenguaje estable y calidad",
+      "repository": "SV-lenguaje-de-computacion",
+      "branch": "main",
+      "path": "docs/calidad/; rust/",
+      "role": "Definición, realización e historial estable del Lenguaje."
+    },
+    {
+      "object": "Antecedente privado del Playground",
+      "repository": "SV-matematica-semantica-cuaternaria",
+      "branch": "lab/playground-sv-permanente",
+      "path": "laboratorio/playground_web/",
+      "role": "Fuentes históricas del entorno experimental; B2 conserva su propia procedencia."
+    },
+    {
+      "object": "Playground Beta B2 publicado",
+      "repository": "SVcustos-dataset",
+      "branch": "lab/lenguaje-sv-beta",
+      "path": "docs/",
+      "role": "Distribución pública experimental y documentos de uso."
+    },
+    {
+      "object": "Experimento de infraestructura",
+      "repository": "SV-matematica-semantica-cuaternaria",
+      "branch": "lab/infraestructura-sv-2026-09-06",
+      "path": "laboratorio-de-infraestructura-SV/",
+      "role": "Fuente y registro privado del experimento sintético."
+    },
+    {
+      "object": "Punto de entrada de ejecución",
+      "repository": "SV-matematica-semantica-cuaternaria",
+      "branch": "lab/infraestructura-sv-2026-09-06",
+      "path": ".github/workflows/laboratorio-infraestructura-sv.yml",
+      "role": "Ubicación técnica requerida por GitHub Actions."
+    },
+    {
+      "object": "Revisión pública de infraestructura",
+      "repository": "SVcustos-dataset",
+      "branch": "lab/lenguaje-sv-beta",
+      "path": "docs/laboratorio-de-infraestructura-SV/",
+      "role": "Proyección estática seleccionada; incluye documentacion/."
+    },
+    {
+      "object": "Fuente de las fichas documentales",
+      "repository": "SV-matematica-semantica-cuaternaria",
+      "branch": "lab/infraestructura-sv-2026-09-06",
+      "path": "laboratorio-de-infraestructura-SV/documentacion/",
+      "role": "Catálogo versionado e índice de fuentes; genera la proyección pública."
+    }
+  ],
+  "pending": [
+    {
+      "front": "A05 · Espera absoluta",
+      "status": "Fallo reproducido",
+      "remaining": "Cinco bytes espaciados mantienen ocupada una conexión; otra petición agota su espera y puede comprometerse después. Faltan plazo absoluto, admisión agregada y reserva de control."
+    },
+    {
+      "front": "A07 · Cancelación autorizada",
+      "status": "Bloqueada",
+      "remaining": "No existe operación válida de cancelación. El rechazo de un campo extraño no acredita el caso positivo ni cancelación por identidad."
+    },
+    {
+      "front": "I07 · Orden causal general",
+      "status": "Comprobación parcial",
+      "remaining": "La revisión protege la dependencia ensayada; no representa precedencia general ni desempate explícito de peticiones incompatibles con igual revisión."
+    },
+    {
+      "front": "I08 · Carrera en compromiso",
+      "status": "Comprobación parcial",
+      "remaining": "Se prueba revocación antes de obtener la transacción de escritura; falta instrumentar la barrera exacta entre validación y compromiso."
+    },
+    {
+      "front": "C04–C06 · Confidencialidad completa",
+      "status": "Comprobaciones parciales",
+      "remaining": "Se examinan registros, claves independientes y capturas tras reinicio. Faltan volcados, políticas con credenciales compartidas y otros residuos."
+    },
+    {
+      "front": "A08 · Continuidad sostenida",
+      "status": "Comprobación finita",
+      "remaining": "Tres intentos durante caída y una recuperación. Un único camino caído permanentemente no puede sostener continuidad."
+    },
+    {
+      "front": "Hardware e integración",
+      "status": "No ejecutado",
+      "remaining": "PC físicos, Windows, ARM, LAN e integración .NET/WASM; alimentación, corrupción y retroceso de almacenamiento fuera del alcance."
+    }
+  ]
+}
