@@ -384,5 +384,35 @@
     "architecture_selected": false,
     "r1_exercised": false,
     "core_modified": false
+  },
+  "perfil_tecnologico020": {
+    "date": "2026-09-06",
+    "id": "PT-SV-LOCAL",
+    "version": "0.1-candidata",
+    "status": "PROPUESTA_DOCUMENTAL_TRAZADA",
+    "scope": "IDENTIDAD_DOCUMENTAL_NO_TIPO_DSL_IR",
+    "source_baseline": "243bb59f82b3b859e49394dfddeba82f4bf11848",
+    "core_reference": "230a205b08f4c54c9c8d9c1c7ad35b2f6ddbbfc4",
+    "page": "perfil-tecnologico.html",
+    "record": "registros/020-PERFIL_TECNOLOGICO_Y_CONTINUIDAD_2026_09_06.md",
+    "obligation_count": 14,
+    "reuses": [
+      "contrato-0.2",
+      "registro-012",
+      "registro-016",
+      "registro-018",
+      "CS01-CS09"
+    ],
+    "new_runtime_executions": 0,
+    "sv_link_executed": false,
+    "architecture_selected": false,
+    "core_modified": false,
+    "next_link_criteria": [
+      "CS01",
+      "CS02",
+      "CS04",
+      "CS05"
+    ],
+    "next_link_precondition": "Fixture legítima por API pública trazada y frontera material especificada; CS03 conserva su dependencia de contratos constituidos."
   }
 }
