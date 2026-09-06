@@ -1,5 +1,5 @@
 {
-  "schema": "sv-laboratory-documentation/1",
+  "schema": "sv-laboratory-documentation/2",
   "date": "2026-09-06",
   "source_commit": "f973904d58cd2a9f28cb93e9c41fe2c5893dce68",
   "public_baseline": "e101cede95e2094875123bef36bef4254ed2010b",
@@ -141,39 +141,196 @@
   ],
   "pending": [
     {
-      "front": "A05 · Espera absoluta",
-      "status": "Fallo reproducido",
-      "remaining": "Cinco bytes espaciados mantienen ocupada una conexión; otra petición agota su espera y puede comprometerse después. Faltan plazo absoluto, admisión agregada y reserva de control."
+      "front": "Disponibilidad del plano de datos",
+      "status": "Límite estructural abierto",
+      "remaining": "Se supera una conexión lenta y se reserva control local bajo cuatro lectores ocupados. Un bus único que no entrega permanentemente impide la disponibilidad de datos; falta decidir topología y condiciones operacionales."
     },
     {
-      "front": "A07 · Cancelación autorizada",
-      "status": "Bloqueada",
-      "remaining": "No existe operación válida de cancelación. El rechazo de un campo extraño no acredita el caso positivo ni cancelación por identidad."
+      "front": "Cancelación y autoridad",
+      "status": "Comprobación experimental parcial",
+      "remaining": "Cancelación previa, posterior, persistente, ligada al contenido y por canal independiente comprobadas. Faltan gobierno de producción, claves y permisos por participante y dominio."
     },
     {
       "front": "I07 · Orden causal general",
-      "status": "Comprobación parcial",
-      "remaining": "La revisión protege la dependencia ensayada; no representa precedencia general ni desempate explícito de peticiones incompatibles con igual revisión."
+      "status": "No representado",
+      "remaining": "Una revisión transaccional rechaza inversión y conflictos de identidad. No representa precedencia general ni composición de operaciones SV."
     },
     {
-      "front": "I08 · Carrera en compromiso",
-      "status": "Comprobación parcial",
-      "remaining": "Se prueba revocación antes de obtener la transacción de escritura; falta instrumentar la barrera exacta entre validación y compromiso."
+      "front": "I08 · Validación y compromiso",
+      "status": "Carreras instrumentadas superadas",
+      "remaining": "Revocación y cancelación entre validación y transacción; BUSY durante compromiso. Falta integración con la frontera SV real."
     },
     {
       "front": "C04–C06 · Confidencialidad completa",
-      "status": "Comprobaciones parciales",
-      "remaining": "Se examinan registros, claves independientes y capturas tras reinicio. Faltan volcados, políticas con credenciales compartidas y otros residuos."
+      "status": "Comprobación parcial",
+      "remaining": "Canarios y claves ausentes de las capturas y salidas examinadas; control protegido por UID. Faltan volcados, residuos y aislamiento entre múltiples participantes."
     },
     {
-      "front": "A08 · Continuidad sostenida",
-      "status": "Comprobación finita",
-      "remaining": "Tres intentos durante caída y una recuperación. Un único camino caído permanentemente no puede sostener continuidad."
+      "front": "Presupuestos físicos",
+      "status": "Cuotas lógicas comprobadas",
+      "remaining": "4/2 atenciones, 64 efectos y 64 cancelaciones; capturas y líneas de observación acotadas. Faltan CPU, bytes físicos de almacenamiento, equidad y carga prolongada."
     },
     {
-      "front": "Hardware e integración",
-      "status": "No ejecutado",
-      "remaining": "PC físicos, Windows, ARM, LAN e integración .NET/WASM; alimentación, corrupción y retroceso de almacenamiento fuera del alcance."
+      "front": "Hardware, núcleo y dominios",
+      "status": "Integración no ejecutada",
+      "remaining": "PC físicos, Windows, ARM, LAN; raíz de confianza, corrupción y retroceso de almacenamiento. Contratos SV, OP-IMM-001, ciberseguridad, agentes e IA siguen en sus sedes; .NET/WASM/FFI no se seleccionan aquí."
     }
-  ]
+  ],
+  "phase02": {
+    "run_id": "34020269127",
+    "source_commit": "5e4c1d066094d9cf5df5f50da5b8748ec2b0d27a",
+    "binary_sha256": "e7dd02013237d2b295903029267a4941ea600399e6e04cf43917104a00804265",
+    "status": "24 PASS · 0 FAIL · 0 ERROR · 0 BLOCKED",
+    "results": [
+      {
+        "id": "NA05-baseline",
+        "status": "PASS",
+        "claim": "El criterio positivo detecta el incumplimiento del prototipo 0.1",
+        "negative_control": true
+      },
+      {
+        "id": "A05-positive",
+        "status": "PASS",
+        "claim": "Una conexión lenta no impide respuesta auténtica en 2 s a otra petición.",
+        "negative_control": false
+      },
+      {
+        "id": "A05-capacity-control",
+        "status": "PASS",
+        "claim": "Cuatro lectores ocupados limitan datos y conservan el control local autorizado.",
+        "negative_control": false
+      },
+      {
+        "id": "A07-before",
+        "status": "PASS",
+        "claim": "Cancelación previa exacta impide el efecto y conserva una petición independiente.",
+        "negative_control": false
+      },
+      {
+        "id": "A07-after",
+        "status": "PASS",
+        "claim": "Un compromiso no se deshace y su estado sobrevive al reinicio del receptor.",
+        "negative_control": false
+      },
+      {
+        "id": "A07-binding",
+        "status": "PASS",
+        "claim": "Una huella ajena no cancela el contenido legítimo del mismo identificador.",
+        "negative_control": false
+      },
+      {
+        "id": "A07-authority",
+        "status": "PASS",
+        "claim": "La clave de datos y el canal TCP no permiten ejercer la cancelación.",
+        "negative_control": false
+      },
+      {
+        "id": "A07-offline",
+        "status": "PASS",
+        "claim": "Con el bus detenido se cancela y la entrega posterior queda impedida.",
+        "negative_control": false
+      },
+      {
+        "id": "A07-restart",
+        "status": "PASS",
+        "claim": "La cancelación previa permanece después de reiniciar receptor y bus.",
+        "negative_control": false
+      },
+      {
+        "id": "I08-revocation",
+        "status": "PASS",
+        "claim": "Revocación tras validación y antes de la transacción impide el efecto.",
+        "negative_control": false
+      },
+      {
+        "id": "I08-cancellation",
+        "status": "PASS",
+        "claim": "Cancelación tras validación y antes de la transacción impide el efecto.",
+        "negative_control": false
+      },
+      {
+        "id": "I08-commit",
+        "status": "PASS",
+        "claim": "Una cancelación bloqueada por la transacción no emite un éxito falso.",
+        "negative_control": false
+      },
+      {
+        "id": "I01-tamper",
+        "status": "PASS",
+        "claim": "La modificación del tráfico no produce efectos ilegítimos.",
+        "negative_control": false
+      },
+      {
+        "id": "I02-fabricate",
+        "status": "PASS",
+        "claim": "La modificación del tráfico no produce efectos ilegítimos.",
+        "negative_control": false
+      },
+      {
+        "id": "I03-replay",
+        "status": "PASS",
+        "claim": "Las entregas repetidas sólo comprometen un efecto.",
+        "negative_control": false
+      },
+      {
+        "id": "I06-receipt",
+        "status": "PASS",
+        "claim": "El recibo fabricado se rechaza aunque el efecto exista.",
+        "negative_control": false
+      },
+      {
+        "id": "I03-concurrent",
+        "status": "PASS",
+        "claim": "Peticiones concurrentes idénticas no duplican el efecto.",
+        "negative_control": false
+      },
+      {
+        "id": "I07-order",
+        "status": "PASS",
+        "claim": "La revisión explícita rechaza inversión y las identidades conflictivas.",
+        "negative_control": false
+      },
+      {
+        "id": "I09-contract",
+        "status": "PASS",
+        "claim": "Firmas inválidas, versiones y destinos ajenos no se admiten.",
+        "negative_control": false
+      },
+      {
+        "id": "A02-recovery",
+        "status": "PASS",
+        "claim": "Pérdida del recibo y reintento tras reinicio no duplican.",
+        "negative_control": false
+      },
+      {
+        "id": "A06-transaction",
+        "status": "PASS",
+        "claim": "La terminación antes de comprometer revierte y permite un reintento único.",
+        "negative_control": false
+      },
+      {
+        "id": "A05-quota",
+        "status": "PASS",
+        "claim": "Los límites de registros rechazan crecimiento y preservan reintentos y control.",
+        "negative_control": false
+      },
+      {
+        "id": "C04-C06-bounded",
+        "status": "PASS",
+        "claim": "Canario y claves no aparecen en capturas o salidas examinadas; otra clave no abre el recibo.",
+        "negative_control": false
+      },
+      {
+        "id": "P02-measurement",
+        "status": "PASS",
+        "claim": "Cuarenta operaciones auténticas con muestras completas y capturas acotadas.",
+        "negative_control": false
+      }
+    ],
+    "conclusion": "23 comprobaciones de la realización 0.2 y un control de sensibilidad superados. Cancelación local, plazos y cotas lógicas comprobados en el alcance declarado; las tres garantías completas y la arquitectura definitiva siguen abiertas.",
+    "measurement": "35 muestras útiles tras 5 de calentamiento: mediana completa 5.443 ms y máximo 5.810 ms. Incluye sellado, transporte y apertura mediante procesos Rust. No es un SLO.",
+    "external_runtime_services": 0,
+    "evidence_url": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/registros/007-FASE_02_2026_09_06.md",
+    "first_run": "34020051299"
+  }
 }
