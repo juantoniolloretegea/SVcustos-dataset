@@ -174,6 +174,16 @@
       "front": "Hardware, núcleo y dominios",
       "status": "Integración no ejecutada",
       "remaining": "PC físicos, Windows, ARM, LAN; raíz de confianza, corrupción y retroceso de almacenamiento. Contratos SV, OP-IMM-001, ciberseguridad, agentes e IA siguen en sus sedes; .NET/WASM/FFI no se seleccionan aquí."
+    },
+    {
+      "front": "Enlace con ejecución gobernada SV",
+      "status": "CONTRASTE_DOCUMENTAL",
+      "remaining": "Nueve pares de criterios CS01–CS09 sin ejecución. Firma, deduplicación y revisión experimental no sustituyen mediación, acumulación y continuidad SV."
+    },
+    {
+      "front": "Autonomía de construcción, ensayo y custodia",
+      "status": "DEUDA_IDENTIFICADA",
+      "remaining": "Reproducción sin programación de Actions, dependencias conservadas y restauración fuera del proveedor no acreditadas. Sin migración."
     }
   ],
   "phase02": {
@@ -332,5 +342,20 @@
     "external_runtime_services": 0,
     "evidence_url": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/registros/007-FASE_02_2026_09_06.md",
     "first_run": "34020051299"
+  },
+  "followup": {
+    "date": "2026-09-06",
+    "source_baseline": "893ccc19b74c1a1380e4ed8ec29d9c02dbb6928b",
+    "core_reference": "230a205b08f4c54c9c8d9c1c7ad35b2f6ddbbfc4",
+    "status": "CONTRASTE_DOCUMENTAL_CONCLUIDO_INTEGRACION_NO_REALIZADA",
+    "new_runtime_tests": 0,
+    "new_sv_link_cases": 9,
+    "sv_link_cases_status": "NO_EJECUTADO",
+    "pages": [
+      "correspondencia-sv.html",
+      "continuidad-infraestructura.html"
+    ],
+    "migration": "NO_INICIADA",
+    "billing_usage": "NO_CONSULTADO"
   }
 }
