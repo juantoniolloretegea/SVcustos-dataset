@@ -428,5 +428,15 @@
     "profile020_status": "CANDIDATA_DOCUMENTAL",
     "runtime_tests_added": 0,
     "receipt": "registros/022-recepcion-acta-calidad.json"
+  },
+  "secuencia_rectora": {
+    "canonical_url": "https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/main/docs/dominios/inmunologia/ACTA_DE_CONFORMIDAD_DE_TRANSICION_SECUENCIAL_DESDE_OP-IMM-001_AL_LENGUAJE_SV_2026_09_03.md#adenda-secuencia-20260906",
+    "immutable_url": "https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/981159d6428197d1ad1d748649f1d8f690b2f588/docs/dominios/inmunologia/ACTA_DE_CONFORMIDAD_DE_TRANSICION_SECUENCIAL_DESDE_OP-IMM-001_AL_LENGUAJE_SV_2026_09_03.md#adenda-secuencia-20260906",
+    "core_commit": "981159d6428197d1ad1d748649f1d8f690b2f588",
+    "retp": "RETP-2026-076",
+    "pr": 64,
+    "relationship": "VINCULO_EXPLICITO_A_ADENDA_DEL_ACTA_EXISTENTE_SIN_SEGUNDA_SECUENCIA_NORMATIVA",
+    "receipt": "registros/025-recepcion-secuencia-rectora.json",
+    "runtime_tests_added": 0
   }
 }
