@@ -1,362 +1,424 @@
 {
-  "schema": "sv-infrastructure-public-review/2",
-  "state": "Fase 0.2: 24 PASS. Histórico 0.1 conservado: A05 FAIL y A07 BLOCKED.",
-  "commit": "5e4c1d066094d9cf5df5f50da5b8748ec2b0d27a",
-  "run": "34020269127 · fase 0.2 superada",
-  "hardware": "Ejecución 34020269127: Ubuntu 24.04 x86-64 alojado en GitHub Actions, AMD EPYC 7763 64-Core Processor, 2 CPU lógicas, 7.75 GiB de RAM visible. Loopback; sin PC físico de usuario ni LAN.",
-  "performance": "35 muestras útiles tras 5 de calentamiento: mediana completa 5.443 ms y máximo 5.810 ms. Incluye sellado, transporte y apertura mediante procesos Rust. No es un SLO.",
+  "approval": "NOT_GRANTED",
   "cases": [
     {
-      "id": "I01",
       "description": "Alteración de bytes",
-      "status": "PASS",
+      "id": "I01",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "I02",
       "description": "Fabricación por el bus",
-      "status": "PASS",
+      "id": "I02",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "I03",
       "description": "Repetición por el bus",
-      "status": "PASS",
+      "id": "I03",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "I04",
       "description": "Identidad repetida con contenido distinto",
-      "status": "PASS",
+      "id": "I04",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "I05",
       "description": "Destinatario sustituido",
-      "status": "PASS",
+      "id": "I05",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "I06",
       "description": "Acuse de éxito falsificado",
-      "status": "PASS",
+      "id": "I06",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "I09",
       "description": "Firma inválida dentro de sobre de prueba",
-      "status": "PASS",
+      "id": "I09",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "I10",
       "description": "Recibo auténtico vinculado a otra petición",
-      "status": "PASS",
+      "id": "I10",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "NI",
       "description": "Retirada deliberada de verificación de firma",
-      "status": "PASS",
+      "id": "NI",
       "negative_control": true,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "C01",
       "description": "Captura de tráfico con canario excluido",
-      "status": "PASS",
+      "id": "C01",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "C02-C03",
       "description": "Apertura de claves, estado y memoria desde otro UID",
-      "status": "PASS",
+      "id": "C02-C03",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "NC",
       "description": "Retirada deliberada de cifrado",
-      "status": "PASS",
+      "id": "NC",
       "negative_control": true,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "A01",
       "description": "Caída antes de entrega",
-      "status": "PASS",
+      "id": "A01",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "A02-A03",
       "description": "Caída después de compromiso y reenvío tras reinicio",
-      "status": "PASS",
+      "id": "A02-A03",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "A04",
       "description": "Revocación durante caída",
-      "status": "PASS",
+      "id": "A04",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "A06",
       "description": "Terminación del receptor dentro de la transacción",
-      "status": "PASS",
+      "id": "A06",
       "negative_control": false,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "NA",
       "description": "Retirada deliberada de deduplicación y control de revisión",
-      "status": "PASS",
+      "id": "NA",
       "negative_control": true,
-      "phase": "0.1 inicial"
+      "phase": "0.1 inicial",
+      "status": "PASS"
     },
     {
-      "id": "I07-revision",
       "description": "La precondición de revisión impide adelantar una modificación dependiente",
-      "status": "PASS",
+      "id": "I07-revision",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "PASS"
     },
     {
-      "id": "I08-lock",
       "description": "Revocación persistida antes de que el receptor pueda obtener la transacción de escritura",
-      "status": "PASS",
+      "id": "I08-lock",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "PASS"
     },
     {
-      "id": "C04-logs",
       "description": "Los registros y capturas examinados no contienen el canario excluido ni las claves binarias",
-      "status": "PASS",
+      "id": "C04-logs",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "PASS"
     },
     {
-      "id": "C05-keys",
       "description": "Un segundo juego independiente de credenciales no abre el recibo del primer participante",
-      "status": "PASS",
+      "id": "C05-keys",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "PASS"
     },
     {
-      "id": "C06-captures",
       "description": "Las capturas persistidas tras reiniciar el bus no contienen el canario en claro",
-      "status": "PASS",
+      "id": "C06-captures",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "PASS"
     },
     {
-      "id": "A05-deadline",
       "description": "Comprobar si el plazo de 2 s limita la interacción completa",
-      "status": "FAIL",
+      "id": "A05-deadline",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "FAIL"
     },
     {
-      "id": "A07-invalid",
       "description": "Un campo de cancelación ajeno al contrato se rechaza y no cancela otra petición",
-      "status": "PASS",
+      "id": "A07-invalid",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "PASS"
     },
     {
-      "id": "A07-authorized",
       "description": "Cancelación autorizada y correlacionada con una petición",
-      "status": "BLOCKED",
+      "id": "A07-authorized",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "BLOCKED"
     },
     {
-      "id": "A08-bounded",
       "description": "Tres intentos con bus detenido no generan efectos; el restablecimiento permite un compromiso",
-      "status": "PASS",
+      "id": "A08-bounded",
       "negative_control": false,
-      "phase": "0.1 continuación"
+      "phase": "0.1 continuación",
+      "status": "PASS"
     },
     {
-      "id": "NA05-baseline",
       "description": "El criterio positivo detecta el incumplimiento del prototipo 0.1",
-      "status": "PASS",
+      "id": "NA05-baseline",
       "negative_control": true,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A05-positive",
       "description": "Una conexión lenta no impide respuesta auténtica en 2 s a otra petición.",
-      "status": "PASS",
+      "id": "A05-positive",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A05-capacity-control",
       "description": "Cuatro lectores ocupados limitan datos y conservan el control local autorizado.",
-      "status": "PASS",
+      "id": "A05-capacity-control",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A07-before",
       "description": "Cancelación previa exacta impide el efecto y conserva una petición independiente.",
-      "status": "PASS",
+      "id": "A07-before",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A07-after",
       "description": "Un compromiso no se deshace y su estado sobrevive al reinicio del receptor.",
-      "status": "PASS",
+      "id": "A07-after",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A07-binding",
       "description": "Una huella ajena no cancela el contenido legítimo del mismo identificador.",
-      "status": "PASS",
+      "id": "A07-binding",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A07-authority",
       "description": "La clave de datos y el canal TCP no permiten ejercer la cancelación.",
-      "status": "PASS",
+      "id": "A07-authority",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A07-offline",
       "description": "Con el bus detenido se cancela y la entrega posterior queda impedida.",
-      "status": "PASS",
+      "id": "A07-offline",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A07-restart",
       "description": "La cancelación previa permanece después de reiniciar receptor y bus.",
-      "status": "PASS",
+      "id": "A07-restart",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "I08-revocation",
       "description": "Revocación tras validación y antes de la transacción impide el efecto.",
-      "status": "PASS",
+      "id": "I08-revocation",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "I08-cancellation",
       "description": "Cancelación tras validación y antes de la transacción impide el efecto.",
-      "status": "PASS",
+      "id": "I08-cancellation",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "I08-commit",
       "description": "Una cancelación bloqueada por la transacción no emite un éxito falso.",
-      "status": "PASS",
+      "id": "I08-commit",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
+      "description": "La modificación del tráfico no produce efectos ilegítimos.",
       "id": "I01-tamper",
-      "description": "La modificación del tráfico no produce efectos ilegítimos.",
-      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
+      "description": "La modificación del tráfico no produce efectos ilegítimos.",
       "id": "I02-fabricate",
-      "description": "La modificación del tráfico no produce efectos ilegítimos.",
-      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "I03-replay",
       "description": "Las entregas repetidas sólo comprometen un efecto.",
-      "status": "PASS",
+      "id": "I03-replay",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "I06-receipt",
       "description": "El recibo fabricado se rechaza aunque el efecto exista.",
-      "status": "PASS",
+      "id": "I06-receipt",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "I03-concurrent",
       "description": "Peticiones concurrentes idénticas no duplican el efecto.",
-      "status": "PASS",
+      "id": "I03-concurrent",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "I07-order",
       "description": "La revisión explícita rechaza inversión y las identidades conflictivas.",
-      "status": "PASS",
+      "id": "I07-order",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "I09-contract",
       "description": "Firmas inválidas, versiones y destinos ajenos no se admiten.",
-      "status": "PASS",
+      "id": "I09-contract",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A02-recovery",
       "description": "Pérdida del recibo y reintento tras reinicio no duplican.",
-      "status": "PASS",
+      "id": "A02-recovery",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A06-transaction",
       "description": "La terminación antes de comprometer revierte y permite un reintento único.",
-      "status": "PASS",
+      "id": "A06-transaction",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "A05-quota",
       "description": "Los límites de registros rechazan crecimiento y preservan reintentos y control.",
-      "status": "PASS",
+      "id": "A05-quota",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "C04-C06-bounded",
       "description": "Canario y claves no aparecen en capturas o salidas examinadas; otra clave no abre el recibo.",
-      "status": "PASS",
+      "id": "C04-C06-bounded",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
     },
     {
-      "id": "P02-measurement",
       "description": "Cuarenta operaciones auténticas con muestras completas y capturas acotadas.",
-      "status": "PASS",
+      "id": "P02-measurement",
       "negative_control": false,
-      "phase": "0.2 actual"
+      "phase": "0.2 / repetición #9",
+      "status": "PASS"
+    },
+    {
+      "phase": "0.1 / repetición #8",
+      "id": "A04",
+      "description": "Error de limpieza: el bus ya había terminado; fase 0.2 no ejecutada en esta tanda. Corregido y repetido en #9.",
+      "status": "ERROR",
+      "negative_control": false
+    },
+    {
+      "phase": "Controlador / #9",
+      "id": "STOP01-child-gone-wrapper-reaped",
+      "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "phase": "Controlador / #9",
+      "id": "STOP02-normal-termination",
+      "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "phase": "Controlador / #9",
+      "id": "STOP03-wrapper-already-finished",
+      "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "phase": "Controlador / #9",
+      "id": "STOP04-permission-delegation",
+      "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "phase": "Controlador / #9",
+      "id": "STOP05-timeout-escalation",
+      "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "phase": "Controlador / #9",
+      "id": "STOP06-unrelated-error-propagates",
+      "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
+      "status": "PASS",
+      "negative_control": false
+    },
+    {
+      "phase": "Controlador / #9",
+      "id": "NSTOP-control-detects-missing-handler",
+      "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
+      "status": "PASS",
+      "negative_control": true
     }
   ],
+  "commit": "fa69ead89282112433b6dc9c6571d334c25c4858",
+  "continuation": {
+    "blocked": 1,
+    "error": 0,
+    "fail": 1,
+    "finding": "El plazo por lectura no limita la interacción completa; la espera agotada del cliente no cancela el efecto.",
+    "hardware": "Ubuntu 24.04 x86-64 alojado; mismo binario experimental que la primera tanda",
+    "pass": 7,
+    "results": 9
+  },
+  "hardware": "Ejecución 34022055251: Ubuntu 24.04 x86-64 alojado en GitHub Actions, Intel Xeon Platinum 8573C, 2 CPU lógicas y 8.127.868 KiB de RAM visible. Bucle local; sin PC físico de usuario ni LAN.",
   "pending": [
     "Disponibilidad del plano de datos: Se supera una conexión lenta y se reserva control local bajo cuatro lectores ocupados. Un bus único que no entrega permanentemente impide la disponibilidad de datos; falta decidir topología y condiciones operacionales.",
     "Cancelación y autoridad: Cancelación previa, posterior, persistente, ligada al contenido y por canal independiente comprobadas. Faltan gobierno de producción, claves y permisos por participante y dominio.",
@@ -364,23 +426,14 @@
     "I08 · Validación y compromiso: Revocación y cancelación entre validación y transacción; BUSY durante compromiso. Falta integración con la frontera SV real.",
     "C04–C06 · Confidencialidad completa: Canarios y claves ausentes de las capturas y salidas examinadas; control protegido por UID. Faltan volcados, residuos y aislamiento entre múltiples participantes.",
     "Presupuestos físicos: 4/2 atenciones, 64 efectos y 64 cancelaciones; capturas y líneas de observación acotadas. Faltan CPU, bytes físicos de almacenamiento, equidad y carga prolongada.",
-    "Hardware, núcleo y dominios: PC físicos, Windows, ARM, LAN; raíz de confianza, corrupción y retroceso de almacenamiento. Contratos SV, OP-IMM-001, ciberseguridad, agentes e IA siguen en sus sedes; .NET/WASM/FFI no se seleccionan aquí."
+    "Hardware, núcleo y dominios: PC físicos, Windows, ARM, LAN; raíz de confianza, corrupción y retroceso de almacenamiento. Contratos SV, OP-IMM-001, ciberseguridad, agentes e IA siguen en sus sedes; .NET/WASM/FFI no se seleccionan aquí.",
+    "Enlace SV: nueve pares de criterios CS01–CS09 documentados, todavía no ejecutados.",
+    "Reproducción y restauración fuera de Actions y de su proveedor pendientes; sin migración."
   ],
-  "three_guarantees_closed": false,
-  "approval": "NOT_GRANTED",
-  "continuation": {
-    "results": 9,
-    "pass": 7,
-    "fail": 1,
-    "blocked": 1,
-    "error": 0,
-    "hardware": "Ubuntu 24.04 x86-64 alojado; mismo binario experimental que la primera tanda",
-    "finding": "El plazo por lectura no limita la interacción completa; la espera agotada del cliente no cancela el efecto."
-  },
-  "source_scope": "La ejecución identificada repite 17 testigos sobre 0.1 y ejecuta 24 casos de fase 0.2; NA05 es un control sobre 0.1. Los nueve registros de continuación pertenecen a 34010741314 y conservan su estado histórico.",
+  "performance": "Ejecución 34022055251: 35 muestras útiles tras 5 de calentamiento, mediana completa 4,313462 ms y máximo 5,587314 ms. Intel Xeon Platinum 8573C alojado; no es SLO ni prueba de mejora causal.",
   "phase02": {
-    "run_id": "34020269127",
-    "source_commit": "5e4c1d066094d9cf5df5f50da5b8748ec2b0d27a",
+    "run_id": "34022055251",
+    "source_commit": "fa69ead89282112433b6dc9c6571d334c25c4858",
     "binary_sha256": "e7dd02013237d2b295903029267a4941ea600399e6e04cf43917104a00804265",
     "status": "24 PASS · 0 FAIL · 0 ERROR · 0 BLOCKED",
     "results": [
@@ -529,10 +582,16 @@
         "negative_control": false
       }
     ],
-    "conclusion": "23 comprobaciones de la realización 0.2 y un control de sensibilidad superados. Cancelación local, plazos y cotas lógicas comprobados en el alcance declarado; las tres garantías completas y la arquitectura definitiva siguen abiertas.",
-    "measurement": "35 muestras útiles tras 5 de calentamiento: mediana completa 5.443 ms y máximo 5.810 ms. Incluye sellado, transporte y apertura mediante procesos Rust. No es un SLO.",
+    "conclusion": "Repetición #9 correcta: 23 comprobaciones de fase 0.2 y un control, más 17 testigos iniciales y 7 comprobaciones del controlador. La ejecución #8 conserva un ERROR A04 por carrera de limpieza; la corrección está documentada y probada. Las garantías completas y el enlace con SV permanecen abiertos.",
+    "measurement": "Ejecución 34022055251: 35 muestras útiles tras 5 de calentamiento, mediana completa 4,313462 ms y máximo 5,587314 ms. Intel Xeon Platinum 8573C alojado; no es SLO ni prueba de mejora causal.",
     "external_runtime_services": 0,
-    "evidence_url": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/registros/007-FASE_02_2026_09_06.md",
-    "first_run": "34020051299"
-  }
+    "evidence_url": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/registros/012-CORRECCION_VERIFICADA_2026_09_06.md",
+    "first_run": "34020051299",
+    "evidence_label": "Registro 012 · privado"
+  },
+  "run": "34022055251 · repetición #9 correcta",
+  "schema": "sv-infrastructure-public-review/2",
+  "source_scope": "La repetición #9 acredita 17 casos 0.1, 24 casos 0.2 y 7 comprobaciones del controlador; incluye controles negativos. A04 ERROR procede de #8. Los registros A05 FAIL y A07 BLOCKED pertenecen a la continuación histórica 34010741314. El contraste CS01–CS09 sigue sin ejecución de enlace SV.",
+  "state": "Fase 0.2: 24 PASS; primera tanda: 17 PASS; controlador: 7 PASS. Históricos A05 FAIL, A07 BLOCKED y A04 ERROR conservados.",
+  "three_guarantees_closed": false
 }

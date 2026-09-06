@@ -187,8 +187,8 @@
     }
   ],
   "phase02": {
-    "run_id": "34020269127",
-    "source_commit": "5e4c1d066094d9cf5df5f50da5b8748ec2b0d27a",
+    "run_id": "34022055251",
+    "source_commit": "fa69ead89282112433b6dc9c6571d334c25c4858",
     "binary_sha256": "e7dd02013237d2b295903029267a4941ea600399e6e04cf43917104a00804265",
     "status": "24 PASS · 0 FAIL · 0 ERROR · 0 BLOCKED",
     "results": [
@@ -337,18 +337,19 @@
         "negative_control": false
       }
     ],
-    "conclusion": "23 comprobaciones de la realización 0.2 y un control de sensibilidad superados. Cancelación local, plazos y cotas lógicas comprobados en el alcance declarado; las tres garantías completas y la arquitectura definitiva siguen abiertas.",
-    "measurement": "35 muestras útiles tras 5 de calentamiento: mediana completa 5.443 ms y máximo 5.810 ms. Incluye sellado, transporte y apertura mediante procesos Rust. No es un SLO.",
+    "conclusion": "Repetición #9 correcta: 23 comprobaciones de fase 0.2 y un control, más 17 testigos iniciales y 7 comprobaciones del controlador. La ejecución #8 conserva un ERROR A04 por carrera de limpieza; la corrección está documentada y probada. Las garantías completas y el enlace con SV permanecen abiertos.",
+    "measurement": "Ejecución 34022055251: 35 muestras útiles tras 5 de calentamiento, mediana completa 4,313462 ms y máximo 5,587314 ms. Intel Xeon Platinum 8573C alojado; no es SLO ni prueba de mejora causal.",
     "external_runtime_services": 0,
-    "evidence_url": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/registros/007-FASE_02_2026_09_06.md",
-    "first_run": "34020051299"
+    "evidence_url": "https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/registros/012-CORRECCION_VERIFICADA_2026_09_06.md",
+    "first_run": "34020051299",
+    "evidence_label": "Registro 012 · privado"
   },
   "followup": {
     "date": "2026-09-06",
     "source_baseline": "893ccc19b74c1a1380e4ed8ec29d9c02dbb6928b",
     "core_reference": "230a205b08f4c54c9c8d9c1c7ad35b2f6ddbbfc4",
     "status": "CONTRASTE_DOCUMENTAL_CONCLUIDO_INTEGRACION_NO_REALIZADA",
-    "new_runtime_tests": 0,
+    "new_runtime_tests": 7,
     "new_sv_link_cases": 9,
     "sv_link_cases_status": "NO_EJECUTADO",
     "pages": [
@@ -356,6 +357,16 @@
       "continuidad-infraestructura.html"
     ],
     "migration": "NO_INICIADA",
-    "billing_usage": "NO_CONSULTADO"
+    "billing_usage": "NO_CONSULTADO",
+    "controller_correction": {
+      "failed_run": "34021807895",
+      "corrected_run": "34022055251",
+      "source_commit": "fa69ead89282112433b6dc9c6571d334c25c4858",
+      "stop_checks": 7,
+      "initial_cases": 17,
+      "phase02_cases": 24,
+      "status": "CORREGIDO_Y_VERIFICADO"
+    },
+    "existing_runtime_cases_repeated": 41
   }
 }
