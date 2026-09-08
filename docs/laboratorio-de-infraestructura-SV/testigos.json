@@ -3109,6 +3109,66 @@
     {
       "id": "M20-missing-artifact",
       "expected_rejection": "Número de artefactos incoherente"
+    },
+    {
+      "id": "M21-approval-granted",
+      "obligation": "H-1: una regularización no concede aprobación humana.",
+      "expected_rejection": "Aprobación incompatible con la regularización histórica"
+    },
+    {
+      "id": "M22-approval-arbitrary",
+      "obligation": "H-1: no se admite una aprobación fuera del contrato.",
+      "expected_rejection": "Aprobación incompatible con la regularización histórica"
+    },
+    {
+      "id": "M23-approval-missing",
+      "obligation": "H-1: la declaración de aprobación es obligatoria.",
+      "expected_rejection": "Aprobación incompatible con la regularización histórica"
+    },
+    {
+      "id": "M24-limit-missing",
+      "obligation": "H-2: no se puede retirar un límite de alcance.",
+      "expected_rejection": "Límites públicos retirados o alterados"
+    },
+    {
+      "id": "M25-limit-weakened",
+      "obligation": "H-2: conservar el número no permite debilitar el contenido.",
+      "expected_rejection": "Límites públicos retirados o alterados"
+    },
+    {
+      "id": "M26-limit-id-duplicated",
+      "obligation": "H-2: cada límite mantiene su identidad.",
+      "expected_rejection": "Límites públicos retirados o alterados"
+    },
+    {
+      "id": "M27-private-source-null",
+      "obligation": "H-3: la identidad privada no puede ser nula.",
+      "expected_rejection": "Identidad de fuente inválida: private"
+    },
+    {
+      "id": "M28-private-source-divergent",
+      "obligation": "H-3: las referencias de la regularización deben concordar.",
+      "expected_rejection": "Identidad de fuente divergente: private"
+    },
+    {
+      "id": "M29-state-source-divergent",
+      "obligation": "H-3: el estado no puede introducir otra referencia privada.",
+      "expected_rejection": "Identidad de fuente divergente: private"
+    },
+    {
+      "id": "M30-approval-policy-weakened",
+      "obligation": "H-1: no se puede relajar el contrato de aprobación junto al resultado.",
+      "expected_rejection": "Contrato público de regularización alterado"
+    },
+    {
+      "id": "M31-private-source-missing",
+      "obligation": "H-3: la identidad de la fuente es obligatoria.",
+      "expected_rejection": "Identidad de fuente inválida: private"
+    },
+    {
+      "id": "M32-limits-coforged",
+      "obligation": "H-2: la especificación y el resultado no pueden borrar juntos un límite del régimen.",
+      "expected_rejection": "Contrato público de regularización alterado"
     }
   ],
   "claim_limits": {
@@ -3127,5 +3187,39 @@
     "freeze_specification_before_measurement": true,
     "unavailable_package": "NO_RECIBIBLE",
     "historical_campaigns": "Regularizar únicamente si se invocan como evidencia normativa; no repetir por esta regla."
+  },
+  "public_verification_contract": {
+    "version": "SV-LAB-REGULARIZACION-PUBLICA/2",
+    "approval": "NOT_GRANTED",
+    "limits": [
+      {
+        "id": "LVP-01",
+        "text": "Las huellas permiten identificar artefactos; no permiten leer su contenido privado ni probar por sí solas que fueron ejecutados."
+      },
+      {
+        "id": "LVP-02",
+        "text": "Las observaciones publicadas son una proyección: se contrasta el predicado declarado, no se reproduce aquí el ensayo privado completo."
+      },
+      {
+        "id": "LVP-03",
+        "text": "La trazabilidad de la especificación histórica se ha regularizado desde contratos anteriores; esta publicación no equivale a un compromiso público anterior a aquellas ejecuciones."
+      },
+      {
+        "id": "LVP-04",
+        "text": "La sensibilidad que ejecuta verificar.mjs pertenece al verificador público; no es una nueva campaña del laboratorio."
+      },
+      {
+        "id": "LVP-05",
+        "text": "La referencia a una confirmación privada se comprueba por formato y concordancia entre los archivos públicos. El lector público no acredita por ello su existencia, contenido ni correspondencia con la ejecución."
+      },
+      {
+        "id": "LVP-06",
+        "text": "Las huellas internas no autentican un paquete sustituido íntegramente. La autenticidad requiere una referencia externa de confianza y un verificador de procedencia comprobada; la conformidad técnica no concede aprobación humana."
+      }
+    ]
+  },
+  "regularization_sources": {
+    "source_public_commit": "bd159c1216d66526c27dda45e31f4e90d688a973",
+    "source_private_commit": "c8f45a32992c3801aff3fec8ee2ea280cfc33b60"
   }
 }

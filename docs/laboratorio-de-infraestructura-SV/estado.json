@@ -1218,7 +1218,9 @@
     "Las huellas permiten identificar artefactos; no permiten leer su contenido privado ni probar por sí solas que fueron ejecutados.",
     "Las observaciones publicadas son una proyección: se contrasta el predicado declarado, no se reproduce aquí el ensayo privado completo.",
     "La trazabilidad de la especificación histórica se ha regularizado desde contratos anteriores; esta publicación no equivale a un compromiso público anterior a aquellas ejecuciones.",
-    "La sensibilidad que ejecuta verificar.mjs pertenece al verificador público; no es una nueva campaña del laboratorio."
+    "La sensibilidad que ejecuta verificar.mjs pertenece al verificador público; no es una nueva campaña del laboratorio.",
+    "La referencia a una confirmación privada se comprueba por formato y concordancia entre los archivos públicos. El lector público no acredita por ello su existencia, contenido ni correspondencia con la ejecución.",
+    "Las huellas internas no autentican un paquete sustituido íntegramente. La autenticidad requiere una referencia externa de confianza y un verificador de procedencia comprobada; la conformidad técnica no concede aprobación humana."
   ],
   "reconciliations": [
     {
@@ -1532,5 +1534,13 @@
       "id": "PEND-09",
       "description": "Reproducción y restauración fuera de Actions y de su proveedor pendientes; sin migración."
     }
+  ],
+  "public_verification_limit_ids": [
+    "LVP-01",
+    "LVP-02",
+    "LVP-03",
+    "LVP-04",
+    "LVP-05",
+    "LVP-06"
   ]
 }

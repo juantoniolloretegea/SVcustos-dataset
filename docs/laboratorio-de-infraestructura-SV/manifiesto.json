@@ -51816,18 +51816,18 @@
   "public_files": [
     {
       "name": "testigos.json",
-      "bytes": 107223,
-      "sha256": "7d5943bfe810313bf5f9bf09eb0b9bbcadfcf4a07ff786bf8a0ee7679f87490f"
+      "bytes": 111404,
+      "sha256": "3fb84d176abb1f4b980b7993cd9168318b4e6bbfe4d233faf449ba5de8c4365f"
     },
     {
       "name": "estado.json",
-      "bytes": 51205,
-      "sha256": "23c9a5ae28da9ba20656994be6d9a20f9212c607f50d71e5d1ff11f094396827"
+      "bytes": 51791,
+      "sha256": "25f42257dc0f886e7e6384a2393a93811884e3c7164c00ed1c99a4ab72202572"
     },
     {
       "name": "verificar.mjs",
-      "bytes": 13733,
-      "sha256": "ff21cbea30714c30292c02062d3a6ede9e0e48feff6663c5d523e4d25823b380"
+      "bytes": 20023,
+      "sha256": "e81e26c9a8c56eaadd8b23ec35a7959e77cf6ad436c7bab2afa2b401f3523ce1"
     }
   ],
   "custody_note": "Inventarios íntegros de tres paquetes recuperados: cada entrada y los ZIP se comprobaron por tamaño y SHA-256. Sólo se publican nombres y huellas; las claves, capturas y actas permanecen privadas. Cada ruta de artefacto es relativa a su paquete, nunca una ruta de acceso público.",
