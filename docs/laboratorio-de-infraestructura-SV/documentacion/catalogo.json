@@ -438,5 +438,42 @@
     "relationship": "VINCULO_EXPLICITO_A_ADENDA_DEL_ACTA_EXISTENTE_SIN_SEGUNDA_SECUENCIA_NORMATIVA",
     "receipt": "registros/025-recepcion-secuencia-rectora.json",
     "runtime_tests_added": 0
+  },
+  "verificacion_publica027": {
+    "id": "LAB-2026-027",
+    "date": "2026-09-08",
+    "page": "verificacion-publica.html",
+    "package": "SV-LAB-PUBLICO-20260908-027",
+    "objects": [
+      "../manifiesto.json",
+      "../testigos.json",
+      "../verificar.mjs",
+      "../estado.json"
+    ],
+    "panel": {
+      "PASS": 55,
+      "FAIL": 1,
+      "BLOCKED": 1,
+      "ERROR": 1,
+      "NOT_EXECUTED": 0
+    },
+    "witnesses": 74,
+    "private_artifacts_identified": 6472,
+    "new_runtime_executions": 0,
+    "required_from_next_campaign": true,
+    "scope": "Consistencia pública; sin reproducción de artefactos privados ni cierre nuclear."
+  },
+  "reconciliacion008": {
+    "execution_id": "34021807895",
+    "counts": {
+      "PASS": 16,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "ERROR": 1,
+      "NOT_EXECUTED": 0
+    },
+    "phase02": "NOT_EXECUTED",
+    "included_in_panel_totals": false,
+    "note": "16 PASS y 1 ERROR en 17 casos. A04 ERROR se referencia una vez desde el panel; los 16 PASS no se suman al total 55 del panel."
   }
 }

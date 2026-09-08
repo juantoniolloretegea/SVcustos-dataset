@@ -2,410 +2,948 @@
   "approval": "NOT_GRANTED",
   "cases": [
     {
+      "id": "I01@34022055251",
+      "legacy_id": "I01",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Alteración de bytes",
-      "id": "I01",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "client_verified": false,
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "I02@34022055251",
+      "legacy_id": "I02",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Fabricación por el bus",
-      "id": "I02",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "client_verified": false,
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "I03@34022055251",
+      "legacy_id": "I03",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Repetición por el bus",
-      "id": "I03",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "I04@34022055251",
+      "legacy_id": "I04",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Identidad repetida con contenido distinto",
-      "id": "I04",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "status": "ID_CONFLICT",
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "I05@34022055251",
+      "legacy_id": "I05",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Destinatario sustituido",
-      "id": "I05",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "client_verified": false,
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "I06@34022055251",
+      "legacy_id": "I06",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Acuse de éxito falsificado",
-      "id": "I06",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "client_state": "UNKNOWN",
+        "effect_committed": 1,
+        "forged_receipt_accepted": false,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "I09@34022055251",
+      "legacy_id": "I09",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Firma inválida dentro de sobre de prueba",
-      "id": "I09",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "illegitimate_effects": 0,
+        "oracle_detected_violation": false,
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "I10@34022055251",
+      "legacy_id": "I10",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Recibo auténtico vinculado a otra petición",
-      "id": "I10",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "mismatched_receipt_accepted": false,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "NI@34022055251",
+      "legacy_id": "NI",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Retirada deliberada de verificación de firma",
-      "id": "NI",
+      "status": "PASS",
       "negative_control": true,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "illegitimate_effects": 1,
+        "oracle_detected_violation": true,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "C01@34022055251",
+      "legacy_id": "C01",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Captura de tráfico con canario excluido",
-      "id": "C01",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "canary_visible": false,
+        "oracle_detected_violation": false,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "C02-C03@34022055251",
+      "legacy_id": "C02-C03",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Apertura de claves, estado y memoria desde otro UID",
-      "id": "C02-C03",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "effects": 0,
+        "revoked": 0,
+        "database_denied": true,
+        "key_denied": true,
+        "memory_denied": true
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "NC@34022055251",
+      "legacy_id": "NC",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Retirada deliberada de cifrado",
-      "id": "NC",
+      "status": "PASS",
       "negative_control": true,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "canary_visible": true,
+        "oracle_detected_violation": true,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "A01@34022055251",
+      "legacy_id": "A01",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Caída antes de entrega",
-      "id": "A01",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "client_verified": false,
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "A02-A03@34022055251",
+      "legacy_id": "A02-A03",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Caída después de compromiso y reenvío tras reinicio",
-      "id": "A02-A03",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "after_retry": 1,
+        "before_retry": 1,
+        "first_state": "UNKNOWN",
+        "oracle_detected_duplication": false,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "A04@34022055251",
+      "legacy_id": "A04",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Revocación durante caída",
-      "id": "A04",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "revoked": 1,
+        "status": "REVOKED",
+        "effects": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "A06@34022055251",
+      "legacy_id": "A06",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Terminación del receptor dentro de la transacción",
-      "id": "A06",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "after_retry": 1,
+        "before_retry": 0,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "NA@34022055251",
+      "legacy_id": "NA",
+      "campaign_id": "34022055251",
+      "phase": "0.1 inicial",
       "description": "Retirada deliberada de deduplicación y control de revisión",
-      "id": "NA",
+      "status": "PASS",
       "negative_control": true,
-      "phase": "0.1 inicial",
-      "status": "PASS"
+      "observations": {
+        "after_retry": 2,
+        "before_retry": 1,
+        "first_state": "UNKNOWN",
+        "oracle_detected_duplication": true,
+        "effects": 2,
+        "revoked": 0
+      },
+      "evidence_ref": "cases.json"
     },
     {
+      "id": "I07-revision@34010741314",
+      "legacy_id": "I07-revision",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "La precondición de revisión impide adelantar una modificación dependiente",
-      "id": "I07-revision",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "PASS"
+      "observations": {
+        "receipts": [
+          "REVISION_CONFLICT",
+          "COMMITTED",
+          "COMMITTED"
+        ],
+        "effects": 2,
+        "revoked": 0
+      },
+      "evidence_ref": "continuacion/results.json"
     },
     {
+      "id": "I08-lock@34010741314",
+      "legacy_id": "I08-lock",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "Revocación persistida antes de que el receptor pueda obtener la transacción de escritura",
-      "id": "I08-lock",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "PASS"
+      "observations": {
+        "retry_status": "REVOKED",
+        "effects": 0,
+        "revoked": 1
+      },
+      "evidence_ref": "continuacion/results.json"
     },
     {
+      "id": "C04-logs@34010741314",
+      "legacy_id": "C04-logs",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "Los registros y capturas examinados no contienen el canario excluido ni las claves binarias",
-      "id": "C04-logs",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "PASS"
+      "observations": {
+        "files_scanned": 11,
+        "positive_canary_in_protected_state": true,
+        "leaks": 0
+      },
+      "evidence_ref": "continuacion/results.json"
     },
     {
+      "id": "C05-keys@34010741314",
+      "legacy_id": "C05-keys",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "Un segundo juego independiente de credenciales no abre el recibo del primer participante",
-      "id": "C05-keys",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "PASS"
+      "observations": {
+        "authorized_open": true,
+        "other_open_exit": 2
+      },
+      "evidence_ref": "continuacion/results.json"
     },
     {
+      "id": "C06-captures@34010741314",
+      "legacy_id": "C06-captures",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "Las capturas persistidas tras reiniciar el bus no contienen el canario en claro",
-      "id": "C06-captures",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "PASS"
+      "observations": {
+        "files_scanned": 6,
+        "retry": "ALREADY_COMMITTED",
+        "leaks": 0
+      },
+      "evidence_ref": "continuacion/results.json"
     },
     {
+      "id": "A05-deadline@34010741314",
+      "legacy_id": "A05-deadline",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "Comprobar si el plazo de 2 s limita la interacción completa",
-      "id": "A05-deadline",
+      "status": "FAIL",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "FAIL"
+      "observations": {
+        "effect_before_slow_close": 0,
+        "retry": "ALREADY_COMMITTED",
+        "transport_error": "TimeoutError",
+        "elapsed_ns": 2002492327
+      },
+      "evidence_ref": "continuacion/results.json",
+      "superseded_by": [
+        "A05-positive@34022055251",
+        "A05-capacity-control@34022055251",
+        "NA05-baseline@34022055251"
+      ],
+      "basis": "Contrato 0.2 §§5–6: plazo y reserva de control sustituyen el diseño 0.1 en el alcance ensayado; el FAIL histórico se conserva. Disponibilidad general permanece pendiente."
     },
     {
+      "id": "A07-invalid@34010741314",
+      "legacy_id": "A07-invalid",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "Un campo de cancelación ajeno al contrato se rechaza y no cancela otra petición",
-      "id": "A07-invalid",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "PASS"
+      "observations": {
+        "other_status": "COMMITTED",
+        "seal_exit": 2
+      },
+      "evidence_ref": "continuacion/results.json"
     },
     {
+      "id": "A07-authorized@34010741314",
+      "legacy_id": "A07-authorized",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "Cancelación autorizada y correlacionada con una petición",
-      "id": "A07-authorized",
+      "status": "BLOCKED",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "BLOCKED"
+      "observations": {},
+      "evidence_ref": "continuacion/results.json",
+      "superseded_by": [
+        "A07-before@34022055251",
+        "A07-after@34022055251",
+        "A07-binding@34022055251",
+        "A07-authority@34022055251",
+        "A07-offline@34022055251",
+        "A07-restart@34022055251"
+      ],
+      "basis": "Contrato 0.2 §§3–4 constituye la operación que faltaba en 0.1; el BLOCKED histórico se conserva. La autoridad de producción permanece pendiente."
     },
     {
+      "id": "A08-bounded@34010741314",
+      "legacy_id": "A08-bounded",
+      "campaign_id": "34010741314",
+      "phase": "0.1 continuación",
       "description": "Tres intentos con bus detenido no generan efectos; el restablecimiento permite un compromiso",
-      "id": "A08-bounded",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.1 continuación",
-      "status": "PASS"
+      "observations": {
+        "effects_during_outage": 0,
+        "retry": "COMMITTED",
+        "attempts": 3,
+        "attempt_errors": 3
+      },
+      "evidence_ref": "continuacion/results.json"
     },
     {
+      "id": "NA05-baseline@34022055251",
+      "legacy_id": "NA05-baseline",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "El criterio positivo detecta el incumplimiento del prototipo 0.1",
-      "id": "NA05-baseline",
+      "status": "PASS",
       "negative_control": true,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "elapsed_ns": 2056227494,
+        "observed_compliance": "FAIL",
+        "slow_bytes": 5,
+        "verified": false,
+        "before_effects": 0,
+        "after_effects": 1
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A05-positive@34022055251",
+      "legacy_id": "A05-positive",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Una conexión lenta no impide respuesta auténtica en 2 s a otra petición.",
-      "id": "A05-positive",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "elapsed_ns": 3017449,
+        "retry": "ALREADY_COMMITTED",
+        "slow_bytes": 3,
+        "verified": true,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A05-capacity-control@34022055251",
+      "legacy_id": "A05-capacity-control",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Cuatro lectores ocupados limitan datos y conservan el control local autorizado.",
-      "id": "A05-capacity-control",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "cancel": "CANCELLED",
+        "control_elapsed_ns": 4889251,
+        "rejected_verified": false,
+        "status": "CANCELLED",
+        "effects": 0,
+        "revoked": 0,
+        "reader_count": 4,
+        "readers_closed": 4,
+        "reader_max_seconds": 2.030864966999985,
+        "control_denied": true,
+        "control_key_denied": true
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A07-before@34022055251",
+      "legacy_id": "A07-before",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Cancelación previa exacta impide el efecto y conserva una petición independiente.",
-      "id": "A07-before",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "statuses": [
+          "NOT_FOUND",
+          "CANCELLED",
+          "CANCELLED",
+          "CANCELLED",
+          "COMMITTED"
+        ],
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A07-after@34022055251",
+      "legacy_id": "A07-after",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Un compromiso no se deshace y su estado sobrevive al reinicio del receptor.",
-      "id": "A07-after",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "statuses": [
+          "COMMITTED",
+          "ALREADY_COMMITTED",
+          "ALREADY_COMMITTED",
+          "ALREADY_COMMITTED"
+        ],
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A07-binding@34022055251",
+      "legacy_id": "A07-binding",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Una huella ajena no cancela el contenido legítimo del mismo identificador.",
-      "id": "A07-binding",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "statuses": [
+          "CANCELLED",
+          "COMMITTED",
+          "ALREADY_COMMITTED"
+        ],
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A07-authority@34022055251",
+      "legacy_id": "A07-authority",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "La clave de datos y el canal TCP no permiten ejercer la cancelación.",
-      "id": "A07-authority",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "data_channel_accepted": false,
+        "data_key_accepted": false,
+        "effect": "COMMITTED",
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A07-offline@34022055251",
+      "legacy_id": "A07-offline",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Con el bus detenido se cancela y la entrega posterior queda impedida.",
-      "id": "A07-offline",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "cancel": "CANCELLED",
+        "delivery": "CANCELLED",
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A07-restart@34022055251",
+      "legacy_id": "A07-restart",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "La cancelación previa permanece después de reiniciar receptor y bus.",
-      "id": "A07-restart",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "after_restart": "CANCELLED",
+        "cancel": "CANCELLED",
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I08-revocation@34022055251",
+      "legacy_id": "I08-revocation",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Revocación tras validación y antes de la transacción impide el efecto.",
-      "id": "I08-revocation",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "barrier": "after_signature_before_transaction",
+        "control": "REVOKED",
+        "effect": "REVOKED",
+        "effects": 0,
+        "revoked": 1
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I08-cancellation@34022055251",
+      "legacy_id": "I08-cancellation",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Cancelación tras validación y antes de la transacción impide el efecto.",
-      "id": "I08-cancellation",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "barrier": "after_signature_before_transaction",
+        "control": "CANCELLED",
+        "effect": "CANCELLED",
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I08-commit@34022055251",
+      "legacy_id": "I08-commit",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Una cancelación bloqueada por la transacción no emite un éxito falso.",
-      "id": "I08-commit",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "after_commit": "ALREADY_COMMITTED",
+        "during_commit": "BUSY",
+        "effect": "COMMITTED",
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I01-tamper@34022055251",
+      "legacy_id": "I01-tamper",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "La modificación del tráfico no produce efectos ilegítimos.",
-      "id": "I01-tamper",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "verified": false,
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I02-fabricate@34022055251",
+      "legacy_id": "I02-fabricate",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "La modificación del tráfico no produce efectos ilegítimos.",
-      "id": "I02-fabricate",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "verified": false,
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I03-replay@34022055251",
+      "legacy_id": "I03-replay",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Las entregas repetidas sólo comprometen un efecto.",
-      "id": "I03-replay",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "again": "ALREADY_COMMITTED",
+        "first": "COMMITTED",
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I06-receipt@34022055251",
+      "legacy_id": "I06-receipt",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "El recibo fabricado se rechaza aunque el efecto exista.",
-      "id": "I06-receipt",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "verified": false,
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I03-concurrent@34022055251",
+      "legacy_id": "I03-concurrent",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Peticiones concurrentes idénticas no duplican el efecto.",
-      "id": "I03-concurrent",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "rejections_are_not_success": true,
+        "retry": "ALREADY_COMMITTED",
+        "statuses": [
+          "COMMITTED",
+          "ALREADY_COMMITTED",
+          null,
+          "ALREADY_COMMITTED",
+          "ALREADY_COMMITTED",
+          "ALREADY_COMMITTED",
+          "ALREADY_COMMITTED",
+          "ALREADY_COMMITTED"
+        ],
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I07-order@34022055251",
+      "legacy_id": "I07-order",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "La revisión explícita rechaza inversión y las identidades conflictivas.",
-      "id": "I07-order",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "statuses": [
+          "REVISION_CONFLICT",
+          "COMMITTED",
+          "COMMITTED",
+          "ID_CONFLICT"
+        ],
+        "effects": 2,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "I09-contract@34022055251",
+      "legacy_id": "I09-contract",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Firmas inválidas, versiones y destinos ajenos no se admiten.",
-      "id": "I09-contract",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "unknown_field_exit": 2,
+        "verified": [
+          false,
+          false,
+          false
+        ],
+        "effects": 0,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A02-recovery@34022055251",
+      "legacy_id": "A02-recovery",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Pérdida del recibo y reintento tras reinicio no duplican.",
-      "id": "A02-recovery",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "first_verified": false,
+        "retry": "ALREADY_COMMITTED",
+        "effects": 1,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A06-transaction@34022055251",
+      "legacy_id": "A06-transaction",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "La terminación antes de comprometer revierte y permite un reintento único.",
-      "id": "A06-transaction",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "retry": "COMMITTED",
+        "effects": 1,
+        "revoked": 0,
+        "before_effects": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A05-quota@34022055251",
+      "legacy_id": "A05-quota",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Los límites de registros rechazan crecimiento y preservan reintentos y control.",
-      "id": "A05-quota",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "cancel_over": "LIMIT",
+        "cancel_repeat": "CANCELLED",
+        "cancellations": 64,
+        "effect_over": "LIMIT",
+        "effect_repeat": "ALREADY_COMMITTED",
+        "effects": 64,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "C04-C06-bounded@34022055251",
+      "legacy_id": "C04-C06-bounded",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Canario y claves no aparecen en capturas o salidas examinadas; otra clave no abre el recibo.",
-      "id": "C04-C06-bounded",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "files_scanned": 7,
+        "other_key_exit": 2,
+        "effects": 1,
+        "revoked": 0,
+        "leaks": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "P02-measurement@34022055251",
+      "legacy_id": "P02-measurement",
+      "campaign_id": "34022055251",
+      "phase": "0.2 / repetición #9",
       "description": "Cuarenta operaciones auténticas con muestras completas y capturas acotadas.",
-      "id": "P02-measurement",
+      "status": "PASS",
       "negative_control": false,
-      "phase": "0.2 / repetición #9",
-      "status": "PASS"
+      "observations": {
+        "capture_requests": 16,
+        "samples": 40,
+        "useful": 35,
+        "effects": 40,
+        "revoked": 0
+      },
+      "evidence_ref": "fase02/results.json"
     },
     {
+      "id": "A04@34021807895",
+      "legacy_id": "A04",
+      "campaign_id": "34021807895",
       "phase": "0.1 / repetición #8",
-      "id": "A04",
       "description": "Error de limpieza: el bus ya había terminado; fase 0.2 no ejecutada en esta tanda. Corregido y repetido en #9.",
       "status": "ERROR",
-      "negative_control": false
+      "negative_control": false,
+      "observations": {},
+      "evidence_ref": "cases.json",
+      "superseded_by": [
+        "A04@34022055251",
+        "STOP01-child-gone-wrapper-reaped@34022055251",
+        "NSTOP-control-detects-missing-handler@34022055251"
+      ],
+      "basis": "Corrección de limpieza y repetición #9; no se altera el ERROR registrado en #8."
     },
     {
+      "id": "STOP01-child-gone-wrapper-reaped@34022055251",
+      "legacy_id": "STOP01-child-gone-wrapper-reaped",
+      "campaign_id": "34022055251",
       "phase": "Controlador / #9",
-      "id": "STOP01-child-gone-wrapper-reaped",
       "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
       "status": "PASS",
-      "negative_control": false
+      "negative_control": false,
+      "observations": {},
+      "evidence_ref": "parada/results.json"
     },
     {
+      "id": "STOP02-normal-termination@34022055251",
+      "legacy_id": "STOP02-normal-termination",
+      "campaign_id": "34022055251",
       "phase": "Controlador / #9",
-      "id": "STOP02-normal-termination",
       "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
       "status": "PASS",
-      "negative_control": false
+      "negative_control": false,
+      "observations": {},
+      "evidence_ref": "parada/results.json"
     },
     {
+      "id": "STOP03-wrapper-already-finished@34022055251",
+      "legacy_id": "STOP03-wrapper-already-finished",
+      "campaign_id": "34022055251",
       "phase": "Controlador / #9",
-      "id": "STOP03-wrapper-already-finished",
       "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
       "status": "PASS",
-      "negative_control": false
+      "negative_control": false,
+      "observations": {},
+      "evidence_ref": "parada/results.json"
     },
     {
+      "id": "STOP04-permission-delegation@34022055251",
+      "legacy_id": "STOP04-permission-delegation",
+      "campaign_id": "34022055251",
       "phase": "Controlador / #9",
-      "id": "STOP04-permission-delegation",
       "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
       "status": "PASS",
-      "negative_control": false
+      "negative_control": false,
+      "observations": {},
+      "evidence_ref": "parada/results.json"
     },
     {
+      "id": "STOP05-timeout-escalation@34022055251",
+      "legacy_id": "STOP05-timeout-escalation",
+      "campaign_id": "34022055251",
       "phase": "Controlador / #9",
-      "id": "STOP05-timeout-escalation",
       "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
       "status": "PASS",
-      "negative_control": false
+      "negative_control": false,
+      "observations": {},
+      "evidence_ref": "parada/results.json"
     },
     {
+      "id": "STOP06-unrelated-error-propagates@34022055251",
+      "legacy_id": "STOP06-unrelated-error-propagates",
+      "campaign_id": "34022055251",
       "phase": "Controlador / #9",
-      "id": "STOP06-unrelated-error-propagates",
       "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
       "status": "PASS",
-      "negative_control": false
+      "negative_control": false,
+      "observations": {},
+      "evidence_ref": "parada/results.json"
     },
     {
+      "id": "NSTOP-control-detects-missing-handler@34022055251",
+      "legacy_id": "NSTOP-control-detects-missing-handler",
+      "campaign_id": "34022055251",
       "phase": "Controlador / #9",
-      "id": "NSTOP-control-detects-missing-handler",
       "description": "Regresión determinista de limpieza del controlador; no es una garantía nuclear.",
       "status": "PASS",
-      "negative_control": true
+      "negative_control": true,
+      "observations": {},
+      "evidence_ref": "parada/results.json"
     }
   ],
   "commit": "fa69ead89282112433b6dc9c6571d334c25c4858",
@@ -416,7 +954,73 @@
     "finding": "El plazo por lectura no limita la interacción completa; la espera agotada del cliente no cancela el efecto.",
     "hardware": "Ubuntu 24.04 x86-64 alojado; mismo binario experimental que la primera tanda",
     "pass": 7,
-    "results": 9
+    "results": [
+      {
+        "id": "I07-revision@34010741314",
+        "legacy_id": "I07-revision",
+        "status": "PASS",
+        "superseded_by": []
+      },
+      {
+        "id": "I08-lock@34010741314",
+        "legacy_id": "I08-lock",
+        "status": "PASS",
+        "superseded_by": []
+      },
+      {
+        "id": "C04-logs@34010741314",
+        "legacy_id": "C04-logs",
+        "status": "PASS",
+        "superseded_by": []
+      },
+      {
+        "id": "C05-keys@34010741314",
+        "legacy_id": "C05-keys",
+        "status": "PASS",
+        "superseded_by": []
+      },
+      {
+        "id": "C06-captures@34010741314",
+        "legacy_id": "C06-captures",
+        "status": "PASS",
+        "superseded_by": []
+      },
+      {
+        "id": "A05-deadline@34010741314",
+        "legacy_id": "A05-deadline",
+        "status": "FAIL",
+        "superseded_by": [
+          "A05-positive@34022055251",
+          "A05-capacity-control@34022055251",
+          "NA05-baseline@34022055251"
+        ]
+      },
+      {
+        "id": "A07-invalid@34010741314",
+        "legacy_id": "A07-invalid",
+        "status": "PASS",
+        "superseded_by": []
+      },
+      {
+        "id": "A07-authorized@34010741314",
+        "legacy_id": "A07-authorized",
+        "status": "BLOCKED",
+        "superseded_by": [
+          "A07-before@34022055251",
+          "A07-after@34022055251",
+          "A07-binding@34022055251",
+          "A07-authority@34022055251",
+          "A07-offline@34022055251",
+          "A07-restart@34022055251"
+        ]
+      },
+      {
+        "id": "A08-bounded@34010741314",
+        "legacy_id": "A08-bounded",
+        "status": "PASS",
+        "superseded_by": []
+      }
+    ]
   },
   "hardware": "Ejecución 34022055251: Ubuntu 24.04 x86-64 alojado en GitHub Actions, Intel Xeon Platinum 8573C, 2 CPU lógicas y 8.127.868 KiB de RAM visible. Bucle local; sin PC físico de usuario ni LAN.",
   "pending": [
@@ -438,147 +1042,147 @@
     "status": "24 PASS · 0 FAIL · 0 ERROR · 0 BLOCKED",
     "results": [
       {
-        "id": "NA05-baseline",
+        "id": "NA05-baseline@34022055251",
+        "legacy_id": "NA05-baseline",
         "status": "PASS",
-        "claim": "El criterio positivo detecta el incumplimiento del prototipo 0.1",
         "negative_control": true
       },
       {
-        "id": "A05-positive",
+        "id": "A05-positive@34022055251",
+        "legacy_id": "A05-positive",
         "status": "PASS",
-        "claim": "Una conexión lenta no impide respuesta auténtica en 2 s a otra petición.",
         "negative_control": false
       },
       {
-        "id": "A05-capacity-control",
+        "id": "A05-capacity-control@34022055251",
+        "legacy_id": "A05-capacity-control",
         "status": "PASS",
-        "claim": "Cuatro lectores ocupados limitan datos y conservan el control local autorizado.",
         "negative_control": false
       },
       {
-        "id": "A07-before",
+        "id": "A07-before@34022055251",
+        "legacy_id": "A07-before",
         "status": "PASS",
-        "claim": "Cancelación previa exacta impide el efecto y conserva una petición independiente.",
         "negative_control": false
       },
       {
-        "id": "A07-after",
+        "id": "A07-after@34022055251",
+        "legacy_id": "A07-after",
         "status": "PASS",
-        "claim": "Un compromiso no se deshace y su estado sobrevive al reinicio del receptor.",
         "negative_control": false
       },
       {
-        "id": "A07-binding",
+        "id": "A07-binding@34022055251",
+        "legacy_id": "A07-binding",
         "status": "PASS",
-        "claim": "Una huella ajena no cancela el contenido legítimo del mismo identificador.",
         "negative_control": false
       },
       {
-        "id": "A07-authority",
+        "id": "A07-authority@34022055251",
+        "legacy_id": "A07-authority",
         "status": "PASS",
-        "claim": "La clave de datos y el canal TCP no permiten ejercer la cancelación.",
         "negative_control": false
       },
       {
-        "id": "A07-offline",
+        "id": "A07-offline@34022055251",
+        "legacy_id": "A07-offline",
         "status": "PASS",
-        "claim": "Con el bus detenido se cancela y la entrega posterior queda impedida.",
         "negative_control": false
       },
       {
-        "id": "A07-restart",
+        "id": "A07-restart@34022055251",
+        "legacy_id": "A07-restart",
         "status": "PASS",
-        "claim": "La cancelación previa permanece después de reiniciar receptor y bus.",
         "negative_control": false
       },
       {
-        "id": "I08-revocation",
+        "id": "I08-revocation@34022055251",
+        "legacy_id": "I08-revocation",
         "status": "PASS",
-        "claim": "Revocación tras validación y antes de la transacción impide el efecto.",
         "negative_control": false
       },
       {
-        "id": "I08-cancellation",
+        "id": "I08-cancellation@34022055251",
+        "legacy_id": "I08-cancellation",
         "status": "PASS",
-        "claim": "Cancelación tras validación y antes de la transacción impide el efecto.",
         "negative_control": false
       },
       {
-        "id": "I08-commit",
+        "id": "I08-commit@34022055251",
+        "legacy_id": "I08-commit",
         "status": "PASS",
-        "claim": "Una cancelación bloqueada por la transacción no emite un éxito falso.",
         "negative_control": false
       },
       {
-        "id": "I01-tamper",
+        "id": "I01-tamper@34022055251",
+        "legacy_id": "I01-tamper",
         "status": "PASS",
-        "claim": "La modificación del tráfico no produce efectos ilegítimos.",
         "negative_control": false
       },
       {
-        "id": "I02-fabricate",
+        "id": "I02-fabricate@34022055251",
+        "legacy_id": "I02-fabricate",
         "status": "PASS",
-        "claim": "La modificación del tráfico no produce efectos ilegítimos.",
         "negative_control": false
       },
       {
-        "id": "I03-replay",
+        "id": "I03-replay@34022055251",
+        "legacy_id": "I03-replay",
         "status": "PASS",
-        "claim": "Las entregas repetidas sólo comprometen un efecto.",
         "negative_control": false
       },
       {
-        "id": "I06-receipt",
+        "id": "I06-receipt@34022055251",
+        "legacy_id": "I06-receipt",
         "status": "PASS",
-        "claim": "El recibo fabricado se rechaza aunque el efecto exista.",
         "negative_control": false
       },
       {
-        "id": "I03-concurrent",
+        "id": "I03-concurrent@34022055251",
+        "legacy_id": "I03-concurrent",
         "status": "PASS",
-        "claim": "Peticiones concurrentes idénticas no duplican el efecto.",
         "negative_control": false
       },
       {
-        "id": "I07-order",
+        "id": "I07-order@34022055251",
+        "legacy_id": "I07-order",
         "status": "PASS",
-        "claim": "La revisión explícita rechaza inversión y las identidades conflictivas.",
         "negative_control": false
       },
       {
-        "id": "I09-contract",
+        "id": "I09-contract@34022055251",
+        "legacy_id": "I09-contract",
         "status": "PASS",
-        "claim": "Firmas inválidas, versiones y destinos ajenos no se admiten.",
         "negative_control": false
       },
       {
-        "id": "A02-recovery",
+        "id": "A02-recovery@34022055251",
+        "legacy_id": "A02-recovery",
         "status": "PASS",
-        "claim": "Pérdida del recibo y reintento tras reinicio no duplican.",
         "negative_control": false
       },
       {
-        "id": "A06-transaction",
+        "id": "A06-transaction@34022055251",
+        "legacy_id": "A06-transaction",
         "status": "PASS",
-        "claim": "La terminación antes de comprometer revierte y permite un reintento único.",
         "negative_control": false
       },
       {
-        "id": "A05-quota",
+        "id": "A05-quota@34022055251",
+        "legacy_id": "A05-quota",
         "status": "PASS",
-        "claim": "Los límites de registros rechazan crecimiento y preservan reintentos y control.",
         "negative_control": false
       },
       {
-        "id": "C04-C06-bounded",
+        "id": "C04-C06-bounded@34022055251",
+        "legacy_id": "C04-C06-bounded",
         "status": "PASS",
-        "claim": "Canario y claves no aparecen en capturas o salidas examinadas; otra clave no abre el recibo.",
         "negative_control": false
       },
       {
-        "id": "P02-measurement",
+        "id": "P02-measurement@34022055251",
+        "legacy_id": "P02-measurement",
         "status": "PASS",
-        "claim": "Cuarenta operaciones auténticas con muestras completas y capturas acotadas.",
         "negative_control": false
       }
     ],
@@ -590,8 +1194,343 @@
     "evidence_label": "Registro 012 · privado"
   },
   "run": "34022055251 · repetición #9 correcta",
-  "schema": "sv-infrastructure-public-review/2",
-  "source_scope": "La repetición #9 acredita 17 casos 0.1, 24 casos 0.2 y 7 comprobaciones del controlador; incluye controles negativos. A04 ERROR procede de #8. Los registros A05 FAIL y A07 BLOCKED pertenecen a la continuación histórica 34010741314. El contraste CS01–CS09 sigue sin ejecución de enlace SV.",
-  "state": "Fase 0.2: 24 PASS; primera tanda: 17 PASS; controlador: 7 PASS. Históricos A05 FAIL, A07 BLOCKED y A04 ERROR conservados.",
-  "three_guarantees_closed": false
+  "schema": "sv-infrastructure-public-state/2",
+  "source_scope": "Panel de 58 registros: #9 aporta 17 iniciales, 24 de 0.2 y 7 de limpieza; la continuación 34010741314 aporta 7 PASS, 1 FAIL y 1 BLOCKED; #8 aporta aquí sólo su ERROR A04. La conciliación separada enumera los 17 casos de #8 (16 PASS y 1 ERROR). CS01–CS09 permanecen sin ejecución.",
+  "state": "55 PASS · 1 FAIL · 1 BLOCKED · 1 ERROR. Panel: 48 PASS de #9 y 7 PASS de continuación histórica. La conciliación de #8 se contabiliza aparte.",
+  "three_guarantees_closed": false,
+  "package_id": "SV-LAB-PUBLICO-20260908-027",
+  "totals": {
+    "PASS": 55,
+    "FAIL": 1,
+    "BLOCKED": 1,
+    "ERROR": 1,
+    "NOT_EXECUTED": 0
+  },
+  "regularization": {
+    "date": "2026-09-08",
+    "new_campaign_executions": 0,
+    "scope": "Conciliación histórica y verificabilidad pública; sin cierre nuclear ni de garantías completas.",
+    "private_custody_changed": false,
+    "source_public_commit": "bd159c1216d66526c27dda45e31f4e90d688a973",
+    "source_private_commit": "c8f45a32992c3801aff3fec8ee2ea280cfc33b60"
+  },
+  "public_verification_limits": [
+    "Las huellas permiten identificar artefactos; no permiten leer su contenido privado ni probar por sí solas que fueron ejecutados.",
+    "Las observaciones publicadas son una proyección: se contrasta el predicado declarado, no se reproduce aquí el ensayo privado completo.",
+    "La trazabilidad de la especificación histórica se ha regularizado desde contratos anteriores; esta publicación no equivale a un compromiso público anterior a aquellas ejecuciones.",
+    "La sensibilidad que ejecuta verificar.mjs pertenece al verificador público; no es una nueva campaña del laboratorio."
+  ],
+  "reconciliations": [
+    {
+      "execution_id": "34021807895",
+      "cases": [
+        {
+          "id": "I01@34021807895",
+          "legacy_id": "I01",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Alterar, fabricar o perder la entrega.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "client_verified": false,
+            "effects": 0,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "I02@34021807895",
+          "legacy_id": "I02",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Alterar, fabricar o perder la entrega.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "client_verified": false,
+            "effects": 0,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "I03@34021807895",
+          "legacy_id": "I03",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Repetir la entrega.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "I04@34021807895",
+          "legacy_id": "I04",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Reutilizar identidad con contenido diferente.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "status": "ID_CONFLICT",
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "I05@34021807895",
+          "legacy_id": "I05",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Sustituir el destinatario.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "client_verified": false,
+            "effects": 0,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "I06@34021807895",
+          "legacy_id": "I06",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Fabricar un acuse aunque exista el efecto.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "client_state": "UNKNOWN",
+            "effect_committed": 1,
+            "forged_receipt_accepted": false,
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "I09@34021807895",
+          "legacy_id": "I09",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Firma inválida dentro de sobre cifrado.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "illegitimate_effects": 0,
+            "oracle_detected_violation": false,
+            "effects": 0,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "I10@34021807895",
+          "legacy_id": "I10",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Abrir un recibo contra una petición distinta.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "mismatched_receipt_accepted": false,
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "NI@34021807895",
+          "legacy_id": "NI",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Retirar la comprobación de firma; el oráculo debe detectar el efecto ilícito.",
+          "status": "PASS",
+          "negative_control": true,
+          "observations": {
+            "illegitimate_effects": 1,
+            "oracle_detected_violation": true,
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "C01@34021807895",
+          "legacy_id": "C01",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Buscar el canario en el tráfico capturado.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "canary_visible": false,
+            "oracle_detected_violation": false,
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "C02-C03@34021807895",
+          "legacy_id": "C02-C03",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Intentar abrir estado, clave y memoria desde el bus.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "effects": 0,
+            "revoked": 0,
+            "database_denied": true,
+            "key_denied": true,
+            "memory_denied": true
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "NC@34021807895",
+          "legacy_id": "NC",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Retirar el cifrado; el canario debe resultar visible.",
+          "status": "PASS",
+          "negative_control": true,
+          "observations": {
+            "canary_visible": true,
+            "oracle_detected_violation": true,
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "A01@34021807895",
+          "legacy_id": "A01",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Alterar, fabricar o perder la entrega.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "client_verified": false,
+            "effects": 0,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "A02-A03@34021807895",
+          "legacy_id": "A02-A03",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Perder recibo después del compromiso y reenviar.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "after_retry": 1,
+            "before_retry": 1,
+            "first_state": "UNKNOWN",
+            "oracle_detected_duplication": false,
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "case_ref": "A04@34021807895"
+        },
+        {
+          "id": "A06@34021807895",
+          "legacy_id": "A06",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Terminar el receptor antes del compromiso y reintentar.",
+          "status": "PASS",
+          "negative_control": false,
+          "observations": {
+            "after_retry": 1,
+            "before_retry": 0,
+            "effects": 1,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        },
+        {
+          "id": "NA@34021807895",
+          "legacy_id": "NA",
+          "campaign_id": "34021807895",
+          "phase": "0.1 / repetición #8",
+          "description": "Retirar deduplicación y revisión; detectar dos efectos.",
+          "status": "PASS",
+          "negative_control": true,
+          "observations": {
+            "after_retry": 2,
+            "before_retry": 1,
+            "first_state": "UNKNOWN",
+            "oracle_detected_duplication": true,
+            "effects": 2,
+            "revoked": 0
+          },
+          "evidence_ref": "cases.json"
+        }
+      ],
+      "counts": {
+        "PASS": 16,
+        "FAIL": 0,
+        "BLOCKED": 0,
+        "ERROR": 1,
+        "NOT_EXECUTED": 0
+      },
+      "phase02": "NOT_EXECUTED",
+      "included_in_panel_totals": false,
+      "note": "16 PASS y 1 ERROR en 17 casos. A04 ERROR se referencia una vez desde el panel; los 16 PASS no se suman al total 55 del panel."
+    }
+  ],
+  "pending_case_ids": [],
+  "pending_obligations": [
+    {
+      "id": "PEND-01",
+      "description": "Disponibilidad del plano de datos: Se supera una conexión lenta y se reserva control local bajo cuatro lectores ocupados. Un bus único que no entrega permanentemente impide la disponibilidad de datos; falta decidir topología y condiciones operacionales."
+    },
+    {
+      "id": "PEND-02",
+      "description": "Cancelación y autoridad: Cancelación previa, posterior, persistente, ligada al contenido y por canal independiente comprobadas. Faltan gobierno de producción, claves y permisos por participante y dominio."
+    },
+    {
+      "id": "PEND-03",
+      "description": "I07 · Orden causal general: Una revisión transaccional rechaza inversión y conflictos de identidad. No representa precedencia general ni composición de operaciones SV."
+    },
+    {
+      "id": "PEND-04",
+      "description": "I08 · Validación y compromiso: Revocación y cancelación entre validación y transacción; BUSY durante compromiso. Falta integración con la frontera SV real."
+    },
+    {
+      "id": "PEND-05",
+      "description": "C04–C06 · Confidencialidad completa: Canarios y claves ausentes de las capturas y salidas examinadas; control protegido por UID. Faltan volcados, residuos y aislamiento entre múltiples participantes."
+    },
+    {
+      "id": "PEND-06",
+      "description": "Presupuestos físicos: 4/2 atenciones, 64 efectos y 64 cancelaciones; capturas y líneas de observación acotadas. Faltan CPU, bytes físicos de almacenamiento, equidad y carga prolongada."
+    },
+    {
+      "id": "PEND-07",
+      "description": "Hardware, núcleo y dominios: PC físicos, Windows, ARM, LAN; raíz de confianza, corrupción y retroceso de almacenamiento. Contratos SV, OP-IMM-001, ciberseguridad, agentes e IA siguen en sus sedes; .NET/WASM/FFI no se seleccionan aquí."
+    },
+    {
+      "id": "PEND-08",
+      "description": "Enlace SV: nueve pares de criterios CS01–CS09 documentados, todavía no ejecutados."
+    },
+    {
+      "id": "PEND-09",
+      "description": "Reproducción y restauración fuera de Actions y de su proveedor pendientes; sin migración."
+    }
+  ]
 }

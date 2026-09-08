@@ -1,0 +1,3131 @@
+{
+  "schema": "sv-infrastructure-public-witnesses/1",
+  "package_id": "SV-LAB-PUBLICO-20260908-027",
+  "status": "REGULARIZACION_HISTORICA_NO_NUEVA_TANDA",
+  "contracts": [
+    {
+      "id": "0.1",
+      "public_url": "documentacion/infraestructura.html",
+      "obligations": "Autenticidad, identidad–contenido, destino, recibo, deduplicación, confidencialidad y recuperación acotadas."
+    },
+    {
+      "id": "0.2",
+      "public_url": "documentacion/contrato-0-2.html",
+      "obligations": "§§3–4 mensajes, autoridad, ligaduras y estados; §5 plazos/cuotas; §6 oráculos y control sobre 0.1."
+    }
+  ],
+  "budgets": {
+    "deadline_ns": 2000000000,
+    "reader_limit_seconds": 2.5,
+    "data_readers": 4,
+    "control_readers": 2,
+    "effects": 64,
+    "cancellations": 64,
+    "samples": 40,
+    "warmup_samples": 5,
+    "useful_samples": 35,
+    "production_latency_threshold": null
+  },
+  "budget_basis": "Contrato experimental 0.2 §5 y contrato 0.1, anteriores a las ejecuciones. Las mediciones no fijan estos valores.",
+  "campaigns": [
+    {
+      "id": "34022055251",
+      "source_commit": "fa69ead89282112433b6dc9c6571d334c25c4858",
+      "number": 9,
+      "archive": "ejecucion-34022055251.zip",
+      "inventory_count": 4068,
+      "private_reexecution": false,
+      "archive_bytes": 5292139,
+      "archive_sha256": "1ade1b3a930fdcbf55a201344784dee25a51e2202438976ca71999ea834ba19c"
+    },
+    {
+      "id": "34021807895",
+      "source_commit": "d7ed09fab3b7a3ee0fe4f72bdabba522ff1b1dfd",
+      "number": 8,
+      "archive": "ejecucion-34021807895.zip",
+      "inventory_count": 1031,
+      "private_reexecution": false,
+      "archive_bytes": 2096303,
+      "archive_sha256": "3b5bbfb77c0c3a596aaae5f3943bdaff9f518f93de1df09b7a3bb2ffe84918e3"
+    },
+    {
+      "id": "34010741314",
+      "source_commit": "f973904d58cd2a9f28cb93e9c41fe2c5893dce68",
+      "number": 5,
+      "archive": "ejecucion-34010741314.zip",
+      "inventory_count": 1373,
+      "private_reexecution": false,
+      "archive_bytes": 2228247,
+      "archive_sha256": "d07309baecc2ab7372a3ca28c4d43086786714d119ebb9a53dac2192ec229e22"
+    }
+  ],
+  "witnesses": [
+    {
+      "id": "I01@34022055251",
+      "legacy_id": "I01",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: petición auténtica antes de producir efecto",
+      "condition": "Alterar, fabricar o perder la entrega.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "client_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "client_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I01"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I02@34022055251",
+      "legacy_id": "I02",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: petición auténtica antes de producir efecto",
+      "condition": "Alterar, fabricar o perder la entrega.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "client_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "client_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I02"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I03@34022055251",
+      "legacy_id": "I03",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: deduplicación",
+      "condition": "Repetir la entrega.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "effects",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I03"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I04@34022055251",
+      "legacy_id": "I04",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: identidad ligada a contenido",
+      "condition": "Reutilizar identidad con contenido diferente.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "status",
+            "op": "eq",
+            "value": "ID_CONFLICT"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "status",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I04"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I05@34022055251",
+      "legacy_id": "I05",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: destino constituido",
+      "condition": "Sustituir el destinatario.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "client_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "client_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I05"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I06@34022055251",
+      "legacy_id": "I06",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: recibo auténtico",
+      "condition": "Fabricar un acuse aunque exista el efecto.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "effect_committed",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "forged_receipt_accepted",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "client_state",
+            "op": "eq",
+            "value": "UNKNOWN"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "effect_committed",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I06"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I09@34022055251",
+      "legacy_id": "I09",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: firma válida",
+      "condition": "Firma inválida dentro de sobre cifrado.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "illegitimate_effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "illegitimate_effects",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I09"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I10@34022055251",
+      "legacy_id": "I10",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: recibo ligado a petición",
+      "condition": "Abrir un recibo contra una petición distinta.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "mismatched_receipt_accepted",
+            "op": "eq",
+            "value": false
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "mismatched_receipt_accepted",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I10"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "NI@34022055251",
+      "legacy_id": "NI",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: sensibilidad de autenticación",
+      "condition": "Retirar la comprobación de firma; el oráculo debe detectar el efecto ilícito.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "illegitimate_effects",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "oracle_detected_violation",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "illegitimate_effects",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "NI"
+      },
+      "negative_campaign_control": true,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "C01@34022055251",
+      "legacy_id": "C01",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: exclusión del canario en captura",
+      "condition": "Buscar el canario en el tráfico capturado.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "canary_visible",
+            "op": "eq",
+            "value": false
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "canary_visible",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "C01"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "C02-C03@34022055251",
+      "legacy_id": "C02-C03",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: separación por UID, con control positivo",
+      "condition": "Intentar abrir estado, clave y memoria desde el bus.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "database_denied",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "key_denied",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "memory_denied",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "database_denied",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "C02-C03"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "NC@34022055251",
+      "legacy_id": "NC",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: sensibilidad de confidencialidad",
+      "condition": "Retirar el cifrado; el canario debe resultar visible.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "canary_visible",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "oracle_detected_violation",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "canary_visible",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "NC"
+      },
+      "negative_campaign_control": true,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A01@34022055251",
+      "legacy_id": "A01",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: petición auténtica antes de producir efecto",
+      "condition": "Alterar, fabricar o perder la entrega.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "client_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "client_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "A01"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A02-A03@34022055251",
+      "legacy_id": "A02-A03",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: recuperación sin duplicar",
+      "condition": "Perder recibo después del compromiso y reenviar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "before_retry",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "after_retry",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "first_state",
+            "op": "eq",
+            "value": "UNKNOWN"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "before_retry",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "A02-A03"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A04@34022055251",
+      "legacy_id": "A04",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: revocación anterior a la nueva admisión",
+      "condition": "Revocar durante la caída y volver a entregar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "status",
+            "op": "eq",
+            "value": "REVOKED"
+          },
+          {
+            "field": "revoked",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "status",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "A04"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A06@34022055251",
+      "legacy_id": "A06",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: transacción indivisible",
+      "condition": "Terminar el receptor antes del compromiso y reintentar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "before_retry",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "after_retry",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "before_retry",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "A06"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "NA@34022055251",
+      "legacy_id": "NA",
+      "campaign_id": "34022055251",
+      "group": "0.1 inicial",
+      "obligation": "0.1: sensibilidad de deduplicación",
+      "condition": "Retirar deduplicación y revisión; detectar dos efectos.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "before_retry",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "after_retry",
+            "op": "eq",
+            "value": 2
+          },
+          {
+            "field": "oracle_detected_duplication",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "before_retry",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "NA"
+      },
+      "negative_campaign_control": true,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I07-revision@34010741314",
+      "legacy_id": "I07-revision",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "0.1: revisión como precondición",
+      "condition": "Enviar la operación dependiente antes de su precedente.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "receipts",
+            "op": "eq",
+            "value": [
+              "REVISION_CONFLICT",
+              "COMMITTED",
+              "COMMITTED"
+            ]
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 2
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "receipts",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "I07-revision"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I08-lock@34010741314",
+      "legacy_id": "I08-lock",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "0.1: revocación comprobada al adquirir la transacción",
+      "condition": "Persistir revocación mientras el receptor espera el bloqueo.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "revoked",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "retry_status",
+            "op": "eq",
+            "value": "REVOKED"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "revoked",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "I08-lock"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "C04-logs@34010741314",
+      "legacy_id": "C04-logs",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "0.1: exclusión del canario y las claves en salidas examinadas",
+      "condition": "Provocar entradas malformadas y examinar capturas y salidas.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "files_scanned",
+            "op": "gt",
+            "value": 0
+          },
+          {
+            "field": "leaks",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "positive_canary_in_protected_state",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "files_scanned",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "C04-logs"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "C05-keys@34010741314",
+      "legacy_id": "C05-keys",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "0.1: ligadura a credenciales",
+      "condition": "Abrir un recibo con un segundo juego de claves.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "authorized_open",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "other_open_exit",
+            "op": "ne",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "authorized_open",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "C05-keys"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "C06-captures@34010741314",
+      "legacy_id": "C06-captures",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "0.1: confidencialidad acotada tras reinicio",
+      "condition": "Reiniciar el bus y examinar las capturas persistidas.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "files_scanned",
+            "op": "gt",
+            "value": 0
+          },
+          {
+            "field": "leaks",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "retry",
+            "op": "eq",
+            "value": "ALREADY_COMMITTED"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "files_scanned",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "C06-captures"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A05-deadline@34010741314",
+      "legacy_id": "A05-deadline",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "0.1: comprobar el alcance del plazo declarado de 2 s",
+      "condition": "Mantener una conexión lenta y encolar una petición legítima.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "transport_error",
+            "op": "eq",
+            "value": null
+          },
+          {
+            "field": "elapsed_ns",
+            "op": "lte",
+            "value": 2000000000
+          },
+          {
+            "field": "effect_before_slow_close",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "transport_error",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "A05-deadline"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A07-invalid@34010741314",
+      "legacy_id": "A07-invalid",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "0.1: contrato estricto de campos",
+      "condition": "Introducir un campo de cancelación ajeno al contrato.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "seal_exit",
+            "op": "ne",
+            "value": 0
+          },
+          {
+            "field": "other_status",
+            "op": "eq",
+            "value": "COMMITTED"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "seal_exit",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "A07-invalid"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A07-authorized@34010741314",
+      "legacy_id": "A07-authorized",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "Cancelación autorizada y ligada a la petición",
+      "condition": "Solicitar cancelación con una operación constituida.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "cancel",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "cancel",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "A07-authorized"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A08-bounded@34010741314",
+      "legacy_id": "A08-bounded",
+      "campaign_id": "34010741314",
+      "group": "0.1 continuación",
+      "obligation": "0.1: ausencia de efectos sin entrega y recuperación acotada",
+      "condition": "Tres intentos con bus detenido, seguidos de restablecimiento.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "attempts",
+            "op": "eq",
+            "value": 3
+          },
+          {
+            "field": "attempt_errors",
+            "op": "eq",
+            "value": 3
+          },
+          {
+            "field": "effects_during_outage",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "retry",
+            "op": "eq",
+            "value": "COMMITTED"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "attempts",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "continuacion/results.json",
+        "selector": "A08-bounded"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "NA05-baseline@34022055251",
+      "legacy_id": "NA05-baseline",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §6: sensibilidad del criterio de plazo",
+      "condition": "Aplicar al binario 0.1 el testigo positivo 0.2 y detectar el incumplimiento.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "observed_compliance",
+            "op": "eq",
+            "value": "FAIL"
+          },
+          {
+            "field": "verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "before_effects",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "after_effects",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "slow_bytes",
+            "op": "eq",
+            "value": 5
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "observed_compliance",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "NA05-baseline"
+      },
+      "negative_campaign_control": true,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A05-positive@34022055251",
+      "legacy_id": "A05-positive",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §§5–6: plazo absoluto y efecto único",
+      "condition": "Una conexión lenta junto a una petición legítima y su reintento.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "verified",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "elapsed_ns",
+            "op": "lte",
+            "value": 2000000000
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "retry",
+            "op": "eq",
+            "value": "ALREADY_COMMITTED"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A05-positive"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A05-capacity-control@34022055251",
+      "legacy_id": "A05-capacity-control",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §§2,5: cuatro lectores y reserva de control",
+      "condition": "Ocupar cuatro lectores e intentar datos y control.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "rejected_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "cancel",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "status",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "control_elapsed_ns",
+            "op": "lte",
+            "value": 2000000000
+          },
+          {
+            "field": "reader_count",
+            "op": "eq",
+            "value": 4
+          },
+          {
+            "field": "readers_closed",
+            "op": "eq",
+            "value": 4
+          },
+          {
+            "field": "reader_max_seconds",
+            "op": "lte",
+            "value": 2.5
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "control_denied",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "control_key_denied",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "rejected_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A05-capacity-control"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A07-before@34022055251",
+      "legacy_id": "A07-before",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: cancelación previa exacta",
+      "condition": "Cancelar antes de entregar y preservar una petición independiente.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "statuses",
+            "op": "eq",
+            "value": [
+              "NOT_FOUND",
+              "CANCELLED",
+              "CANCELLED",
+              "CANCELLED",
+              "COMMITTED"
+            ]
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "statuses",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A07-before"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A07-after@34022055251",
+      "legacy_id": "A07-after",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: irreversibilidad del compromiso",
+      "condition": "Cancelar un efecto comprometido y reiniciar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "statuses",
+            "op": "eq",
+            "value": [
+              "COMMITTED",
+              "ALREADY_COMMITTED",
+              "ALREADY_COMMITTED",
+              "ALREADY_COMMITTED"
+            ]
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "statuses",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A07-after"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A07-binding@34022055251",
+      "legacy_id": "A07-binding",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §§3–4: ligadura identificador–huella",
+      "condition": "Cancelar una huella ajena con el mismo identificador.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "statuses",
+            "op": "eq",
+            "value": [
+              "CANCELLED",
+              "COMMITTED",
+              "ALREADY_COMMITTED"
+            ]
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "statuses",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A07-binding"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A07-authority@34022055251",
+      "legacy_id": "A07-authority",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §§2–3: autoridad y canal de control",
+      "condition": "Usar clave de datos o canal TCP para cancelar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "data_key_accepted",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "data_channel_accepted",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effect",
+            "op": "eq",
+            "value": "COMMITTED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "data_key_accepted",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A07-authority"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A07-offline@34022055251",
+      "legacy_id": "A07-offline",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: control local independiente del bus",
+      "condition": "Cancelar con el bus detenido y entregar después.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "cancel",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "delivery",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "cancel",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A07-offline"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A07-restart@34022055251",
+      "legacy_id": "A07-restart",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: persistencia de cancelación",
+      "condition": "Reiniciar receptor y bus después de cancelar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "cancel",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "after_restart",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "cancel",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A07-restart"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I08-revocation@34022055251",
+      "legacy_id": "I08-revocation",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: revocación al comprometer",
+      "condition": "Revocar entre validación de firma y transacción.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "barrier",
+            "op": "eq",
+            "value": "after_signature_before_transaction"
+          },
+          {
+            "field": "control",
+            "op": "eq",
+            "value": "REVOKED"
+          },
+          {
+            "field": "effect",
+            "op": "eq",
+            "value": "REVOKED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "barrier",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I08-revocation"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I08-cancellation@34022055251",
+      "legacy_id": "I08-cancellation",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: cancelación al comprometer",
+      "condition": "Cancelar entre validación de firma y transacción.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "barrier",
+            "op": "eq",
+            "value": "after_signature_before_transaction"
+          },
+          {
+            "field": "control",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "effect",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "barrier",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I08-cancellation"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I08-commit@34022055251",
+      "legacy_id": "I08-commit",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: bloqueo no significa cancelación",
+      "condition": "Solicitar cancelación mientras la transacción mantiene el bloqueo.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "during_commit",
+            "op": "eq",
+            "value": "BUSY"
+          },
+          {
+            "field": "effect",
+            "op": "eq",
+            "value": "COMMITTED"
+          },
+          {
+            "field": "after_commit",
+            "op": "eq",
+            "value": "ALREADY_COMMITTED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "during_commit",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I08-commit"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I01-tamper@34022055251",
+      "legacy_id": "I01-tamper",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §§3–4: autenticidad antes del efecto",
+      "condition": "Alterar o fabricar tráfico cifrado.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I01-tamper"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I02-fabricate@34022055251",
+      "legacy_id": "I02-fabricate",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §§3–4: autenticidad antes del efecto",
+      "condition": "Alterar o fabricar tráfico cifrado.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I02-fabricate"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I03-replay@34022055251",
+      "legacy_id": "I03-replay",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: deduplicación",
+      "condition": "Repetir la misma petición.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "first",
+            "op": "eq",
+            "value": "COMMITTED"
+          },
+          {
+            "field": "again",
+            "op": "eq",
+            "value": "ALREADY_COMMITTED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "first",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I03-replay"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I06-receipt@34022055251",
+      "legacy_id": "I06-receipt",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §3: recibo auténtico",
+      "condition": "Fabricar el recibo después del efecto.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I06-receipt"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I03-concurrent@34022055251",
+      "legacy_id": "I03-concurrent",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: deduplicación transaccional",
+      "condition": "Entregar concurrentemente la misma identidad y contenido.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "retry",
+            "op": "eq",
+            "value": "ALREADY_COMMITTED"
+          },
+          {
+            "field": "rejections_are_not_success",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "retry",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I03-concurrent"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I07-order@34022055251",
+      "legacy_id": "I07-order",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: revisión e identidad",
+      "condition": "Invertir la revisión y reutilizar una identidad con otro contenido.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "statuses",
+            "op": "eq",
+            "value": [
+              "REVISION_CONFLICT",
+              "COMMITTED",
+              "COMMITTED",
+              "ID_CONFLICT"
+            ]
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 2
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "statuses",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I07-order"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I09-contract@34022055251",
+      "legacy_id": "I09-contract",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §3: admisibilidad del contrato",
+      "condition": "Firma inválida, destino ajeno, versión ajena y campo extraño.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "verified",
+            "op": "eq",
+            "value": [
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "field": "unknown_field_exit",
+            "op": "ne",
+            "value": 0
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "I09-contract"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A02-recovery@34022055251",
+      "legacy_id": "A02-recovery",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: recuperación sin duplicar",
+      "condition": "Perder el recibo y reenviar tras reiniciar el bus.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "first_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "retry",
+            "op": "eq",
+            "value": "ALREADY_COMMITTED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "first_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A02-recovery"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A06-transaction@34022055251",
+      "legacy_id": "A06-transaction",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §4: atomicidad",
+      "condition": "Terminar antes del compromiso y reintentar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "before_effects",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "retry",
+            "op": "eq",
+            "value": "COMMITTED"
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "before_effects",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A06-transaction"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A05-quota@34022055251",
+      "legacy_id": "A05-quota",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §5: cuotas de registros",
+      "condition": "Superar 64 efectos y 64 cancelaciones y consultar los existentes.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 64
+          },
+          {
+            "field": "effect_over",
+            "op": "eq",
+            "value": "LIMIT"
+          },
+          {
+            "field": "cancellations",
+            "op": "eq",
+            "value": 64
+          },
+          {
+            "field": "cancel_over",
+            "op": "eq",
+            "value": "LIMIT"
+          },
+          {
+            "field": "cancel_repeat",
+            "op": "eq",
+            "value": "CANCELLED"
+          },
+          {
+            "field": "effect_repeat",
+            "op": "eq",
+            "value": "ALREADY_COMMITTED"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "effects",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "A05-quota"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "C04-C06-bounded@34022055251",
+      "legacy_id": "C04-C06-bounded",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §§3,5: confidencialidad acotada",
+      "condition": "Examinar salidas y capturas; intentar apertura con otras claves.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "files_scanned",
+            "op": "gt",
+            "value": 0
+          },
+          {
+            "field": "leaks",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "other_key_exit",
+            "op": "ne",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "files_scanned",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "C04-C06-bounded"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "P02-measurement@34022055251",
+      "legacy_id": "P02-measurement",
+      "campaign_id": "34022055251",
+      "group": "0.2 / repetición #9",
+      "obligation": "0.2 §5 y contrato 0.1: medición declarada",
+      "condition": "40 operaciones con 5 de calentamiento, sin umbral de latencia productiva.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "samples",
+            "op": "eq",
+            "value": 40
+          },
+          {
+            "field": "useful",
+            "op": "eq",
+            "value": 35
+          },
+          {
+            "field": "capture_requests",
+            "op": "eq",
+            "value": 16
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 40
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "samples",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "fase02/results.json",
+        "selector": "P02-measurement"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A04@34021807895",
+      "legacy_id": "A04",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: revocación anterior a la nueva admisión",
+      "condition": "Revocar durante la caída y volver a entregar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "status",
+            "op": "eq",
+            "value": "REVOKED"
+          },
+          {
+            "field": "revoked",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "status",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "A04"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "STOP01-child-gone-wrapper-reaped@34022055251",
+      "legacy_id": "STOP01-child-gone-wrapper-reaped",
+      "campaign_id": "34022055251",
+      "group": "Controlador / #9",
+      "obligation": "Testigo de limpieza: conservación de comportamiento fuera de ESRCH",
+      "condition": "Hijo desaparecido: recoger el proceso envolvente una vez y conservar su retorno.",
+      "oracle": {
+        "kind": "custodied_result_only",
+        "rules": [],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "invent_unknown_witness",
+        "field": "id",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "parada/results.json",
+        "selector": "STOP01-child-gone-wrapper-reaped"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "STOP02-normal-termination@34022055251",
+      "legacy_id": "STOP02-normal-termination",
+      "campaign_id": "34022055251",
+      "group": "Controlador / #9",
+      "obligation": "Testigo de limpieza: conservación de comportamiento fuera de ESRCH",
+      "condition": "Terminación normal: una espera.",
+      "oracle": {
+        "kind": "custodied_result_only",
+        "rules": [],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "invent_unknown_witness",
+        "field": "id",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "parada/results.json",
+        "selector": "STOP02-normal-termination"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "STOP03-wrapper-already-finished@34022055251",
+      "legacy_id": "STOP03-wrapper-already-finished",
+      "campaign_id": "34022055251",
+      "group": "Controlador / #9",
+      "obligation": "Testigo de limpieza: conservación de comportamiento fuera de ESRCH",
+      "condition": "Envolvente terminada: ninguna espera adicional.",
+      "oracle": {
+        "kind": "custodied_result_only",
+        "rules": [],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "invent_unknown_witness",
+        "field": "id",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "parada/results.json",
+        "selector": "STOP03-wrapper-already-finished"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "STOP04-permission-delegation@34022055251",
+      "legacy_id": "STOP04-permission-delegation",
+      "campaign_id": "34022055251",
+      "group": "Controlador / #9",
+      "obligation": "Testigo de limpieza: conservación de comportamiento fuera de ESRCH",
+      "condition": "Permiso insuficiente: delegación de SIGTERM al hijo correcto.",
+      "oracle": {
+        "kind": "custodied_result_only",
+        "rules": [],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "invent_unknown_witness",
+        "field": "id",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "parada/results.json",
+        "selector": "STOP04-permission-delegation"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "STOP05-timeout-escalation@34022055251",
+      "legacy_id": "STOP05-timeout-escalation",
+      "campaign_id": "34022055251",
+      "group": "Controlador / #9",
+      "obligation": "Testigo de limpieza: conservación de comportamiento fuera de ESRCH",
+      "condition": "Espera vencida: escalada y segunda espera.",
+      "oracle": {
+        "kind": "custodied_result_only",
+        "rules": [],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "invent_unknown_witness",
+        "field": "id",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "parada/results.json",
+        "selector": "STOP05-timeout-escalation"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "STOP06-unrelated-error-propagates@34022055251",
+      "legacy_id": "STOP06-unrelated-error-propagates",
+      "campaign_id": "34022055251",
+      "group": "Controlador / #9",
+      "obligation": "Testigo de limpieza: conservación de comportamiento fuera de ESRCH",
+      "condition": "Otro error del sistema: propagarlo, no ocultarlo.",
+      "oracle": {
+        "kind": "custodied_result_only",
+        "rules": [],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "invent_unknown_witness",
+        "field": "id",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "parada/results.json",
+        "selector": "STOP06-unrelated-error-propagates"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "NSTOP-control-detects-missing-handler@34022055251",
+      "legacy_id": "NSTOP-control-detects-missing-handler",
+      "campaign_id": "34022055251",
+      "group": "Controlador / #9",
+      "obligation": "Testigo de limpieza: conservación de comportamiento fuera de ESRCH",
+      "condition": "Retirar exclusivamente el tratamiento de ESRCH: la sonda debe detectar la excepción.",
+      "oracle": {
+        "kind": "custodied_result_only",
+        "rules": [],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "invent_unknown_witness",
+        "field": "id",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "parada/results.json",
+        "selector": "NSTOP-control-detects-missing-handler"
+      },
+      "negative_campaign_control": true,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I01@34021807895",
+      "legacy_id": "I01",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: petición auténtica antes de producir efecto",
+      "condition": "Alterar, fabricar o perder la entrega.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "client_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "client_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I01"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I02@34021807895",
+      "legacy_id": "I02",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: petición auténtica antes de producir efecto",
+      "condition": "Alterar, fabricar o perder la entrega.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "client_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "client_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I02"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I03@34021807895",
+      "legacy_id": "I03",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: deduplicación",
+      "condition": "Repetir la entrega.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "effects",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I03"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I04@34021807895",
+      "legacy_id": "I04",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: identidad ligada a contenido",
+      "condition": "Reutilizar identidad con contenido diferente.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "status",
+            "op": "eq",
+            "value": "ID_CONFLICT"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "status",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I04"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I05@34021807895",
+      "legacy_id": "I05",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: destino constituido",
+      "condition": "Sustituir el destinatario.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "client_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "client_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I05"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I06@34021807895",
+      "legacy_id": "I06",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: recibo auténtico",
+      "condition": "Fabricar un acuse aunque exista el efecto.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "effect_committed",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "forged_receipt_accepted",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "client_state",
+            "op": "eq",
+            "value": "UNKNOWN"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "effect_committed",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I06"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I09@34021807895",
+      "legacy_id": "I09",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: firma válida",
+      "condition": "Firma inválida dentro de sobre cifrado.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "illegitimate_effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "illegitimate_effects",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I09"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "I10@34021807895",
+      "legacy_id": "I10",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: recibo ligado a petición",
+      "condition": "Abrir un recibo contra una petición distinta.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "mismatched_receipt_accepted",
+            "op": "eq",
+            "value": false
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "mismatched_receipt_accepted",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "I10"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "NI@34021807895",
+      "legacy_id": "NI",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: sensibilidad de autenticación",
+      "condition": "Retirar la comprobación de firma; el oráculo debe detectar el efecto ilícito.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "illegitimate_effects",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "oracle_detected_violation",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "illegitimate_effects",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "NI"
+      },
+      "negative_campaign_control": true,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "C01@34021807895",
+      "legacy_id": "C01",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: exclusión del canario en captura",
+      "condition": "Buscar el canario en el tráfico capturado.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "canary_visible",
+            "op": "eq",
+            "value": false
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "canary_visible",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "C01"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "C02-C03@34021807895",
+      "legacy_id": "C02-C03",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: separación por UID, con control positivo",
+      "condition": "Intentar abrir estado, clave y memoria desde el bus.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "database_denied",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "key_denied",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "memory_denied",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "database_denied",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "C02-C03"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "NC@34021807895",
+      "legacy_id": "NC",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: sensibilidad de confidencialidad",
+      "condition": "Retirar el cifrado; el canario debe resultar visible.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "canary_visible",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "oracle_detected_violation",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "canary_visible",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "NC"
+      },
+      "negative_campaign_control": true,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A01@34021807895",
+      "legacy_id": "A01",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: petición auténtica antes de producir efecto",
+      "condition": "Alterar, fabricar o perder la entrega.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "client_verified",
+            "op": "eq",
+            "value": false
+          },
+          {
+            "field": "effects",
+            "op": "eq",
+            "value": 0
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "client_verified",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "A01"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A02-A03@34021807895",
+      "legacy_id": "A02-A03",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: recuperación sin duplicar",
+      "condition": "Perder recibo después del compromiso y reenviar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "before_retry",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "after_retry",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "first_state",
+            "op": "eq",
+            "value": "UNKNOWN"
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "before_retry",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "A02-A03"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "A06@34021807895",
+      "legacy_id": "A06",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: transacción indivisible",
+      "condition": "Terminar el receptor antes del compromiso y reintentar.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "before_retry",
+            "op": "eq",
+            "value": 0
+          },
+          {
+            "field": "after_retry",
+            "op": "eq",
+            "value": 1
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "before_retry",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "A06"
+      },
+      "negative_campaign_control": false,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    },
+    {
+      "id": "NA@34021807895",
+      "legacy_id": "NA",
+      "campaign_id": "34021807895",
+      "group": "0.1 / repetición #8",
+      "obligation": "0.1: sensibilidad de deduplicación",
+      "condition": "Retirar deduplicación y revisión; detectar dos efectos.",
+      "oracle": {
+        "kind": "all_public_observations",
+        "rules": [
+          {
+            "field": "before_retry",
+            "op": "eq",
+            "value": 1
+          },
+          {
+            "field": "after_retry",
+            "op": "eq",
+            "value": 2
+          },
+          {
+            "field": "oracle_detected_duplication",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "limits": "Predicado sobre proyección publicada; no reemplaza la traza completa bajo custodia."
+      },
+      "negative_control": {
+        "kind": "remove_required_observable",
+        "field": "before_retry",
+        "expected": "REJECT",
+        "scope": "Sensibilidad del verificador público, no nueva ejecución privada."
+      },
+      "evidence": {
+        "artifact": "cases.json",
+        "selector": "NA"
+      },
+      "negative_campaign_control": true,
+      "specification_origin": "Contrato 0.1 / contrato 0.2 §§3–6 / testigo de limpieza, identificados por fuente; reconstrucción documental explícita."
+    }
+  ],
+  "panel_ids": [
+    "I01@34022055251",
+    "I02@34022055251",
+    "I03@34022055251",
+    "I04@34022055251",
+    "I05@34022055251",
+    "I06@34022055251",
+    "I09@34022055251",
+    "I10@34022055251",
+    "NI@34022055251",
+    "C01@34022055251",
+    "C02-C03@34022055251",
+    "NC@34022055251",
+    "A01@34022055251",
+    "A02-A03@34022055251",
+    "A04@34022055251",
+    "A06@34022055251",
+    "NA@34022055251",
+    "I07-revision@34010741314",
+    "I08-lock@34010741314",
+    "C04-logs@34010741314",
+    "C05-keys@34010741314",
+    "C06-captures@34010741314",
+    "A05-deadline@34010741314",
+    "A07-invalid@34010741314",
+    "A07-authorized@34010741314",
+    "A08-bounded@34010741314",
+    "NA05-baseline@34022055251",
+    "A05-positive@34022055251",
+    "A05-capacity-control@34022055251",
+    "A07-before@34022055251",
+    "A07-after@34022055251",
+    "A07-binding@34022055251",
+    "A07-authority@34022055251",
+    "A07-offline@34022055251",
+    "A07-restart@34022055251",
+    "I08-revocation@34022055251",
+    "I08-cancellation@34022055251",
+    "I08-commit@34022055251",
+    "I01-tamper@34022055251",
+    "I02-fabricate@34022055251",
+    "I03-replay@34022055251",
+    "I06-receipt@34022055251",
+    "I03-concurrent@34022055251",
+    "I07-order@34022055251",
+    "I09-contract@34022055251",
+    "A02-recovery@34022055251",
+    "A06-transaction@34022055251",
+    "A05-quota@34022055251",
+    "C04-C06-bounded@34022055251",
+    "P02-measurement@34022055251",
+    "A04@34021807895",
+    "STOP01-child-gone-wrapper-reaped@34022055251",
+    "STOP02-normal-termination@34022055251",
+    "STOP03-wrapper-already-finished@34022055251",
+    "STOP04-permission-delegation@34022055251",
+    "STOP05-timeout-escalation@34022055251",
+    "STOP06-unrelated-error-propagates@34022055251",
+    "NSTOP-control-detects-missing-handler@34022055251"
+  ],
+  "reconciliation_ids": {
+    "34021807895": [
+      "I01@34021807895",
+      "I02@34021807895",
+      "I03@34021807895",
+      "I04@34021807895",
+      "I05@34021807895",
+      "I06@34021807895",
+      "I09@34021807895",
+      "I10@34021807895",
+      "NI@34021807895",
+      "C01@34021807895",
+      "C02-C03@34021807895",
+      "NC@34021807895",
+      "A01@34021807895",
+      "A02-A03@34021807895",
+      "A04@34021807895",
+      "A06@34021807895",
+      "NA@34021807895"
+    ]
+  },
+  "successions": {
+    "A05-deadline@34010741314": {
+      "superseded_by": [
+        "A05-positive@34022055251",
+        "A05-capacity-control@34022055251",
+        "NA05-baseline@34022055251"
+      ],
+      "basis": "Contrato 0.2 §§5–6: plazo y reserva de control sustituyen el diseño 0.1 en el alcance ensayado; el FAIL histórico se conserva. Disponibilidad general permanece pendiente."
+    },
+    "A07-authorized@34010741314": {
+      "superseded_by": [
+        "A07-before@34022055251",
+        "A07-after@34022055251",
+        "A07-binding@34022055251",
+        "A07-authority@34022055251",
+        "A07-offline@34022055251",
+        "A07-restart@34022055251"
+      ],
+      "basis": "Contrato 0.2 §§3–4 constituye la operación que faltaba en 0.1; el BLOCKED histórico se conserva. La autoridad de producción permanece pendiente."
+    },
+    "A04@34021807895": {
+      "superseded_by": [
+        "A04@34022055251",
+        "STOP01-child-gone-wrapper-reaped@34022055251",
+        "NSTOP-control-detects-missing-handler@34022055251"
+      ],
+      "basis": "Corrección de limpieza y repetición #9; no se altera el ERROR registrado en #8."
+    }
+  },
+  "pending_obligations": [
+    {
+      "id": "PEND-01",
+      "description": "Disponibilidad del plano de datos: Se supera una conexión lenta y se reserva control local bajo cuatro lectores ocupados. Un bus único que no entrega permanentemente impide la disponibilidad de datos; falta decidir topología y condiciones operacionales."
+    },
+    {
+      "id": "PEND-02",
+      "description": "Cancelación y autoridad: Cancelación previa, posterior, persistente, ligada al contenido y por canal independiente comprobadas. Faltan gobierno de producción, claves y permisos por participante y dominio."
+    },
+    {
+      "id": "PEND-03",
+      "description": "I07 · Orden causal general: Una revisión transaccional rechaza inversión y conflictos de identidad. No representa precedencia general ni composición de operaciones SV."
+    },
+    {
+      "id": "PEND-04",
+      "description": "I08 · Validación y compromiso: Revocación y cancelación entre validación y transacción; BUSY durante compromiso. Falta integración con la frontera SV real."
+    },
+    {
+      "id": "PEND-05",
+      "description": "C04–C06 · Confidencialidad completa: Canarios y claves ausentes de las capturas y salidas examinadas; control protegido por UID. Faltan volcados, residuos y aislamiento entre múltiples participantes."
+    },
+    {
+      "id": "PEND-06",
+      "description": "Presupuestos físicos: 4/2 atenciones, 64 efectos y 64 cancelaciones; capturas y líneas de observación acotadas. Faltan CPU, bytes físicos de almacenamiento, equidad y carga prolongada."
+    },
+    {
+      "id": "PEND-07",
+      "description": "Hardware, núcleo y dominios: PC físicos, Windows, ARM, LAN; raíz de confianza, corrupción y retroceso de almacenamiento. Contratos SV, OP-IMM-001, ciberseguridad, agentes e IA siguen en sus sedes; .NET/WASM/FFI no se seleccionan aquí."
+    },
+    {
+      "id": "PEND-08",
+      "description": "Enlace SV: nueve pares de criterios CS01–CS09 documentados, todavía no ejecutados."
+    },
+    {
+      "id": "PEND-09",
+      "description": "Reproducción y restauración fuera de Actions y de su proveedor pendientes; sin migración."
+    }
+  ],
+  "negative_mutations": [
+    {
+      "id": "M01-total",
+      "expected_rejection": "Total del panel"
+    },
+    {
+      "id": "M02-state",
+      "expected_rejection": "Resumen state divergente"
+    },
+    {
+      "id": "M03-duplicate-id",
+      "expected_rejection": "Identidad repetida: panel"
+    },
+    {
+      "id": "M04-unknown-case",
+      "expected_rejection": "Inventario divergente: panel"
+    },
+    {
+      "id": "M05-missing-case",
+      "expected_rejection": "Inventario divergente: panel"
+    },
+    {
+      "id": "M06-retired-without-successor",
+      "expected_rejection": "Fallo retirado sin pendiente ni sucesión: A05-deadline@34010741314"
+    },
+    {
+      "id": "M07-unknown-successor",
+      "expected_rejection": "Sucesión sin fundamento declarado"
+    },
+    {
+      "id": "M08-self-successor",
+      "expected_rejection": "Sucesión sin fundamento declarado"
+    },
+    {
+      "id": "M09-run8-count",
+      "expected_rejection": "Recuento de conciliación"
+    },
+    {
+      "id": "M10-run8-missing-case",
+      "expected_rejection": "Inventario divergente: conciliación 34021807895"
+    },
+    {
+      "id": "M11-source-commit",
+      "expected_rejection": "Fuente de artefacto incompatible"
+    },
+    {
+      "id": "M12-archive-hash",
+      "expected_rejection": "Archivo de tanda incompatible"
+    },
+    {
+      "id": "M13-negative-control",
+      "expected_rejection": "Clase o estado alterado"
+    },
+    {
+      "id": "M14-oracle-swap",
+      "expected_rejection": "Resultado contrario al oráculo: A07-before@34022055251"
+    },
+    {
+      "id": "M15-false-pass",
+      "expected_rejection": "Resultado contrario al oráculo: A05-deadline@34010741314"
+    },
+    {
+      "id": "M16-drop-pending",
+      "expected_rejection": "Obligación pendiente retirada o alterada"
+    },
+    {
+      "id": "M17-change-budget",
+      "expected_rejection": "Resultado contrario al oráculo: A05-positive@34022055251"
+    },
+    {
+      "id": "M18-guarantee-closure",
+      "expected_rejection": "Cierre o ejecución no acreditados"
+    },
+    {
+      "id": "M19-downgrade-public-check",
+      "expected_rejection": "No se permite degradar una comprobación pública a declaración de custodia"
+    },
+    {
+      "id": "M20-missing-artifact",
+      "expected_rejection": "Número de artefactos incoherente"
+    }
+  ],
+  "claim_limits": {
+    "runtime_reexecuted": false,
+    "three_guarantees_closed": false,
+    "full_private_reproduction_public": false,
+    "public_hashes_are_execution_proof": false
+  },
+  "future_campaign_rule": {
+    "required_files": [
+      "manifiesto.json",
+      "testigos.json",
+      "verificar.mjs",
+      "estado.json"
+    ],
+    "freeze_specification_before_measurement": true,
+    "unavailable_package": "NO_RECIBIBLE",
+    "historical_campaigns": "Regularizar únicamente si se invocan como evidencia normativa; no repetir por esta regla."
+  }
+}
