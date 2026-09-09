@@ -1,2 +1,347 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"><title>Punto de control de rendimiento · Laboratorio SV</title><link rel="stylesheet" href="documentacion.css"></head><body><a class="skip" href="#contenido">Saltar al contenido</a><header><a class="brand" href="index.html">SV · Documentación de laboratorios</a><a href="../../">Playground Beta</a></header><div class="layout"><nav aria-label="Documentación"><a href="index.html">Fichas</a><a href="beta.html">Playground Beta</a><a href="vigilancia-y-coste.html">Vigilancia y coste</a><a href="verificacion-publica.html">Evidencia pública</a></nav><main id="contenido"><p class="eyebrow">LAB-2026-030 · 9 DE SEPTIEMBRE DE 2026</p><h1>Punto de control de rendimiento</h1><p class="lead">Referencia exploratoria y vigilancia de las evoluciones Beta del Lenguaje SV.</p><section class="note"><h2>Estado y decisión</h2><p><strong>No hay necesidad de refactorización acreditada por este expediente.</strong> Se conserva la realización y se vigilan las evoluciones pertinentes. Una refactorización requiere un defecto demostrado y autorización humana expresa.</p><p>Los tiempos proceden del informe recibido: no se han reproducido independientemente. La comprobación pública verifica la transcripción, el recálculo y las identidades documentales. No ejecuta SV ni acredita suficiencia universal.</p></section><h2>Lectura completa</h2><p><a href="medicion-030/punto-control.md">Consultar o descargar el punto corregido en Markdown</a>. Incluye las cuatro tablas de hoy, la procedencia, el protocolo mínimo de seguimiento y los pendientes.</p><h2>Qué queda medido</h2><p>El informe declara cinco calentamientos y 40 ejecuciones por punto, sobre el corte <code>0f434dbb6f6ea8f5f4e270c58c4ad4c5490d8c84</code>. El cronómetro abarca el proceso nativo completo, incluida la serialización de la IR. Restar la referencia de 1,450 ms no aísla el núcleo.</p><table><thead><tr><th>Familia</th><th>Puntos sobre el criterio exploratorio</th><th>Exponente frente a bytes</th></tr></thead><tbody><tr><td>Cantidad de objetos</td><td>3</td><td>≈0,954</td></tr><tr><td>Nodos del marco</td><td>4</td><td>≈1,050</td></tr><tr><td>Dígitos de parameter_id</td><td>0</td><td>No caracterizado</td></tr><tr><td>Longitud de identificador</td><td>1</td><td>No caracterizado</td></tr></tbody></table><p>El criterio de 0,480 ms procede del informe y no es un presupuesto del SV. En nodos, el coste por byte aumenta aproximadamente un 18,047 %. Estas cifras no demuestran complejidad asintótica.</p><h2>Seguimiento en futuras Beta</h2><p>Identificar cortes, fuentes, binarios y opciones; preservar muestras y tiempos totales; medir CPU y memoria máxima; comparar cargas equivalentes; verificar el juicio y la presentación ES/EN por separado. Medir cada destino en su entorno. Una ausencia de medida queda pendiente.</p><h2>Paquete público</h2><p><a href="medicion-030/manifiesto.json">Manifiesto</a> · <a href="medicion-030/testigos.json">Especificación</a> · <a href="medicion-030/estado.json">Estado</a> · <a href="medicion-030/verificar.mjs">Verificador</a></p><p>Después de descargar los cinco archivos en un directorio:</p><pre><code>node verificar.mjs
-node verificar.mjs --autoprueba</code></pre><p>La integridad frente a sustituciones exige contrastar el manifiesto con su huella en el asiento de publicación y el corte Git. El verificador no autentica al autor de la medición ni recupera muestras no entregadas.</p><h2>Continuidad</h2><p>La siguiente tarea del Lenguaje es la localización diagnóstica ES/EN. Este registro acompaña su observación futura; no cambia dominios, R1, gramática, IR ni plataforma.</p><p><a href="https://github.com/juantoniolloretegea/SV-matematica-semantica-cuaternaria/blob/lab/infraestructura-sv-2026-09-06/laboratorio-de-infraestructura-SV/registros/030-PUNTO_DE_CONTROL_DE_RENDIMIENTO_2026_09_09.md">Registro canónico privado (requiere acceso)</a> · <a href="index.html#ficha-030">Volver a la ficha registrada</a></p></main></div><footer>Observación documental y metrológica acotada. Los resultados históricos y los paneles de campañas anteriores conservan su alcance.</footer></body></html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"><title>Punto de control de rendimiento · Laboratorio SV</title><link rel="stylesheet" href="documentacion.css"></head><body><a class="skip" href="#contenido">Saltar al contenido</a><header><a class="brand" href="index.html">SV · Documentación de laboratorios</a><a href="../../">Playground Beta</a></header><div class="layout"><nav aria-label="Documentación"><a href="index.html">Fichas</a><a href="beta.html">Playground Beta</a><a href="vigilancia-y-coste.html">Vigilancia y coste</a><a href="verificacion-publica.html">Evidencia pública</a></nav><main id="contenido"><p class="eyebrow">LAB-2026-030 · DOCUMENTO COMPLETO</p><h1 id="punto-de-control-de-rendimiento-y-vigilancia-de-las-evoluciones-beta-del-lenguaje-sv">Punto de control de rendimiento y vigilancia de las evoluciones Beta del Lenguaje SV</h1><p class="lead">Medición exploratoria y seguimiento de las evoluciones Beta.</p>
+<p><a href="index.html#ficha-030">Volver a la ficha del índice</a> · <a href="medicion-030/punto-control.md" download="LAB-2026-030-punto-control.md">Descargar fuente Markdown (.md)</a></p>
+<details><summary>Índice del documento completo</summary><ol><li><a href="#1-mandato-alcance-y-gobierno">1. Mandato, alcance y gobierno</a></li><li><a href="#2-identidad-y-procedencia">2. Identidad y procedencia</a></li><li><a href="#3-magnitud-realmente-observada">3. Magnitud realmente observada</a></li><li><a href="#4-tablas-recibidas-de-la-medición-de-hoy">4. Tablas recibidas de la medición de hoy</a></li><li><a href="#5-recálculo-y-lectura-corregida">5. Recálculo y lectura corregida</a></li><li><a href="#6-seguimiento-mínimo-para-futuras-evoluciones-beta">6. Seguimiento mínimo para futuras evoluciones Beta</a></li><li><a href="#7-pendientes-y-alcance-de-la-comprobación-pública">7. Pendientes y alcance de la comprobación pública</a></li><li><a href="#8-fuentes-y-continuidad">8. Fuentes y continuidad</a></li></ol></details><article id="documento-completo">
+<p><strong>Registro:</strong> LAB-2026-030 · <strong>Fecha:</strong> 9 de septiembre de 2026.</p>
+<p><strong>Estado:</strong> medición exploratoria externa recibida y revisada; reproducción independiente pendiente. No hay necesidad de refactorización acreditada por este expediente.</p>
+<h2 id="1-mandato-alcance-y-gobierno">1. Mandato, alcance y gobierno</h2>
+<p>Juan Antonio Lloret Egea autoriza registrar el punto corregido y su ficha en la documentación del laboratorio, como referencia para las futuras evoluciones Beta. La finalidad es preservar el trabajo y detectar costes o regresiones antes de que se conviertan en problemas. No se establece una ventana obligatoria de refactorización ni se autoriza modificar el núcleo por razones de organización, tamaño de fichero o preferencia estética.</p>
+<p>Una refactorización sólo podrá proponerse ante un defecto concreto acreditado, con su causa, consecuencia, alternativa mínima y evidencia antes/después; requiere autorización humana expresa y separada. Los resultados favorables respaldan conservar la realización dentro del alcance medido. Ninguna prueba finita garantiza que nunca aparezca una necesidad futura; un dato ausente o no resoluble no se contabiliza como conformidad ni como defecto del núcleo.</p>
+<p>Esta inscripción no modifica gramática, IR, operaciones, perfiles, constituciones IMM/CYB, R1, plataforma ni secuencia de cierre. Los relojes del laboratorio son instrumentos externos de medida, no primitivas del SV. La continuación del Lenguaje es la localización diagnóstica ES/EN ya autorizada, antes de la recepción profesional R1.</p>
+<h2 id="2-identidad-y-procedencia">2. Identidad y procedencia</h2>
+<div class="table-wrap" role="region" aria-label="Tabla 1 del punto de control" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th scope="col">Objeto</th>
+<th scope="col">Identidad y alcance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Informe recibido</td>
+<td>«Medición de rendimiento del núcleo SV y procedimiento de la ventana de refactorización», atribuido a Claude por la Dirección, 09/09/2026.</td>
+</tr>
+<tr class="even">
+<td>Original bajo custodia</td>
+<td><code>030-informe-recibido.md</code>, 12 461 bytes; SHA-256 <code>6aa75bdd7be1a7f98e2bd6bc77a87d1fc8d1d1c6f12ca7a9a62ee5029c2cd084</code>. Se conserva sin corregirlo retrospectivamente.</td>
+</tr>
+<tr class="odd">
+<td>Corte declarado de medición</td>
+<td>Lenguaje <code>0f434dbb6f6ea8f5f4e270c58c4ad4c5490d8c84</code>; árbol comprobado <code>604a4f8a44cf9dae7e027008c9be2a2b3168935e</code>.</td>
+</tr>
+<tr class="even">
+<td>Binario declarado</td>
+<td><code>rust/target/release/sv-native</code>, 1 008 952 bytes; SHA-256 declarado <code>cb0db4112cea29ed01972f88a549b0add8bb43a261034f0e8f37cb04974b8e7a</code>. Esta recepción no verifica los bytes del binario utilizado por el autor.</td>
+</tr>
+<tr class="odd">
+<td>Construcción declarada</td>
+<td><code>release</code>; rustc 1.98.0 (88d9e12ae 2026-08-18); cargo 1.98.0 (797e8a9bc 2026-08-05). Comando completo y opciones adicionales no entregados.</td>
+</tr>
+<tr class="even">
+<td>Entorno declarado</td>
+<td>Linux 6.18.44-fc-v24 x86_64; Intel Xeon a 2,10 GHz; dos CPU; contenedor compartido, sin afinidad ni control de otras cargas. No se han verificado independientemente modelo completo ni cuotas efectivas.</td>
+</tr>
+<tr class="odd">
+<td>Protocolo declarado</td>
+<td>Cinco calentamientos y 40 ejecuciones por punto; mediana y desviación absoluta mediana (MAD). Muestras individuales y programa adicional de análisis no entregados.</td>
+</tr>
+<tr class="even">
+<td>Corte de continuidad del Lenguaje</td>
+<td><code>39203889e2896389907e9a2ddffec0f60dc259e5</code>, PR #89 en borrador; realización diagnóstica pendiente. No es el corte medido.</td>
+</tr>
+<tr class="odd">
+<td>Bases de esta recepción</td>
+<td>Laboratorio <code>673a81abf3046eba4437c0b109c3667d00fc7f08</code>; publicación Beta <code>97c91ec2b64e1cee6b2fe9697eb051dd5c49ddf0</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<p>El estado histórico de PR #88 consignado en el original no describe el estado posterior de integración. La inscripción conserva el corte de la medición, sin trasladar sus tiempos a otra cabeza.</p>
+<p>Se consultaron los Pilares completos, el acta de perfiles completa y la transición secuencial con sus relevos hasta §30 en el corte de continuidad del Lenguaje; el contrato diagnóstico y RETP-111/112; y el índice y régimen de evidencia pública del laboratorio. La medición externa no adquiere autoridad doctrinal.</p>
+<h2 id="3-magnitud-realmente-observada">3. Magnitud realmente observada</h2>
+<p>El arnés citado mide la duración de <code>subprocess.run([sv-native, fuente])</code>, con stdout y stderr capturados. La CLI lee la fuente, compila, serializa la IR y escribe el resultado antes de terminar. La duración incluye creación y terminación de proceso, lectura, compilación, serialización y transporte de salida. La generación de fuentes y el cálculo de la huella de salida quedan fuera del intervalo cronometrado del arnés.</p>
+<p>Por tanto, la referencia de 106 bytes, mediana declarada <strong>1,450 ms</strong> y MAD declarada <strong>0,096 ms</strong>, no mide exclusivamente el arranque. Restarla estima una diferencia respecto de esa carga; no aísla el núcleo. Los tiempos siguientes son las diferencias publicadas por el autor, no tiempos totales reproducidos en esta recepción. No se reconstruyen las medianas brutas sumando la referencia, porque el tratamiento de los ceros no está documentado.</p>
+<p>El umbral <strong>0,480 ms = 5 × MAD de la referencia</strong> se conserva como criterio exploratorio del original, no como presupuesto SV, intervalo de confianza ni límite de detección acreditado. La incertidumbre de la resta incluye cada carga y su referencia. Los ceros requieren aclarar redondeo, recorte o censura. El ruido de un entorno compartido puede afectar tanto a valores absolutos como a la forma de la curva.</p>
+<h2 id="4-tablas-recibidas-de-la-medición-de-hoy">4. Tablas recibidas de la medición de hoy</h2>
+<p>La columna de clasificación sólo aplica el criterio exploratorio anterior. «Supera» no significa conformidad de rendimiento ni suficiencia estadística.</p>
+<div class="table-wrap" role="region" aria-label="Tabla 2 del punto de control" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th scope="col">Familia</th>
+<th scope="col">Escala</th>
+<th scope="col">Bytes de fuente</th>
+<th scope="col">Diferencia publicada (ms)</th>
+<th scope="col">Supera 0,480 ms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N02, cantidad de objetos</td>
+<td>1</td>
+<td>27</td>
+<td>0,000</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>N02, cantidad de objetos</td>
+<td>100</td>
+<td>2790</td>
+<td>0,111</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>N02, cantidad de objetos</td>
+<td>500</td>
+<td>14390</td>
+<td>1,009</td>
+<td>Sí</td>
+</tr>
+<tr class="even">
+<td>N02, cantidad de objetos</td>
+<td>2000</td>
+<td>58890</td>
+<td>3,814</td>
+<td>Sí</td>
+</tr>
+<tr class="odd">
+<td>N02, cantidad de objetos</td>
+<td>5000</td>
+<td>148890</td>
+<td>9,397</td>
+<td>Sí</td>
+</tr>
+<tr class="even">
+<td>N03, nodos del marco</td>
+<td>1</td>
+<td>720</td>
+<td>0,000</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>N03, nodos del marco</td>
+<td>100</td>
+<td>22257</td>
+<td>0,828</td>
+<td>Sí</td>
+</tr>
+<tr class="even">
+<td>N03, nodos del marco</td>
+<td>250</td>
+<td>55707</td>
+<td>2,185</td>
+<td>Sí</td>
+</tr>
+<tr class="odd">
+<td>N03, nodos del marco</td>
+<td>1000</td>
+<td>222957</td>
+<td>9,102</td>
+<td>Sí</td>
+</tr>
+<tr class="even">
+<td>N03, nodos del marco</td>
+<td>2000</td>
+<td>450957</td>
+<td>19,804</td>
+<td>Sí</td>
+</tr>
+<tr class="odd">
+<td>N01, dígitos de parameter_id</td>
+<td>1</td>
+<td>106</td>
+<td>0,000</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>N01, dígitos de parameter_id</td>
+<td>1000</td>
+<td>1105</td>
+<td>0,000</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>N01, dígitos de parameter_id</td>
+<td>5000</td>
+<td>5105</td>
+<td>0,000</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>N01, dígitos de parameter_id</td>
+<td>20000</td>
+<td>20105</td>
+<td>0,079</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>N01, dígitos de parameter_id</td>
+<td>50000</td>
+<td>50105</td>
+<td>0,348</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>N02, longitud de identificador</td>
+<td>8</td>
+<td>33</td>
+<td>0,000</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>N02, longitud de identificador</td>
+<td>1024</td>
+<td>1049</td>
+<td>0,000</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>N02, longitud de identificador</td>
+<td>4096</td>
+<td>4121</td>
+<td>0,000</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>N02, longitud de identificador</td>
+<td>16384</td>
+<td>16409</td>
+<td>0,065</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>N02, longitud de identificador</td>
+<td>65536</td>
+<td>65561</td>
+<td>0,654</td>
+<td>Sí</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-recálculo-y-lectura-corregida">5. Recálculo y lectura corregida</h2>
+<p>Se ajusta por mínimos cuadrados <code>ln(diferencia_ms) = intercepto + exponente × ln(tamaño)</code> sólo con los puntos que superan 0,480 ms. Se publican por separado ajustes frente a escala y frente a bytes. Los cálculos proceden de cifras redondeadas del informe, no de sus muestras. El verificador público permite repetir esta aritmética.</p>
+<div class="table-wrap" role="region" aria-label="Tabla 3 del punto de control" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th scope="col">Familia</th>
+<th scope="col">Puntos</th>
+<th scope="col">Exponente / escala</th>
+<th scope="col">Exponente / bytes</th>
+<th scope="col">Coste inicial → final (ns/byte)</th>
+<th scope="col">Recorrido de escala</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N02, cantidad de objetos</td>
+<td>3</td>
+<td>0,968297</td>
+<td>0,954035</td>
+<td>70,118 → 63,114</td>
+<td>×10</td>
+</tr>
+<tr class="even">
+<td>N03, nodos del marco</td>
+<td>4</td>
+<td>1,053915</td>
+<td>1,050236</td>
+<td>37,202 → 43,915</td>
+<td>×20</td>
+</tr>
+<tr class="odd">
+<td>N01, dígitos</td>
+<td>0</td>
+<td>No estimado</td>
+<td>No estimado</td>
+<td>No caracterizado</td>
+<td>No caracterizado</td>
+</tr>
+<tr class="even">
+<td>N02, identificador</td>
+<td>1</td>
+<td>No estimado</td>
+<td>No estimado</td>
+<td>Un punto no define curva</td>
+<td>No caracterizado</td>
+</tr>
+</tbody>
+</table></div>
+<p>Las dos primeras familias muestran crecimiento aproximadamente proporcional en el intervalo ensayado. No demuestran complejidad lineal asintótica ni ausencia de cuellos de botella fuera del ensayo. El tramo útil es de una década de escala en N02 y aproximadamente 1,301 décadas en N03; no son dos órdenes de magnitud. En N03, el coste por byte crece aproximadamente <strong>18,047 %</strong> entre extremos; su significación requiere la dispersión de las muestras.</p>
+<p>Los caudales derivados de los últimos puntos son aproximadamente 15,8 y 22,8 MB/s decimales de fuente por tiempo incremental. No se presentan como capacidad general del compilador ni del núcleo. El identificador de longitud 65536 sí supera el criterio exploratorio, pero un solo punto no caracteriza su crecimiento.</p>
+<p>El generador N03 mantiene un grafo sin aristas, una CellSpec sintética de b=3 y vacíos los resultados de evaluación, puertas, supervisión y criticidades. El generador N01 varía parameter_id, no toda la aritmética Nat. Los programas generados son EN. No se ha medido aquí ensamblaje ES/EN, ejecución profesional IMM/CYB, LIG, álgebra material, WASI ni navegador. La sonda sintética no constituye geometría, agente o arquitectura de un dominio.</p>
+<p><strong>Dictamen:</strong> este expediente no acredita un cuello de botella que justifique refactorizar. Tampoco acredita suficiencia universal. Mantener la realización y observar sus evoluciones es la decisión respaldada en este alcance.</p>
+<h2 id="6-seguimiento-mínimo-para-futuras-evoluciones-beta">6. Seguimiento mínimo para futuras evoluciones Beta</h2>
+<p>Antes de medir una candidata, fijar entradas, instrumento, oráculos y criterios aplicables en un corte identificable. No escoger después los tamaños o límites para obtener un resultado favorable. La ausencia de presupuesto impide declarar su cumplimiento; no impide detectar una regresión reproducible frente a una referencia comparable.</p>
+<div class="table-wrap" role="region" aria-label="Tabla 4 del punto de control" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th scope="col">Control</th>
+<th scope="col">Medida mínima</th>
+<th scope="col">Decisión y límite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identidad y validez</td>
+<td>Corte, árbol, fuentes y binarios con huellas; comandos y opciones; aceptación/rechazo y resultado esperado</td>
+<td>Una entrada o un artefacto distinto se registra por separado; no se atribuye una mejora a haber omitido trabajo o guardas.</td>
+</tr>
+<tr class="even">
+<td>CLI nativa</td>
+<td>Duración total, muestras, calentamientos, mediana, MAD y percentiles con número de muestras y método</td>
+<td>Conservar totales; las diferencias son auxiliares y conservan incertidumbre y signo.</td>
+</tr>
+<tr class="odd">
+<td>Recursos</td>
+<td>CPU de usuario/sistema y memoria residente máxima; bytes de entrada y salida, tamaño de binario</td>
+<td>El arnés original ya recoge CPU/RSS en ejecuciones separadas. Declarar esa separación y sus políticas de salida; un tiempo favorable no sustituye estas medidas.</td>
+</tr>
+<tr class="even">
+<td>Escalado</td>
+<td>Objetos, longitudes, nodos y, cuando afecten a la modificación, aristas, estados, operaciones y ensamblajes</td>
+<td>No extrapolar una familia vacía o sintética a todo el trabajo. Conservar puntos intermedios y residuos del ajuste.</td>
+</tr>
+<tr class="odd">
+<td>Comparación</td>
+<td>Referencia y candidata bajo condiciones comparables, cargas idénticas e intercalación/orden declarado</td>
+<td>Investigar una diferencia reproducible y su efecto práctico; no imponer un porcentaje universal sin justificarlo antes. Entorno local o CI controlado pueden servir.</td>
+</tr>
+<tr class="even">
+<td>Perfiles ES/EN</td>
+<td>Casos equivalentes y ensamblaje mixto, incluidos rechazo temprano y tardío cuando sean pertinentes</td>
+<td>Mismo juicio y causa canónica; prosa, tamaño y huella pueden diferir legítimamente. La localización añade trabajo y se declara ese cambio funcional.</td>
+</tr>
+<tr class="odd">
+<td>Destinos</td>
+<td>Nativo, WASI y navegador por separado; inicialización/carga y ejecución estable diferenciadas</td>
+<td>No trasladar una basal entre destinos ni declarar probado uno por el resultado de otro.</td>
+</tr>
+<tr class="even">
+<td>Corrección</td>
+<td>Corpus y mutaciones vigentes, oráculos de decisión, procedencia y presentación</td>
+<td>Los recuentos históricos no congelan el corpus. Investigar supervivientes y aplicabilidad; el porcentaje de mutación no es una certificación de seguridad.</td>
+</tr>
+<tr class="odd">
+<td>Resolución insuficiente</td>
+<td>Aumentar señal o usar, si procede, un banco dentro del proceso con entrada y resultado efectivamente consumidos</td>
+<td>Es otro instrumento; delimitar compilación, serialización, asignación/liberación y cachés. No mezclar sus cifras con las de proceso.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Estos controles acompañan cambios pertinentes y recepciones Beta; no ordenan repetir indiscriminadamente todas las campañas por una edición documental. La evidencia afectada se decide por el alcance del cambio. No se introduce dependencia productiva ni se requiere instalar una biblioteca de medición en el núcleo.</p>
+<p>Si aparece una desviación, primero se verifica el instrumento, se reproduce, se localiza el coste y se documenta la consecuencia. La corrección mínima y su prueba discriminante preceden a cualquier propuesta de reorganización amplia. Medir un crecimiento superlineal no autoriza por sí solo una refactorización; medir crecimiento lineal tampoco descarta un coste excesivo.</p>
+<h2 id="7-pendientes-y-alcance-de-la-comprobación-pública">7. Pendientes y alcance de la comprobación pública</h2>
+<p>Pendientes del informe recibido: 40 muestras de cada punto y de la referencia; orden de ejecución; tiempos totales; significado de ceros; dispersión por carga; script exacto ampliado y de análisis; opciones de construcción; fuentes y salidas capturadas; confirmación independiente del binario y entorno; CPU/RSS de esa ejecución.</p>
+<p>Los tamaños de archivos, proporción de código de pruebas y avisos de compilador del original son datos de estructura declarados, no métricas de velocidad ni de memoria en producción. No se incorporan como alarma de refactorización ni se presentan aquí como censo reproducido.</p>
+<p>El paquete público de este registro contiene manifiesto, especificación, verificador y estado, más este punto Markdown. Su alcance es identidad documental, transcripción y recálculo de tablas, y ausencia de atribuciones de ejecución o suficiencia no acreditadas. No reproduce tiempos, no ejecuta SV y no convierte datos declarados en medidas independientes. La huella del manifiesto queda en el asiento de publicación externo, sin autorreferencia circular. Los paneles de campañas anteriores mantienen sus recuentos.</p>
+<h2 id="8-fuentes-y-continuidad">8. Fuentes y continuidad</h2>
+<ul>
+<li><a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/0f434dbb6f6ea8f5f4e270c58c4ad4c5490d8c84/tests/r0_8_scale.py">Arnés exacto R0-8</a> y <a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/0f434dbb6f6ea8f5f4e270c58c4ad4c5490d8c84/rust/sv_native/src/main.rs">CLI del mismo corte</a>.</li>
+<li><a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/39203889e2896389907e9a2ddffec0f60dc259e5/docs/calidad/PILARES_Y_RESTRICCIONES_DE_DISENO_DEL_LENGUAJE_DE_COMPUTACION_SV_2026_09_05.md">Pilares</a>, <a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/39203889e2896389907e9a2ddffec0f60dc259e5/docs/calidad/ACTA_TECNICA_DE_PERFILES_CONTRATOS_Y_ENSAMBLAJE_DEL_LENGUAJE_SV_2026_09_06.md">perfiles</a> y <a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/39203889e2896389907e9a2ddffec0f60dc259e5/docs/dominios/inmunologia/ACTA_DE_CONFORMIDAD_DE_TRANSICION_SECUENCIAL_DESDE_OP-IMM-001_AL_LENGUAJE_SV_2026_09_03.md#adenda-secuencia-20260906">secuencia rectora</a>.</li>
+<li><a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/39203889e2896389907e9a2ddffec0f60dc259e5/docs/calidad/CONTRATO_DIAGNOSTICO_ESTRUCTURADO_Y_LOCALIZACION_ES_EN_2026_09_09.md">Contrato de localización ES/EN</a> e <a href="https://github.com/juantoniolloretegea/SV-lenguaje-de-computacion/blob/39203889e2896389907e9a2ddffec0f60dc259e5/docs/calidad/INVENTARIO_DE_EMISORES_DIAGNOSTICOS_Y_MIGRACION_ES_EN_2026_09_09.md">inventario RETP-112</a>.</li>
+<li><a href="https://google.github.io/benchmark/reducing_variance.html">Variabilidad de medición, Google Benchmark</a> y <a href="https://llvm.org/docs/Benchmarking.html">precauciones de medición, LLVM</a>. Referencias metodológicas, sin adopción de dependencias.</li>
+<li><a href="https://juantoniolloretegea.github.io/SVcustos-dataset/laboratorio-de-infraestructura-SV/documentacion/">Documentación del laboratorio</a> y <a href="https://juantoniolloretegea.github.io/SVcustos-dataset/laboratorio-de-infraestructura-SV/documentacion/punto-control-rendimiento.html">ficha de este punto</a>.</li>
+</ul>
+<p>Tras este asiento se retoma la localización desde PR #89. Esta recepción documental no prueba la localización ni autoriza su despliegue, no vincula referencias protegidas R1 y no constituye una operación de los dominios.</p>
+</article><section aria-labelledby="paquete-publico"><h2 id="paquete-publico">Paquete público de comprobación</h2>
+<p><a href="medicion-030/manifiesto.json">Manifiesto</a> · <a href="medicion-030/testigos.json">Especificación</a> · <a href="medicion-030/estado.json">Estado</a> · <a href="medicion-030/verificar.mjs">Verificador</a> · <a href="medicion-030/punto-control.md" download="LAB-2026-030-punto-control.md">Fuente Markdown</a></p>
+<p>Con los cinco archivos descargados en el mismo directorio, se puede comprobar la consistencia documental mediante <code>node verificar.mjs</code> y ejecutar sus controles negativos mediante <code>node verificar.mjs --autoprueba</code>. No reproduce los tiempos de SV.</p>
+<details><summary>Identidad de la fuente de esta vista</summary><p>SHA-256 del Markdown: <code>b7dd8bb9111c7719e888a9a0cadec72a80334a814a00801ee00491727af44937</code>. La vista HTML conserva el texto y las tablas del registro.</p></details></section>
+<p><a href="index.html#ficha-030">Volver a la ficha del índice</a></p></main></div><footer>Observación documental y metrológica acotada. Los resultados históricos y los paneles de campañas anteriores conservan su alcance.</footer></body></html>
