@@ -1,0 +1,33 @@
+{
+  "schema": "sv-lab-030-manifiesto-v1",
+  "id": "LAB-2026-030",
+  "alcance": "Identidad y consistencia documental, no reproducción de tiempos ni autenticidad de medida. Confirmar esta huella con el asiento externo.",
+  "fuente": {
+    "commit_declarado": "0f434dbb6f6ea8f5f4e270c58c4ad4c5490d8c84",
+    "informe_original_sha256": "6aa75bdd7be1a7f98e2bd6bc77a87d1fc8d1d1c6f12ca7a9a62ee5029c2cd084",
+    "informe_original_bytes": 12461,
+    "muestras_brutas": "NO_ENTREGADAS"
+  },
+  "artefactos": [
+    {
+      "ruta": "estado.json",
+      "bytes": 1866,
+      "sha256": "13abe6e89e9b5863bfa7f40aff663338f0f92db3db9d62dd01cdf7b9033029eb"
+    },
+    {
+      "ruta": "punto-control.md",
+      "bytes": 15970,
+      "sha256": "b7dd8bb9111c7719e888a9a0cadec72a80334a814a00801ee00491727af44937"
+    },
+    {
+      "ruta": "testigos.json",
+      "bytes": 1918,
+      "sha256": "2857f5e3bc3c8993d932ff4dfb7fbc83120790360144bfbd3ea0096471339e07"
+    },
+    {
+      "ruta": "verificar.mjs",
+      "bytes": 3784,
+      "sha256": "dface6a0fa0a0abf4deb7825f59788e1931080173dd26c509d48084f5890d92d"
+    }
+  ]
+}

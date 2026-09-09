@@ -475,5 +475,19 @@
     "phase02": "NOT_EXECUTED",
     "included_in_panel_totals": false,
     "note": "16 PASS y 1 ERROR en 17 casos. A04 ERROR se referencia una vez desde el panel; los 16 PASS no se suman al total 55 del panel."
+  },
+  "punto_control030": {
+    "id": "LAB-2026-030",
+    "date": "2026-09-09",
+    "status": "MEDICION_EXPLORATORIA_RECIBIDA_Y_REVISADA",
+    "page": "punto-control-rendimiento.html",
+    "record": "registros/030-PUNTO_DE_CONTROL_DE_RENDIMIENTO_2026_09_09.md",
+    "package": "medicion-030/",
+    "source_commit": "0f434dbb6f6ea8f5f4e270c58c4ad4c5490d8c84",
+    "raw_samples_available": false,
+    "new_sv_executions": 0,
+    "refactoring_authorized": false,
+    "beta_followup": true,
+    "scope": "Transcripción y recálculo públicos; tiempos declarados, sin reproducción independiente."
   }
 }

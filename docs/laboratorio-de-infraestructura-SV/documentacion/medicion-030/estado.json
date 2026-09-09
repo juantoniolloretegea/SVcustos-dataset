@@ -1,0 +1,132 @@
+{
+  "schema": "sv-lab-030-estado-v1",
+  "id": "LAB-2026-030",
+  "fecha": "2026-09-09",
+  "tablas": {
+    "N02_objetos": [
+      [
+        1,
+        27,
+        0
+      ],
+      [
+        100,
+        2790,
+        0.111
+      ],
+      [
+        500,
+        14390,
+        1.009
+      ],
+      [
+        2000,
+        58890,
+        3.814
+      ],
+      [
+        5000,
+        148890,
+        9.397
+      ]
+    ],
+    "N03_nodos": [
+      [
+        1,
+        720,
+        0
+      ],
+      [
+        100,
+        22257,
+        0.828
+      ],
+      [
+        250,
+        55707,
+        2.185
+      ],
+      [
+        1000,
+        222957,
+        9.102
+      ],
+      [
+        2000,
+        450957,
+        19.804
+      ]
+    ],
+    "N01_digitos": [
+      [
+        1,
+        106,
+        0
+      ],
+      [
+        1000,
+        1105,
+        0
+      ],
+      [
+        5000,
+        5105,
+        0
+      ],
+      [
+        20000,
+        20105,
+        0.079
+      ],
+      [
+        50000,
+        50105,
+        0.348
+      ]
+    ],
+    "N02_identificador": [
+      [
+        8,
+        33,
+        0
+      ],
+      [
+        1024,
+        1049,
+        0
+      ],
+      [
+        4096,
+        4121,
+        0
+      ],
+      [
+        16384,
+        16409,
+        0.065
+      ],
+      [
+        65536,
+        65561,
+        0.654
+      ]
+    ]
+  },
+  "datos_temporales": "DECLARADOS_POR_INFORME_RECIBIDO",
+  "muestras_brutas_disponibles": false,
+  "ejecuciones_sv_nuevas": 0,
+  "necesidad_refactorizacion_acreditada": false,
+  "suficiencia_universal_acreditada": false,
+  "pendientes": [
+    "Muestras brutas y orden",
+    "Script adicional y tratamiento de ceros",
+    "Verificación del binario y entorno",
+    "CPU y RSS de la ejecución recibida"
+  ],
+  "exponentes_bytes": [
+    0.9540352199622758,
+    1.0502360350038824,
+    null,
+    null
+  ]
+}

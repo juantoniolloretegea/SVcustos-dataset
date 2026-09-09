@@ -1,0 +1,138 @@
+{
+  "schema": "sv-lab-030-especificacion-v1",
+  "alcance": "Consistencia documental; sin reproducción de tiempos ni ejecución SV.",
+  "columnas": [
+    "escala",
+    "bytes",
+    "diferencia_declarada_ms"
+  ],
+  "tablas_transcritas": {
+    "N02_objetos": [
+      [
+        1,
+        27,
+        0
+      ],
+      [
+        100,
+        2790,
+        0.111
+      ],
+      [
+        500,
+        14390,
+        1.009
+      ],
+      [
+        2000,
+        58890,
+        3.814
+      ],
+      [
+        5000,
+        148890,
+        9.397
+      ]
+    ],
+    "N03_nodos": [
+      [
+        1,
+        720,
+        0
+      ],
+      [
+        100,
+        22257,
+        0.828
+      ],
+      [
+        250,
+        55707,
+        2.185
+      ],
+      [
+        1000,
+        222957,
+        9.102
+      ],
+      [
+        2000,
+        450957,
+        19.804
+      ]
+    ],
+    "N01_digitos": [
+      [
+        1,
+        106,
+        0
+      ],
+      [
+        1000,
+        1105,
+        0
+      ],
+      [
+        5000,
+        5105,
+        0
+      ],
+      [
+        20000,
+        20105,
+        0.079
+      ],
+      [
+        50000,
+        50105,
+        0.348
+      ]
+    ],
+    "N02_identificador": [
+      [
+        8,
+        33,
+        0
+      ],
+      [
+        1024,
+        1049,
+        0
+      ],
+      [
+        4096,
+        4121,
+        0
+      ],
+      [
+        16384,
+        16409,
+        0.065
+      ],
+      [
+        65536,
+        65561,
+        0.654
+      ]
+    ]
+  },
+  "criterio_exploratorio_ms": 0.48,
+  "puntos_superiores": [
+    3,
+    4,
+    0,
+    1
+  ],
+  "controles": [
+    "transcripción exacta",
+    "recálculo de pendientes",
+    "estado de ejecución y límites",
+    "identidad de archivos"
+  ],
+  "negativos": [
+    "alteración de tiempo con huellas recalculadas",
+    "pendiente falseada",
+    "ejecución indebidamente atribuida",
+    "campo ajeno en el estado"
+  ]
+}
