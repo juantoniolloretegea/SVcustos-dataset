@@ -1,0 +1,162 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"><title>Aislamiento auxiliar · LAB-2026-033</title><link rel="stylesheet" href="documentacion.css"></head><body><a class="skip" href="#contenido">Saltar al contenido</a><header><a class="brand" href="index.html">SV <span>Documentación de laboratorios</span></a></header><div class="layout"><nav aria-label="Navegación"><a href="index.html#ficha-033">Ficha registrada</a><a href="punto-control-rendimiento.html">Punto de control de rendimiento</a></nav><main id="contenido"><p><a href="aislamiento-033/manifiesto.json">Manifiesto</a> · <a href="aislamiento-033/testigos.json">Testigos</a> · <a href="aislamiento-033/estado.json">Estado y muestras</a> · <a href="aislamiento-033/verificar.mjs">Verificador</a></p><h1 id="lab-2026-033--aislamiento-del-auxiliar-y-verificación-independiente">LAB-2026-033 · Aislamiento del auxiliar y verificación independiente</h1>
+<p><strong>Fecha:</strong> 9 de septiembre de 2026. <strong>Estado:</strong> ensayo material acotado, con evidencia pública de consistencia. <strong>Dirección:</strong> Juan Antonio Lloret Egea. <strong>Fuente final:</strong> <code>d870febdc145890105dbab0b5b58658c19fef217</code>. <strong>Ejecución final:</strong> <code>34415054643</code>.</p>
+<h2 id="1-dictamen">1. Dictamen</h2>
+<p>La separación propuesta es realizable en el caso sintético ensayado: un proceso auxiliar Rust sometido a restricciones materiales comunica con un receptor Rust independiente. La segunda tanda produjo <strong>33 resultados conformes a sus expectativas</strong>, incluidos controles deliberadamente inseguros. Esto no significa 33 ataques bloqueados: también se cuentan respuestas útiles, negativa legítima y controles que debían permitir el defecto.</p>
+<p>El resultado más relevante es la diferencia entre aislamiento y admisión. El canal protegido pudo transportar una respuesta incompleta. Un receptor que creía al auxiliar la aceptó; el receptor que conservaba su propia cobertura y comprobaba los datos la rechazó. La separación de memoria y canales no sustituye la comprobación de la evidencia.</p>
+<p>Se apoya continuar estudiando un componente auxiliar subordinado, con un único núcleo semántico SV. Esta tanda no acredita necesidad de añadir un primitivo nuclear, crear una segunda semántica ni refactorizar SV. No ejecuta el núcleo ni una IA: comprueba una realización de infraestructura con auxiliares sintéticos y fallos introducidos expresamente.</p>
+<h2 id="2-realización-y-autoridad">2. Realización y autoridad</h2>
+<p>El receptor crea tuberías anónimas y conserva el encargo, la cobertura y los datos esperados. El auxiliar extrae tres registros de cinco. Uno de ellos contiene una revocación sintética que no puede omitirse ni cambiarse por «vigente». Sólo el receptor registra el efecto sintético después de comprobar la respuesta y la autorización local del ensayo.</p>
+<p>El mensaje liga petición, época, procedencia IA, operación, perfil ES/EN y registros. Es un contrato experimental; sus etiquetas no son vocabulario nuevo de SV. No se autentica una identidad remota mediante estas tuberías ni se acredita origen humano de la autorización. Las expectativas del receptor son independientes del contenido recibido; no se emplea otra IA como juez.</p>
+<p>Linux aplica espacios virtuales separados y seccomp con lista permitida. El filtro sólo permite leer del descriptor del canal de entrada y escribir en el de salida, además de un conjunto mínimo de llamadas de memoria privada y ejecución. Se cierran descriptores adicionales y se fijan límites antes de instalar el filtro. El máximo de mensaje es 4096 bytes; el límite de espacio virtual es 64 MiB y el plazo nominal de respuesta, 200 ms. Son parámetros de laboratorio, sin validez como presupuestos de producción.</p>
+<p>La imagen y el arranque que instalan la protección, el receptor y el sistema operativo pertenecen a la base de confianza. Las sondas adversariales se ejecutan después de instalarla. Rust y el filtro no protegen frente a una sustitución hostil de ese arranque ni frente al administrador, kernel o hipervisor. Se usa el mismo UID en procesos diferentes; no se atribuye a ese hecho una protección autónoma.</p>
+<h2 id="3-qué-se-comprobó">3. Qué se comprobó</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Familia</th>
+<th>Observación material</th>
+<th>Alcance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Utilidad</td>
+<td>Respuestas ES y EN completas admitidas; dos filas en el registro de efectos</td>
+<td>Extracción sintética; no localización del diagnóstico ni consejo profesional</td>
+</tr>
+<tr class="even">
+<td>Integridad</td>
+<td>Rechazo de omisión, sustitución, duplicado y referencia inventada</td>
+<td>El receptor dispone de cobertura y valores esperados independientes</td>
+</tr>
+<tr class="odd">
+<td>Ligaduras</td>
+<td>Rechazo de otra petición, época, procedencia, operación o perfil</td>
+<td>Estado local del ensayo; no continuidad entre máquinas o reinicios</td>
+</tr>
+<tr class="even">
+<td>Autoridad</td>
+<td>Respuesta correcta rechazada tras revocación sintética; explicación de conformidad no admitida</td>
+<td>No acredita consentimiento humano ni veracidad de una explicación</td>
+</tr>
+<tr class="odd">
+<td>Transporte</td>
+<td>Distinción entre negativa, bytes inválidos, mensaje excesivo, truncamiento, cierre y espera agotada</td>
+<td>No se usa <code>Tri.U</code>; no se prueba un protocolo distribuido</td>
+</tr>
+<tr class="even">
+<td>Recursos</td>
+<td>Reserva de 128 MiB denegada; bucle sin respuesta terminado; salida excesiva rechazada</td>
+<td>Límite de espacio virtual y supervisión; no cota dura de CPU o tiempo</td>
+</tr>
+<tr class="odd">
+<td>Accesos fuera del canal</td>
+<td>Denegados lectura/escritura del centinela, <code>/proc</code>, socket, duplicación de descriptor, creación de hijo, lectura de memoria del receptor y escritura por otro descriptor</td>
+<td>Sondas del proceso protegido; no todos los canales laterales</td>
+</tr>
+<tr class="even">
+<td>Controles sin filtro</td>
+<td>Escritura del centinela y creación de socket permitidas</td>
+<td>Confirma que esos resultados no proceden sólo del entorno</td>
+</tr>
+<tr class="odd">
+<td>Receptor defectuoso</td>
+<td>La omisión llega por el canal y es aceptada por el control débil</td>
+<td>Demuestra insuficiencia de confiar sólo en el controlador</td>
+</tr>
+<tr class="even">
+<td>Recuperación y concurrencia</td>
+<td>31 peticiones correctas de recuperación; otro auxiliar responde con el adversario vivo antes y después</td>
+<td>No demuestra reparto justo de recursos ni ausencia de interferencia temporal</td>
+</tr>
+</tbody>
+</table></div>
+<p>La primera tanda (<code>34414792047</code>) había dado 33 PASS internos. Su observador de concurrencia no confirmaba entrada en la rama adversarial ni vida antes/después; ese resultado se conserva con alcance limitado. El sucesor incorpora ambas comprobaciones y <code>companion.json</code>, con los cuatro indicadores verdaderos. No se borran ni se suman las dos tandas como si fueran 66 obligaciones diferentes.</p>
+<h2 id="4-coste-observado">4. Coste observado</h2>
+<p>Ambas tandas usan Rust 1.98.0, compilación release <code>--locked --offline</code>, cero crates externos, Ubuntu 24.04 x86-64, kernel <code>6.17.0-1022-azure</code> y dos CPU lógicas disponibles. Las máquinas expusieron modelos distintos; el nombre comercial de 64 núcleos del EPYC no describe la cuota del trabajo. RAM visible: aproximadamente 8,13 millones de KiB. Los archivos cgroup consultados no estaban disponibles; no se infieren cuotas adicionales.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Ejecución / CPU expuesta</th>
+<th style="text-align: right;">Directa (µs)</th>
+<th style="text-align: right;">IPC persistente (µs)</th>
+<th style="text-align: right;">Arranque y primera respuesta (µs)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>34414792047 · Xeon Platinum 8573C</td>
+<td style="text-align: right;">1.721</td>
+<td style="text-align: right;">13.361</td>
+<td style="text-align: right;">496.986</td>
+</tr>
+<tr class="even">
+<td>34415054643 · EPYC 7763</td>
+<td style="text-align: right;">2.400</td>
+<td style="text-align: right;">26.459</td>
+<td style="text-align: right;">696.818</td>
+</tr>
+</tbody>
+</table></div>
+<p>Las tandas se muestran separadas. La diferencia entre ellas no es una comparación controlada de procesadores ni prueba una regresión del componente. La ruta directa realiza la misma extracción y verificación dentro del receptor; IPC añade serialización, tuberías, proceso protegido y planificación. La mediana final aumenta aproximadamente 24,06 µs para esta carga pequeña. No se mide inferencia de modelos, red remota ni rendimiento de SV.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Ruta final</th>
+<th style="text-align: right;">Muestras útiles</th>
+<th style="text-align: right;">Mediana (µs)</th>
+<th style="text-align: right;">MAD (µs)</th>
+<th style="text-align: right;">p95 (µs)</th>
+<th style="text-align: right;">Máximo observado (µs)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Directa</td>
+<td style="text-align: right;">1500</td>
+<td style="text-align: right;">2.400</td>
+<td style="text-align: right;">0.266</td>
+<td style="text-align: right;">2.915</td>
+<td style="text-align: right;">21.281</td>
+</tr>
+<tr class="even">
+<td>IPC persistente</td>
+<td style="text-align: right;">1500</td>
+<td style="text-align: right;">26.459</td>
+<td style="text-align: right;">5.630</td>
+<td style="text-align: right;">47.149</td>
+<td style="text-align: right;">115.709</td>
+</tr>
+<tr class="odd">
+<td>Arranque + primera respuesta</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">696.818</td>
+<td style="text-align: right;">20.038</td>
+<td style="text-align: right;">757.212</td>
+<td style="text-align: right;">775.476</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cada ruta persistente tiene tres bloques de 50 calentamientos y 500 muestras útiles; se alterna el orden directa/IPC. El arranque tiene cinco calentamientos y 25 muestras útiles. Se conservan 3330 muestras brutas por tanda, 3025 útiles. El intervalo de arranque comprende creación del hijo, arranque, instalación de restricciones, primera respuesta y comprobación; termina antes de la limpieza final del hijo. <code>Instant</code> mide tiempo transcurrido. No se fija un SLO por estas medianas.</p>
+<p>En la segunda tanda las tres lecturas externas de RSS del auxiliar fueron <strong>2012, 2044 y 2016 KiB</strong>, antes de los bloques; no son su máximo bajo cualquier carga. <code>/usr/bin/time</code> informó 0,02 s de CPU de usuario, 0,06 s de sistema y 0,09 s de tiempo transcurrido para el banco combinado, con 2172 KiB de RSS máximo informado; no es la suma de la memoria simultánea de todos los procesos ni una atribución de CPU por ruta. El binario ocupa <strong>624304 bytes</strong>. El límite de 64 MiB es de espacio virtual, distinto del RSS.</p>
+<p>El coste de desarrollo, revisión, mantenimiento, integración, hardware final y proveedores IA no se ha medido en dinero. La viabilidad observada es técnica y parcial; no constituye un precio ni un presupuesto de despliegue.</p>
+<h2 id="5-límites-que-permanecen-abiertos">5. Límites que permanecen abiertos</h2>
+<p>No se ha ejecutado una IA real, ni medido su utilidad profesional o sus sesgos. Una procedencia bien ligada no demuestra verdad; un resumen puede omitir información fuera de la cobertura conocida. El caso permite comprobar completitud porque su universo sintético está fijado; esa condición no se presume en Ciberseguridad o Inmunología.</p>
+<p>La protección se refiere a comportamiento dentro de un compartimento ya iniciado. No se han probado sustitución de binario antes del filtro, código de arranque comprometido, receptor hostil, host administrador, GPU, DMA, dispositivos, cachés, temporización como canal encubierto, uso indebido de datos por un proveedor remoto ni todas las vías de entrada que podrían ocultar procedencia IA. Un socket denegado no equivale a probar inexistencia universal de canales.</p>
+<p>También quedan pendientes autorización humana auténtica, revocación distribuida, recuperación persistente, cuotas agregadas, múltiples adversarios, cargas sostenidas, equipos destino y enlace con <code>sv_core</code>/R1. La separación de UID y namespaces intentada en el entorno local no estuvo disponible; no se contó como superada. Allí también falló la construcción por metadatos de la instalación de Rust; no se ejecutaron los testigos locales.</p>
+<p>El criterio para una IA auxiliar es función y conducta verificadas bajo un encargo humano, no una clasificación intrínseca de modelos «buenos» o «malos». La intervención humana conserva el gobierno; la evidencia técnica acota qué hechos puede revisar.</p>
+<h2 id="6-evidencia-y-reproducción">6. Evidencia y reproducción</h2>
+<ul>
+<li>Fuente previa a la primera tanda: <code>b27d484c6b506ab76a0c507126bb413931fb5745</code>.</li>
+<li>Fuente y especificación del observador final: <code>d870febdc145890105dbab0b5b58658c19fef217</code>.</li>
+<li>ZIP inicial: SHA-256 <code>1c033c0b3a03900dbc020b756a2688a46a009c6ba8fa8f18729f5dc36d90a25f</code>.</li>
+<li>ZIP final: SHA-256 <code>a0e0f3fabca5de8be7b9115307fb9c181ad076276bfff904bc53db6a0920d42f</code>.</li>
+<li>Binario final: SHA-256 <code>d136537fe1dcb11d757cf007d41187e52c7a9b933d45d2deafcf3ae9057c7a5c</code>.</li>
+</ul>
+<p>Los dos ZIP exactos, sus inventarios de miembros, fuentes, comandos, stdout/stderr, registro de efectos, estado externo del proceso y muestras individuales se conservan en el registro privado. La especificación se fijó en Git antes de cada ejecución; sus seis archivos coinciden con las huellas del preregistro recuperado. El incidente local permanece separado.</p>
+<p>La proyección pública consta de <code>manifiesto.json</code>, <code>testigos.json</code>, <code>estado.json</code> y <code>verificar.mjs</code>. Comprueba 33 observaciones documentadas, sucesión, límites y aritmética de 3025 muestras finales; siete alteraciones negativas deben rechazarse. La reproducción de esa aritmética no vuelve a ejecutar los ataques ni certifica los datos privados. La fuente de confianza del manifiesto es el corte publicado y su asiento externo, no una huella circular.</p>
+<p>Después de descargar los cuatro objetos en un directorio, ejecutar <code>node verificar.mjs --autoprueba</code>. Para reproducir el ensayo material se necesita el código del laboratorio en el corte final y Linux x86-64 compatible; las instrucciones y expectativas están en <code>aislamiento-033/PROTOCOLO.md</code>, <code>testigos.json</code> y <code>run.py</code>.</p>
+<h2 id="7-continuidad">7. Continuidad</h2>
+<p>Esta tanda cubre parcialmente obligaciones de identidad, recursos, aislamiento y verificación del perfil tecnológico 020. No constituye un contrato de agente, no modifica las 32 definiciones CYB, no ejecuta consejo profesional ni Frame y no cierra R1/R2/R3/R4. Se conserva la política de medir antes de proponer refactorización.</p>
+<p>El siguiente paso que justificaría promover esta arquitectura es enlazar una operación ya admitida y su autorización real con la frontera material, manteniendo una fuente soberana de semántica. La localización ES/EN y la PR #89 conservan su estado propio; este ensayo no las aprueba ni las integra.</p>
+<p><a href="aislamiento-033/manifiesto.json">Manifiesto</a> · <a href="aislamiento-033/testigos.json">Testigos</a> · <a href="aislamiento-033/estado.json">Estado y muestras</a> · <a href="aislamiento-033/verificar.mjs">Verificador</a></p><p><a href="index.html#ficha-033">Volver a documentación del laboratorio</a></p></main></div><footer>Ensayo acotado. La consistencia pública no equivale a certificación de seguridad.</footer></body></html>

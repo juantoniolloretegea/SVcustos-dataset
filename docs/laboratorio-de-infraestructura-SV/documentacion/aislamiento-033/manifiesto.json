@@ -1,0 +1,308 @@
+{
+  "id": "LAB-2026-033",
+  "source_commit": "d870febdc145890105dbab0b5b58658c19fef217",
+  "run_id": 34415054643,
+  "public_files": [
+    {
+      "path": "testigos.json",
+      "bytes": 15925,
+      "sha256": "c38154ff76fe637b4885203f058d27f4c7fb43da56a6effacd621ed29a2f14a7"
+    },
+    {
+      "path": "estado.json",
+      "bytes": 47134,
+      "sha256": "c29f7ad3a547b6225e606662d3018df8eda888b698f4b501a906d89f3608c1ac"
+    },
+    {
+      "path": "verificar.mjs",
+      "bytes": 4334,
+      "sha256": "ee8e14540ecf073131f29bfd6e945952478176a6a93a98bdf97437509ae4688e"
+    }
+  ],
+  "private_archives": [
+    {
+      "path": "registros/033-ejecucion-34414792047.zip",
+      "run_id": 34414792047,
+      "visibility": "private",
+      "bytes": 553093,
+      "sha256": "1c033c0b3a03900dbc020b756a2688a46a009c6ba8fa8f18729f5dc36d90a25f",
+      "members": [
+        {
+          "path": "bench-time.txt",
+          "bytes": 838,
+          "sha256": "538b527e3adb05bbcb13a2cdd54b72edcad82e9bb9c4b94edd89b34b77ed98c8"
+        },
+        {
+          "path": "bench.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "bench.stdout",
+          "bytes": 75355,
+          "sha256": "0fbab9695049614447dd9abcf2d95489243851a4cbd355d82da4f8559b71ab08"
+        },
+        {
+          "path": "build.stderr",
+          "bytes": 235,
+          "sha256": "c897702d05198f97dcbc40edae54a710465ead77d0e3080d3b63095e6b5e494a"
+        },
+        {
+          "path": "build.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "cargo.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "cargo.stdout",
+          "bytes": 36,
+          "sha256": "fb3f25aefd6d5441842d285f5a9b125b3f0f0b0bf2013d9a32677f9e99c6c854"
+        },
+        {
+          "path": "cases.json",
+          "bytes": 7015,
+          "sha256": "2bc3196e86c56b1bfe9fd25a05e0d45d2db4a15de587182eb2d6dcd89717f394"
+        },
+        {
+          "path": "cases.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "cases.stdout",
+          "bytes": 1804,
+          "sha256": "fea64ec44d4b5b9ba97079182178ea75f216ce65bef1e1828044d58a0c596494"
+        },
+        {
+          "path": "centinela",
+          "bytes": 19,
+          "sha256": "7240afc1348af7d32ad7e0b926d3dc09740047880d9344586e2c6847d1105b56"
+        },
+        {
+          "path": "child-status-0.txt",
+          "bytes": 1503,
+          "sha256": "288e102c399ca33bd1cd24b56a629893681fee9d75dfec8536b33cd715f07eba"
+        },
+        {
+          "path": "child-status-1.txt",
+          "bytes": 1503,
+          "sha256": "30baaf7c6388f39ff6ec7582836cfbd059b82c62c2797ff98e64feae80f9a8cf"
+        },
+        {
+          "path": "child-status-2.txt",
+          "bytes": 1503,
+          "sha256": "78bbbaac273a7914b4706c778cff5bc0f0ceb7b4d6feff560b9dbcbf2789fee7"
+        },
+        {
+          "path": "commands.jsonl",
+          "bytes": 2032,
+          "sha256": "fe80106af0f32c1c926012a97178b08b49f20b6886ef8c7383ebec46c18d109f"
+        },
+        {
+          "path": "efectos.tsv",
+          "bytes": 86,
+          "sha256": "45f538a2debf0d6dc8ed2be06d1084a132598cce19642e50c8df61213531c13e"
+        },
+        {
+          "path": "environment.json",
+          "bytes": 7410,
+          "sha256": "02329241488ae4ea3c6bad49269b5468ca6cdd7f6162dee2a97b3fc509889fee"
+        },
+        {
+          "path": "preregistro.json",
+          "bytes": 863,
+          "sha256": "af4f92a28644a257816a273ec3f4749d31e92d68cc31645c955ceb63e42c594c"
+        },
+        {
+          "path": "rustc.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "rustc.stdout",
+          "bytes": 196,
+          "sha256": "3975d062e234a9f3921955bf6ae5b90f5819df94fa825d057f76b34a35ed0f4d"
+        },
+        {
+          "path": "summary.json",
+          "bytes": 763,
+          "sha256": "26102b76bcf72762c6ddc833e6481469c28eecfbaf82437f88111f3c13e5ad97"
+        },
+        {
+          "path": "target/CACHEDIR.TAG",
+          "bytes": 177,
+          "sha256": "6d9d1d216e0f83abc5e5662ca62c92b4f23009466b54fa27321a69acdb778bb2"
+        },
+        {
+          "path": "target/release/deps/sv_lab_033-1f4af0694978d77d",
+          "bytes": 622688,
+          "sha256": "c4cd5a79440d8860a0b2d0a08f3557ac24c31eb28bc41ccdd8a7304a90577832"
+        },
+        {
+          "path": "target/release/deps/sv_lab_033-1f4af0694978d77d.d",
+          "bytes": 225,
+          "sha256": "7d06ebc46603f9c9424d15818aac17059163b44872aca2233432efa248d7e4dd"
+        },
+        {
+          "path": "target/release/sv-lab-033",
+          "bytes": 622688,
+          "sha256": "c4cd5a79440d8860a0b2d0a08f3557ac24c31eb28bc41ccdd8a7304a90577832"
+        },
+        {
+          "path": "target/release/sv-lab-033.d",
+          "bytes": 222,
+          "sha256": "eaefccb8703594f25e3ccbd50e30f4639d3c6c1d8a1ee8c73b21d2334398a0b1"
+        }
+      ]
+    },
+    {
+      "path": "registros/033-ejecucion-34415054643.zip",
+      "run_id": 34415054643,
+      "visibility": "private",
+      "bytes": 553683,
+      "sha256": "a0e0f3fabca5de8be7b9115307fb9c181ad076276bfff904bc53db6a0920d42f",
+      "members": [
+        {
+          "path": "bench-time.txt",
+          "bytes": 838,
+          "sha256": "76d8d53b07994d3d31054cfc47110a8a84e6422a68b9827237dacc2f9a600d37"
+        },
+        {
+          "path": "bench.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "bench.stdout",
+          "bytes": 75657,
+          "sha256": "cd3e09c3d6e4e74a9b853e054bbc063deaabeeb8540c192a5a1f5a4fddb84665"
+        },
+        {
+          "path": "build.stderr",
+          "bytes": 235,
+          "sha256": "2418d0a1392fd41c4cb5553a096c42079ad00849692d11c16b36b15d3b25a344"
+        },
+        {
+          "path": "build.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "cargo.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "cargo.stdout",
+          "bytes": 36,
+          "sha256": "fb3f25aefd6d5441842d285f5a9b125b3f0f0b0bf2013d9a32677f9e99c6c854"
+        },
+        {
+          "path": "cases.json",
+          "bytes": 7016,
+          "sha256": "0b5791ebb7c7623eb5e35683ad97a09b906ceead6f364353e68ae166cffe3319"
+        },
+        {
+          "path": "cases.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "cases.stdout",
+          "bytes": 1805,
+          "sha256": "c4d30320eabc54b58c3d51b15cf7889bb4a71f655d3a4d7a68d52829843d6612"
+        },
+        {
+          "path": "centinela",
+          "bytes": 19,
+          "sha256": "7240afc1348af7d32ad7e0b926d3dc09740047880d9344586e2c6847d1105b56"
+        },
+        {
+          "path": "child-status-0.txt",
+          "bytes": 1503,
+          "sha256": "4fe63d2c38077bb990eb928782ff32a4cb8865722fe4e0a9117a351b64e1bb75"
+        },
+        {
+          "path": "child-status-1.txt",
+          "bytes": 1503,
+          "sha256": "4276898e8284ba195dd44c8ad104d7312dd0d9b48db61cdf373eb52ca93acbb4"
+        },
+        {
+          "path": "child-status-2.txt",
+          "bytes": 1503,
+          "sha256": "41e0e58c2287483f28e5a880af888b40bc58213e85c6ab1416ecf40608481159"
+        },
+        {
+          "path": "commands.jsonl",
+          "bytes": 2032,
+          "sha256": "025c6edc4894ce676a19cf77fd9478a5e798b6356bda6f926a9083be54ac46ca"
+        },
+        {
+          "path": "companion.json",
+          "bytes": 70,
+          "sha256": "a96571afef0a5226c5f1953060977eb153108ea90cf32ff71490bfdc6274337b"
+        },
+        {
+          "path": "efectos.tsv",
+          "bytes": 86,
+          "sha256": "45f538a2debf0d6dc8ed2be06d1084a132598cce19642e50c8df61213531c13e"
+        },
+        {
+          "path": "environment.json",
+          "bytes": 6885,
+          "sha256": "fd39e740e6f799f5d96ead6988ebaaa7e604eddf203949be7c7a0e198c87ad86"
+        },
+        {
+          "path": "preregistro.json",
+          "bytes": 863,
+          "sha256": "e5cdd94245dab5754775a2b49b39d1dcafd8a316a862fb2903e6fa62e94a36c7"
+        },
+        {
+          "path": "rustc.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "rustc.stdout",
+          "bytes": 196,
+          "sha256": "3975d062e234a9f3921955bf6ae5b90f5819df94fa825d057f76b34a35ed0f4d"
+        },
+        {
+          "path": "summary.json",
+          "bytes": 765,
+          "sha256": "d49dc9425720fcf3e61db3cd24cfdd164c2f53f264b1a31bc39969927863e282"
+        },
+        {
+          "path": "target/CACHEDIR.TAG",
+          "bytes": 177,
+          "sha256": "6d9d1d216e0f83abc5e5662ca62c92b4f23009466b54fa27321a69acdb778bb2"
+        },
+        {
+          "path": "target/release/deps/sv_lab_033-1f4af0694978d77d",
+          "bytes": 624304,
+          "sha256": "d136537fe1dcb11d757cf007d41187e52c7a9b933d45d2deafcf3ae9057c7a5c"
+        },
+        {
+          "path": "target/release/deps/sv_lab_033-1f4af0694978d77d.d",
+          "bytes": 225,
+          "sha256": "7d06ebc46603f9c9424d15818aac17059163b44872aca2233432efa248d7e4dd"
+        },
+        {
+          "path": "target/release/sv-lab-033",
+          "bytes": 624304,
+          "sha256": "d136537fe1dcb11d757cf007d41187e52c7a9b933d45d2deafcf3ae9057c7a5c"
+        },
+        {
+          "path": "target/release/sv-lab-033.d",
+          "bytes": 222,
+          "sha256": "eaefccb8703594f25e3ccbd50e30f4639d3c6c1d8a1ee8c73b21d2334398a0b1"
+        }
+      ]
+    }
+  ],
+  "note": "La propia huella de este manifiesto queda anclada en la confirmación Git de publicación y en el asiento privado. No certifica la ejecución por sí sola."
+}

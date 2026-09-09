@@ -489,5 +489,17 @@
     "refactoring_authorized": false,
     "beta_followup": true,
     "scope": "Transcripción y recálculo públicos; tiempos declarados, sin reproducción independiente."
+  },
+  "aislamiento033": {
+    "id": "LAB-2026-033",
+    "date": "2026-09-09",
+    "source_commit": "d870febdc145890105dbab0b5b58658c19fef217",
+    "run_id": 34415054643,
+    "page": "aislamiento-auxiliar.html",
+    "package": "aislamiento-033/",
+    "passed": 33,
+    "sv_core_executed": false,
+    "ai_model_executed": false,
+    "scope": "Aislamiento de un auxiliar sintético, verificación independiente y medición. No acredita producción."
   }
 }
