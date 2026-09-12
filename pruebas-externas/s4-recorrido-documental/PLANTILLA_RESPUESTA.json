@@ -1,0 +1,218 @@
+{
+  "version": "S4-RESPUESTA/1",
+  "banco": "S4-EXTERNA-DOCUMENTAL/1",
+  "participante": {
+    "modelo": null,
+    "version_visible": null,
+    "plataforma": null,
+    "modo_acceso": null,
+    "referencia_paquete": null,
+    "lectura_completa": false
+  },
+  "modalidad": null,
+  "resultados": [
+    {
+      "id": "E01",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E02",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E03",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E04",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E05",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E06",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E07",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E08",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E09",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E10",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E11",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    },
+    {
+      "id": "E12",
+      "decision": null,
+      "causa_o_resolucion": null,
+      "contenido": null,
+      "llamadas_politica": null,
+      "consecuencia": null,
+      "fuentes": [],
+      "evidencia_literal": null,
+      "justificacion_verificable": null,
+      "limitacion": null
+    }
+  ],
+  "actividad_observable": {
+    "herramientas": [],
+    "comandos": [],
+    "artefactos": [],
+    "intentos": 1,
+    "errores_y_correcciones": [],
+    "limitaciones": []
+  },
+  "mediciones": [
+    {
+      "nombre": "duracion_total",
+      "valor": null,
+      "unidad": "s",
+      "origen": "no_disponible",
+      "fuente": null,
+      "motivo": null
+    },
+    {
+      "nombre": "duracion_herramientas",
+      "valor": null,
+      "unidad": "s",
+      "origen": "no_disponible",
+      "fuente": null,
+      "motivo": null
+    },
+    {
+      "nombre": "llamadas_herramientas",
+      "valor": null,
+      "unidad": "llamadas",
+      "origen": "no_disponible",
+      "fuente": null,
+      "motivo": null
+    },
+    {
+      "nombre": "tokens_entrada",
+      "valor": null,
+      "unidad": "tokens",
+      "origen": "no_disponible",
+      "fuente": null,
+      "motivo": null
+    },
+    {
+      "nombre": "tokens_salida",
+      "valor": null,
+      "unidad": "tokens",
+      "origen": "no_disponible",
+      "fuente": null,
+      "motivo": null
+    },
+    {
+      "nombre": "coste",
+      "valor": null,
+      "unidad": "moneda",
+      "origen": "no_disponible",
+      "fuente": null,
+      "motivo": null
+    }
+  ],
+  "referencias_adicionales_consultadas": []
+}

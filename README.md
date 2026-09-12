@@ -1,3 +1,5 @@
+> **Prueba documental S4:** [encargo común, fuentes, rúbrica y reproducción](pruebas-externas/s4-recorrido-documental/README.md). Material público de lectura; respuestas por el canal del encargo.
+
 # SVcustos-dataset
 
 **Fecha:** 4 de abril de 2026  

@@ -1,0 +1,19 @@
+{
+  "version": "S4-OBSERVADOR/1",
+  "participante": null,
+  "modelo_version_visible": null,
+  "intento": 1,
+  "referencia_paquete": null,
+  "modo_entrega": null,
+  "t_envio_utc": null,
+  "t_primer_contenido_utc": null,
+  "t_fin_utc": null,
+  "duracion_observada_s": null,
+  "instrumento_medicion": null,
+  "observador": null,
+  "incidencias_acceso": [],
+  "respuesta_original_archivo": null,
+  "respuesta_sha256": null,
+  "bytes_respuesta": null,
+  "datos_proveedor": null
+}
