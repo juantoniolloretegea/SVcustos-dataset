@@ -35,3 +35,37 @@ Cierre del arranque: publicación comprobada; revisiones externas no iniciadas. 
 | resultado | Expediente publicado y verificado; revisiones no iniciadas; respuestas ausentes |
 | limites | Lectura documental; originales H2 reservados; sin dictamen |
 | siguiente_actuacion | La Dirección transmite cada enlace por commit cuando decida iniciar la revisión |
+
+## LP-DOC-0002
+
+| Campo | Valor |
+|---|---|
+| id | LP-DOC-0002 |
+| objeto | Actualización y preparación de auditoría preventiva del auxiliar |
+| version | v1 |
+| fuente_autorizacion | Solicitud humana de 17/09/2026 bajo LP-DOC-0001/v1 + A01 |
+| fecha_autorizacion | 2026-09-17; hora de autorización no registrada |
+| inicio_observado | 2026-09-17T16:31:28.6900000Z; primer sello conservado de preparación |
+| entrega_observada |  |
+| cortes_entrada | Lenguaje bdb094958da5be00d2c24864c333deaa4f0636cc; laboratorio 206c405184a33884cdf0d19017b8f31d0f398340 |
+| evidencia | encargos/LP-AUD-0002/v1/ANALISIS_PREPARATORIO.md; fichas/estado-canonico/v3.md |
+| resultado | Expediente preparado; publicación y comprobación remota pendientes |
+| limites | Sin acceso privado, reproducción material o transmisión externa |
+| siguiente_actuacion | Publicar en laboratorio-publico, verificar y entregar enlaces para revisión humana |
+
+## LP-AUD-0002
+
+| Campo | Valor |
+|---|---|
+| id | LP-AUD-0002 |
+| objeto | Rust/FFI, CR08, contención, dominios y prueba-conclusión |
+| version | v1 |
+| fuente_autorizacion | Preparación solicitada por la Dirección; transmisión y ejecución externa pendientes |
+| fecha_autorizacion | 2026-09-17; sólo preparación |
+| inicio_observado |  |
+| entrega_observada |  |
+| cortes_entrada | S32 revisión 8 / RETP-2026-257 en bdb094958da5be00d2c24864c333deaa4f0636cc |
+| evidencia | encargos/LP-AUD-0002/v1/ENCARGO_COMUN.md; FUENTES.tsv; MANIFIESTO_SHA256.tsv; PROTOCOLO_ENTREGA.md |
+| resultado | Preparado; Claude prioritario propuesto; Grok sin transmisión dispuesta; respuestas ausentes |
+| limites | No acredita código privado, permisos de Claude ni aceptación material |
+| siguiente_actuacion | Revisión y autorización humana del enlace exacto antes de transmitir; declaración expresa de acceso y escritura por el revisor |

@@ -1,6 +1,6 @@
 # Inicio y recuperación
 
-**Mandato vigente:** LP-DOC-0001/v1 + A01. Leer [mandato público](MANDATO_PUBLICO.md), [A01](ADENDA_A01.md), [registro](REGISTRO_LP.md), [estado](ESTADO.md) y [encargo activo](encargos/LP-AUD-0001/v1/ENCARGO_COMUN.md).
+**Mandato vigente:** LP-DOC-0001/v1 + A01. Leer [mandato público](MANDATO_PUBLICO.md), [A01](ADENDA_A01.md), [registro](REGISTRO_LP.md), [estado](ESTADO.md) y [encargo activo LP-AUD-0002/v1](encargos/LP-AUD-0002/v1/ENCARGO_COMUN.md).
 
 ## Competencia y permisos
 
@@ -26,3 +26,7 @@ La rama nace del corte histórico `dd50c3e5c74e10526bb28087c8d5e2852d2efb68`. La
 LP-DOC identifica actividades documentales; LP-AUD, expedientes de revisión; LP-HAL, hallazgos documentales cuando existan. No se consume un LP-HAL por una incertidumbre sin hallazgo. CSV y Markdown son presentaciones concordantes del mismo registro. HISTORIAL_LP conserva transiciones por adición. Fechas no observadas se dejan vacías o se indican como no registradas; no se reconstruyen.
 
 Aplicar [el procedimiento](PROCEDIMIENTO.md) para respuestas, aptitud pública y recomendaciones de elevación. No ejecutar modelos, código de terceros ni campañas experimentales. Las revisiones externas sólo se activan por transmisión humana de la revisión exacta.
+
+## Precisión de entrega vigente
+
+Aplicar el [protocolo de LP-AUD-0002](encargos/LP-AUD-0002/v1/PROTOCOLO_ENTREGA.md): rama laboratorio-publico y carpeta propia; declaración expresa de imposibilidad de escritura y de evidencia privada no examinada. Si la herramienta sólo escribe en main o exige otra rama/PR, no usarla para publicar. LP-AUD-0001 y sus fichas permanecen íntegros.

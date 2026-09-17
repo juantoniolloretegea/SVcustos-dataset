@@ -1,34 +1,34 @@
 # Laboratorio público documental
 
-**U-DOC-PUBLICA · LP-DOC-0001/v1 + A01 · 17/09/2026**  
-Repositorio: `juantoniolloretegea/SVcustos-dataset`. Rama exclusiva de publicación: `laboratorio-publico`.
+**U-DOC-PUBLICA · LP-DOC-0001/v1 + A01 · actualización 17/09/2026**
+Único repositorio y rama de escritura: juantoniolloretegea/SVcustos-dataset, **laboratorio-publico**.
 
-Sede de síntesis documental y preparación de revisiones externas. Calidad, Sucesos y RETP del Lenguaje conservan la autoridad canónica. Una publicación no acredita seguridad, ejecución ni aceptación de un candidato.
+## Expediente actual · LP-AUD-0002/v1
 
-**Arranque publicado y verificado:** [acta de entrega y enlaces fijados](ENTREGA.md).
+Auditoría preventiva de Rust/FFI, CR08, contención, permisos por dominio y correspondencia entre pruebas y conclusiones. Corte canónico **S32 revisión 8 / RETP-2026-257**, bdb094958da5be00d2c24864c333deaa4f0636cc.
 
-## Acceso operativo
+- [Abrir expediente actualizado](encargos/LP-AUD-0002/v1/README.md).
+- [Encargo Claude, destinatario prioritario propuesto](encargos/LP-AUD-0002/v1/claude/LEAME.md).
+- [Encargo equivalente Grok, sin transmisión dispuesta](encargos/LP-AUD-0002/v1/grok/LEAME.md).
+- [Análisis preparatorio y límites](encargos/LP-AUD-0002/v1/ANALISIS_PREPARATORIO.md).
+- [Rama, permisos y declaración de imposibilidad de escritura](encargos/LP-AUD-0002/v1/PROTOCOLO_ENTREGA.md).
+
+**Preparación autorizada; revisión y transmisión humanas pendientes.** No se han invocado revisores. La evidencia privada no examinada no puede convertirse en conformidad. Sin escritura autorizada y disponible, el revisor debe declararlo expresamente y entregar su respuesta a la Dirección.
+
+## Estado, fuentes y continuidad
 
 - [Estado y siguientes actuaciones](ESTADO.md).
-- [Ficha del estado comprobado, v2](fichas/estado-canonico/v2.md).
-- [Mapa de fuentes públicas, v2](fichas/mapa-fuentes/v2.md).
-- [Registro](REGISTRO_LP.md) · [CSV](REGISTRO_LP.csv) · [Historial por adición](HISTORIAL_LP.csv).
-- [Mandato público derivado](MANDATO_PUBLICO.md) · [Adenda A01](ADENDA_A01.md).
-- [Inicio y recuperación](LEAME_PRIMERO.md) · [Comprobaciones](COMPROBACIONES.md).
+- [Ficha canónica v3](fichas/estado-canonico/v3.md) y [mapa de fuentes v3](fichas/mapa-fuentes/v3.md).
+- [Registro](REGISTRO_LP.md) · [CSV](REGISTRO_LP.csv) · [Historial](HISTORIAL_LP.csv).
+- [Mandato público derivado](MANDATO_PUBLICO.md) · [A01](ADENDA_A01.md).
+- [Inicio y recuperación](LEAME_PRIMERO.md) · [Procedimiento](PROCEDIMIENTO.md).
 
-## LP-AUD-0001/v1 · Preparado para transmisión humana
+## Antecedente conservado · LP-AUD-0001/v1
 
-Ambos encargos utilizan [el mismo objeto, preguntas y rúbrica](encargos/LP-AUD-0001/v1/ENCARGO_COMUN.md), [fuentes fijadas](encargos/LP-AUD-0001/v1/FUENTES.tsv) y [manifiesto SHA-256](encargos/LP-AUD-0001/v1/MANIFIESTO_SHA256.tsv).
+[Expediente anterior](encargos/LP-AUD-0001/v1/ENCARGO_COMUN.md), corte S32 revisión 6. Sus fuentes, manifiesto y dos encargos se conservan íntegros. [Entrega de arranque](ENTREGA.md). No se atribuye a ese corte el estado canónico actual. Ambas respuestas siguen ausentes en esta custodia.
 
-| Procedencia | Encargo | Custodia de respuesta | Estado |
-|---|---|---|---|
-| Grok | [Instrucciones](encargos/LP-AUD-0001/v1/grok/LEAME.md) | [Ruta asignada](respuestas/LP-AUD-0001/grok/README.md) | No iniciada; sin respuesta |
-| Claude | [Instrucciones](encargos/LP-AUD-0001/v1/claude/LEAME.md) | [Ruta asignada](respuestas/LP-AUD-0001/claude/README.md) | No iniciada; sin respuesta |
+## Publicación y alcance
 
-La Dirección transmite el enlace de cada encargo fijado al commit completo de publicación. Preparar o publicar no inicia la revisión. La disponibilidad pública concede lectura; cualquier escritura del revisor requiere autorización expresa.
+Acceso operativo mediante Markdown en GitHub. [HTML preparado](index.html); **despliegue web pendiente**. No se modifican Pages, DNS, workflows, otras ramas ni el playground.
 
-## Presentación y límites
-
-La [presentación HTML](index.html) está preparada. El acceso operativo es este índice Markdown en GitHub. **Despliegue HTML pendiente**: no se modifican GitHub Pages, DNS, workflows ni otras ramas.
-
-Corte canónico vigente consultado: `7d6ecaa7d56b786ff194379417fef2ec2f0952df`; corte inicial conservado en las fichas v1. Corte histórico de presentación: `dd50c3e5c74e10526bb28087c8d5e2852d2efb68`. Las fichas distinguen recepción pública de evidencias originales reservadas. [Procedimiento de respuestas y elevación](PROCEDIMIENTO.md).
+Calidad, Sucesos y RETP mantienen la autoridad canónica. Una publicación o una huella no demuestra seguridad, ejecución ni aceptación de un candidato. [Respuestas](respuestas/README.md) y [dictámenes](dictamenes/README.md) se custodian por separado.

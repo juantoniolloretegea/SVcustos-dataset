@@ -1,22 +1,25 @@
-# Estado documental · corte 17/09/2026
+# Estado documental · actualización 17/09/2026
 
-**Mandato:** LP-DOC-0001/v1 + A01. **Rama exclusiva:** laboratorio-publico.
-Sede publicada y comprobada; LP-AUD-0001/v1 preparado para transmisión humana. Véase [acta de entrega](ENTREGA.md) y [verificación remota](VERIFICACION_PUBLICACION.tsv).
+Mandato: LP-DOC-0001/v1 + A01 y solicitud humana de preparar auditoría preventiva del auxiliar. Rama exclusiva: **laboratorio-publico**.
 
-## Corte y cambio observado
+## Corte vigente consultado
 
-Último corte canónico consultado: 7d6ecaa7d56b786ff194379417fef2ec2f0952df, S32 revisión 6 / RETP-2026-255. La cobertura S32-COBERTURA-01/v1 ya está recibida conforme en su alcance documental. Diez flujos, seis puertas y brechas A–I; estas últimas no son asignaciones ni encargos.
+Lenguaje bdb094958da5be00d2c24864c333deaa4f0636cc, S32 revisión 8 / RETP-2026-257. [Ficha v3](fichas/estado-canonico/v3.md).
 
-H2 sigue candidato, 19 TLC sin ejecutar, durabilidad no implementada y S32/BIS-03 abiertos. Las 18 comprobaciones instrumentales de la recepción H2 no se repitieron aquí y no son ensayos de privacidad. Decisiones humanas sobre perímetro/API/federación y contratos siguen pendientes.
+Recuperación instrumental del cliente conforme al banco publicado 19/19 según recepción. RCR-03 resuelta; RCR-01/CR08 y AUX-C01–C04 pendientes; RCR-02 histórica conservada. Sin aceptación íntegra, selección o integración. Los 19 TLC no se han ejecutado; H2 candidato, durabilidad no implementada y S32/BIS-03 abiertos.
 
-Se conservan [ficha inicial v1](fichas/estado-canonico/v1.md) y [actualización v2](fichas/estado-canonico/v2.md), con la evidencia. La comunicación inicial de cobertura en ejecución fue superada por una recepción pública antes de publicar esta sede.
+## Trabajo propio activo
 
-## Pendientes propios
+LP-DOC-0002: actualización documental y preparación de **LP-AUD-0002/v1**. Claude es el destinatario prioritario propuesto; Grok conserva una vía equivalente preparada, sin ejecución dispuesta.
 
-- Despliegue HTML pendiente; acceso operativo mediante Markdown en GitHub.
-- Transmisión humana de LP-AUD-0001/v1; ambas revisiones no iniciadas y ambas respuestas ausentes.
-- No existen dictámenes; los productos privados H2/cobertura no fueron consultados.
+[Expediente](encargos/LP-AUD-0002/v1/README.md) preparado para publicación y revisión humana. Las fuentes privadas no se han consultado; la auditoría material queda limitada. Ambas respuestas están ausentes y no existen dictámenes.
 
-## Siguiente actuación permitida
+LP-AUD-0001/v1 y fichas v1/v2 se conservan íntegros. No se conoce transmisión o entrega externa posterior; no se infiere su ejecución por memoria ni por publicación.
 
-El arranque se detiene tras entregar los enlaces por commit. La publicación y recuperación anónima inicial están comprobadas. La Dirección decide la transmisión y las actuaciones posteriores. Las recepciones posteriores al corte congelado se incorporarán en otra revisión, sin alterar silenciosamente el expediente.
+## Permisos y siguiente actuación
+
+Publicar y verificar este nuevo expediente exclusivamente en la rama autorizada. Entregar enlaces por commit a la Dirección para revisión y eventual autorización de transmisión. No invocar revisores.
+
+Toda escritura del revisor requiere autorización expresa y comprobación de la rama y carpeta propia. Si su sistema o permisos impiden escribir allí, debe declararlo y devolver el informe; no utilizar otro destino.
+
+Despliegue HTML pendiente. No actualizar dependencias, ensayos, repositorios canónicos o privados, Pages o protecciones. Las actuaciones posteriores conservan autorización humana separada.
