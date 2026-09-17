@@ -60,12 +60,12 @@ Cierre del arranque: publicación comprobada; revisiones externas no iniciadas. 
 | id | LP-AUD-0002 |
 | objeto | Rust/FFI, CR08, contención, dominios y prueba-conclusión |
 | version | v1 |
-| fuente_autorizacion | Preparación solicitada por la Dirección; transmisión y ejecución externa pendientes |
-| fecha_autorizacion | 2026-09-17; sólo preparación |
-| inicio_observado |  |
-| entrega_observada |  |
+| fuente_autorizacion | Preparación autorizada; la Dirección confirma transmisión y autorización de escritura de Claude al aportar su respuesta |
+| fecha_autorizacion | 2026-09-17; autorización previa de Claude confirmada en recepción, sin hora acreditada |
+| inicio_observado | 2026-09-17 según Claude; hora no acreditada |
+| entrega_observada | 2026-09-17T17:48:00.6236380Z; recepción por U-DOC-PUBLICA del archivo aportado por la Dirección |
 | cortes_entrada | S32 revisión 8 / RETP-2026-257 en bdb094958da5be00d2c24864c333deaa4f0636cc |
-| evidencia | encargos/LP-AUD-0002/v1/ENCARGO_COMUN.md; FUENTES.tsv; MANIFIESTO_SHA256.tsv; PROTOCOLO_ENTREGA.md |
-| resultado | Publicado y verificado; no transmitido; Claude prioritario propuesto; respuestas ausentes |
-| limites | No acredita código privado, permisos de Claude ni aceptación material |
-| siguiente_actuacion | Revisión y autorización humana del enlace exacto antes de transmitir; declaración expresa de acceso y escritura por el revisor |
+| evidencia | encargos/LP-AUD-0002/v1/ENCARGO_COMUN.md; FUENTES.tsv; MANIFIESTO_SHA256.tsv; PROTOCOLO_ENTREGA.md; respuestas/LP-AUD-0002/claude/entrega-01/RESPUESTA.md; dictamenes/LP-AUD-0002/recepcion-claude-01.md |
+| resultado | Claude recibido con identidad cotejada; Grok observado en remoto y conservado; sin aceptación material |
+| limites | Bloqueo de sesión Claude declarado, no reproducido; no independencia declarada; evidencia privada no examinada |
+| siguiente_actuacion | Decisión humana sobre aclaraciones documentales y eventual corpus delimitado; sin transmisión automática |

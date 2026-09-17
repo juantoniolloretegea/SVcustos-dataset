@@ -1,0 +1,32 @@
+# LP-AUD-0002 · recepción de Claude y diagnóstico de escritura
+
+Nota de U-DOC-PUBLICA, 17/09/2026. [Original recibido](../../respuestas/LP-AUD-0002/claude/entrega-01/RESPUESTA.md), sin alteración. [Identidad y custodia](../../respuestas/LP-AUD-0002/claude/README.md). No constituye aceptación material ni comparación final de revisores.
+
+## Impedimento de publicación
+
+La Dirección confirma que autorizó la escritura y precisa que se trataba del **chat de Claude con herramientas de archivos/GitHub**. La respuesta transcribe dos rechazos: API 403 por repositorio no habilitado en la sesión y proxy Git que rehúsa inyectar credencial al no estar el repositorio en su conjunto autorizado. También declara que la herramienta sugerida, `add_repo`, no está disponible. Son errores aportados por el revisor; no se dispone de traza original independiente ni de acceso administrativo a su sesión.
+
+**Diagnóstico sustentado por esos mensajes:** falta de habilitación técnica del repositorio en la sesión o intermediario empleado. La autorización humana delimita lo permitido, pero no configura por sí misma la conexión, las herramientas disponibles o la entrega de credenciales. La lectura pública mediante Git no demuestra capacidad de escritura. Un 403 transmitido por un intermediario no se atribuye automáticamente al servidor de GitHub.
+
+**Límite del diagnóstico:** este bloqueo previo no permite certificar que la cuenta, reglas de rama y demás controles posteriores permitirían escribir una vez habilitada la sesión. La afirmación categórica de Claude de que no hay ningún problema de permisos o protección excede lo comprobado. Tampoco se confirma desde aquí la disponibilidad real de `add_repo` ni que exista una reparación mediante ese nombre.
+
+La [guía oficial de la integración GitHub en el chat](https://support.claude.com/en/articles/10167454-use-the-github-integration), consultada el 17/09/2026, describe añadir archivos y carpetas desde el botón «+» y sincronizar contenido de una rama para aportar contexto. Esa función documentada no acredita una capacidad de publicación. Se recomienda comprobar que SVcustos-dataset está añadido a ese chat y revisar el acceso del conector limitado a ese repositorio; después comprobar qué herramienta de escritura ofrece efectivamente la sesión y si permite seleccionar laboratorio-publico. Añadir archivos o repetir una autorización en el texto no garantiza habilitar el proxy Git.
+
+Si, tras esa comprobación, persiste el rechazo o no existe herramienta de escritura, el diagnóstico pendiente corresponde al soporte o administrador del entorno Claude, aportando los errores, identificador de sesión y hora, sin credenciales. No se prescribe crear otra rama, PR, fork o repositorio ni ampliar permisos generales. El depósito mediado por la Dirección y U-DOC-PUBLICA es la vía ya autorizada y se aplica a esta entrega. No se han cambiado conectores, permisos o protecciones ni se ha contactado a terceros.
+
+## Valoración documental acotada
+
+Se conserva la separación del revisor: conformidad de presentación en su alcance, reservas de diseño y ausencia de verificación material. Su falta de independencia de S32 y las lecturas parciales declaradas limitan el peso del contraste; no anulan automáticamente las comprobaciones documentales. No se acepta el cliente ni se promueve una referencia privada a evidencia examinada.
+
+1. **AUX-C01–C04:** cotejados §§15 y 16.2 de F07 en el corte bdb094958da5be00d2c24864c333deaa4f0636cc. Existen formulaciones diferentes sobre identidad de dependencias y carga/frontera nativa. §15 se refiere al auxiliar y §16 al cliente: la discrepancia no demuestra por sí sola que los cuatro códigos hayan cambiado o que deban ser cinco. Sí justifica solicitar una correspondencia explícita entre obligaciones, artefactos y códigos antes de cerrar contención. No se ha leído la recepción privada que permitiría resolverlo.
+2. **RCR-01 / CR08:** una mutación aislada acredita, como máximo, la propiedad discriminada por esa entrada y su oráculo. No prueba automáticamente cobertura por cada evento, orden o multiplicidad. Esos requisitos sólo pueden exigirse si los fija el contrato original; la propuesta de Claude no los constituye. Conviene delimitar la conclusión del complemento antes de ejecutarlo.
+3. **Identificación de pruebas y de atribución:** diferenciar por nombre el banco del cliente y los TLC, y separar en los resúmenes los dos commits públicos de los siete privados atribuidos a recepción, son mejoras documentales razonables. No prueban un resultado experimental incorrecto ni un cierre canónico indebido.
+4. **Precisión técnica en Q02:** Claude califica como comportamiento indefinido la propagación de un panic Rust por extern "C". El [Rustonomicon, FFI and unwinding](https://doc.rust-lang.org/nomicon/ffi.html#ffi-and-unwinding), consultado el 17/09/2026, distingue: un panic Rust que alcanza una frontera sin unwinding permitido provoca aborto seguro del proceso; una excepción extranjera que entra en Rust por esa frontera puede producir comportamiento indefinido. catch_unwind sólo captura panic con unwinding, no abortos; C-unwind no proporciona aislamiento. La frase de Q02 requiere corrección en una entrega posterior. Se conserva literalmente el original y no se infiere cómo está configurado el cliente privado.
+
+El mensaje de acompañamiento resume tres novedades; el archivo contiene CLA-0002-01 a CLA-0002-05, incluido el impedimento. Se toma el documento identificado como entregable, sin borrar la diferencia entre resumen y texto.
+
+## Continuidad y elevación
+
+Antes del depósito se observó avance remoto de 0f04ef0a679713bd008fad49a12cde17bb186f10 a afcfea0502fe66dbe98cbba0baa53e692f5fddc2: una respuesta de Grok en su carpeta. Se incorporó por avance lineal y se conserva íntegra. La consulta receptora de esa entrega ocurrió después de recibir el archivo congelado de Claude; no se comunicó su contenido a ningún revisor. Esta nota no certifica independencia ni realiza una comparación final.
+
+Se recomienda elevar a la Dirección la delimitación de AUX-C01–C04 y del complemento CR08, antes de selección o integración, y solicitar corrección de Q02 cuando corresponda. No se afirma un incidente activo. Pregunta para decisión posterior: ¿se dispone una aclaración documental de esos alcances y, por separado, un corpus exacto publicable para examinar FFI/CR08? Esta pregunta no autoriza acceso privado, ensayos ni traslado a otras unidades.

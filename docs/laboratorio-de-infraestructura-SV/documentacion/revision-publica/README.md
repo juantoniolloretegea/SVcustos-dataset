@@ -9,11 +9,11 @@ Auditoría preventiva de Rust/FFI, CR08, contención, permisos por dominio y cor
 
 - [Abrir expediente actualizado](encargos/LP-AUD-0002/v1/README.md).
 - [Encargo Claude, destinatario prioritario propuesto](encargos/LP-AUD-0002/v1/claude/LEAME.md).
-- [Encargo equivalente Grok, sin transmisión dispuesta](encargos/LP-AUD-0002/v1/grok/LEAME.md).
+- [Encargo equivalente Grok](encargos/LP-AUD-0002/v1/grok/LEAME.md).
 - [Análisis preparatorio y límites](encargos/LP-AUD-0002/v1/ANALISIS_PREPARATORIO.md).
 - [Rama, permisos y declaración de imposibilidad de escritura](encargos/LP-AUD-0002/v1/PROTOCOLO_ENTREGA.md).
 
-**Preparación autorizada; revisión y transmisión humanas pendientes.** No se han invocado revisores. La evidencia privada no examinada no puede convertirse en conformidad. Sin escritura autorizada y disponible, el revisor debe declararlo expresamente y entregar su respuesta a la Dirección.
+**Claude recibido mediante la Dirección; entrega de Grok observada en la rama.** [Custodia de respuestas](respuestas/README.md) y [nota receptora sobre Claude](dictamenes/LP-AUD-0002/recepcion-claude-01.md). U-DOC-PUBLICA no ha invocado revisores. La evidencia privada no examinada no puede convertirse en conformidad. Sin escritura autorizada y disponible, el revisor debe declararlo expresamente y entregar su respuesta a la Dirección.
 
 ## Estado, fuentes y continuidad
 
