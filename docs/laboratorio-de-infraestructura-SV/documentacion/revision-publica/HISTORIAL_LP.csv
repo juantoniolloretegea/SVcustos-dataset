@@ -1,0 +1,5 @@
+"asiento","id","fecha_observada","estado_anterior","estado_nuevo","motivo","evidencia","limite"
+"1","LP-DOC-0001","2026-09-17; hora no registrada","No iniciado","En preparación bajo v1","Transmisión humana del mandato","MANDATO_PUBLICO.md","Sin publicación remota"
+"2","LP-DOC-0001","2026-09-17; hora no registrada","En preparación bajo v1","En preparación bajo v1 + A01","Sustitución autorizada de rama e integración; conservación de trabajo","ADENDA_A01.md","Rama preparatoria local conservada; sin escritura previa remota"
+"3","LP-AUD-0001","2026-09-17T09:55:07.3251346Z","No preparado","Preparado; no iniciado","Fuentes fijadas y rúbrica común","encargos/LP-AUD-0001/v1/ENCARGO_COMUN.md","Ambas respuestas ausentes; transmisión humana pendiente"
+"4","LP-DOC-0001","2026-09-17T10:03:02.1356157Z","Corte inicial e1ab93d; cobertura comunicada en ejecución","Corte 7d6ecaa; cobertura recibida documentalmente","Nueva recepción canónica detectada antes de primera publicación; fichas v1 conservadas y v2 añadidas","fichas/estado-canonico/v2.md; fichas/mapa-fuentes/v2.md","Sin cierre S32/BIS-03, sin ensayos y sin decisión de opciones"
