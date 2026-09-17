@@ -32,3 +32,5 @@ Auditoría preventiva de Rust/FFI, CR08, contención, permisos por dominio y cor
 Acceso operativo mediante Markdown en GitHub. [HTML preparado](index.html); **despliegue web pendiente**. No se modifican Pages, DNS, workflows, otras ramas ni el playground.
 
 Calidad, Sucesos y RETP mantienen la autoridad canónica. Una publicación o una huella no demuestra seguridad, ejecución ni aceptación de un candidato. [Respuestas](respuestas/README.md) y [dictámenes](dictamenes/README.md) se custodian por separado.
+
+[Entrega verificada de LP-AUD-0002/v1 y enlaces inmutables](entregas/LP-DOC-0002/ENTREGA.md).

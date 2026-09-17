@@ -12,13 +12,13 @@ Recuperación instrumental del cliente conforme al banco publicado 19/19 según 
 
 LP-DOC-0002: actualización documental y preparación de **LP-AUD-0002/v1**. Claude es el destinatario prioritario propuesto; Grok conserva una vía equivalente preparada, sin ejecución dispuesta.
 
-[Expediente](encargos/LP-AUD-0002/v1/README.md) preparado para publicación y revisión humana. Las fuentes privadas no se han consultado; la auditoría material queda limitada. Ambas respuestas están ausentes y no existen dictámenes.
+[Expediente](encargos/LP-AUD-0002/v1/README.md) publicado y verificado; disponible para revisión humana. Las fuentes privadas no se han consultado; la auditoría material queda limitada. Ambas respuestas están ausentes y no existen dictámenes.
 
 LP-AUD-0001/v1 y fichas v1/v2 se conservan íntegros. No se conoce transmisión o entrega externa posterior; no se infiere su ejecución por memoria ni por publicación.
 
 ## Permisos y siguiente actuación
 
-Publicar y verificar este nuevo expediente exclusivamente en la rama autorizada. Entregar enlaces por commit a la Dirección para revisión y eventual autorización de transmisión. No invocar revisores.
+Publicación comprobada en la rama autorizada. [Entrega y enlaces por commit](entregas/LP-DOC-0002/ENTREGA.md) disponibles para revisión y eventual autorización de transmisión por la Dirección. No invocar revisores.
 
 Toda escritura del revisor requiere autorización expresa y comprobación de la rama y carpeta propia. Si su sistema o permisos impiden escribir allí, debe declararlo y devolver el informe; no utilizar otro destino.
 

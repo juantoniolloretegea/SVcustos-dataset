@@ -46,12 +46,12 @@ Cierre del arranque: publicación comprobada; revisiones externas no iniciadas. 
 | fuente_autorizacion | Solicitud humana de 17/09/2026 bajo LP-DOC-0001/v1 + A01 |
 | fecha_autorizacion | 2026-09-17; hora de autorización no registrada |
 | inicio_observado | 2026-09-17T16:31:28.6900000Z; primer sello conservado de preparación |
-| entrega_observada |  |
+| entrega_observada | 2026-09-17T16:45:14.0449070Z; publicación comprobada y disponible para entrega |
 | cortes_entrada | Lenguaje bdb094958da5be00d2c24864c333deaa4f0636cc; laboratorio 206c405184a33884cdf0d19017b8f31d0f398340 |
-| evidencia | encargos/LP-AUD-0002/v1/ANALISIS_PREPARATORIO.md; fichas/estado-canonico/v3.md |
-| resultado | Expediente preparado; publicación y comprobación remota pendientes |
+| evidencia | encargos/LP-AUD-0002/v1/ANALISIS_PREPARATORIO.md; fichas/estado-canonico/v3.md; entregas/LP-DOC-0002/ENTREGA.md; commit 116b69eae43037a9159a1d7c483b0e585c4445c2 |
+| resultado | Expediente publicado y verificado; disponible para revisión humana |
 | limites | Sin acceso privado, reproducción material o transmisión externa |
-| siguiente_actuacion | Publicar en laboratorio-publico, verificar y entregar enlaces para revisión humana |
+| siguiente_actuacion | La Dirección revisa y autoriza la transmisión del enlace exacto; no iniciar revisores |
 
 ## LP-AUD-0002
 
@@ -66,6 +66,6 @@ Cierre del arranque: publicación comprobada; revisiones externas no iniciadas. 
 | entrega_observada |  |
 | cortes_entrada | S32 revisión 8 / RETP-2026-257 en bdb094958da5be00d2c24864c333deaa4f0636cc |
 | evidencia | encargos/LP-AUD-0002/v1/ENCARGO_COMUN.md; FUENTES.tsv; MANIFIESTO_SHA256.tsv; PROTOCOLO_ENTREGA.md |
-| resultado | Preparado; Claude prioritario propuesto; Grok sin transmisión dispuesta; respuestas ausentes |
+| resultado | Publicado y verificado; no transmitido; Claude prioritario propuesto; respuestas ausentes |
 | limites | No acredita código privado, permisos de Claude ni aceptación material |
 | siguiente_actuacion | Revisión y autorización humana del enlace exacto antes de transmitir; declaración expresa de acceso y escritura por el revisor |
