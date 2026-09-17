@@ -1,7 +1,7 @@
 # Estado documental · corte 17/09/2026
 
 **Mandato:** LP-DOC-0001/v1 + A01. **Rama exclusiva:** laboratorio-publico.
-Sede y LP-AUD-0001/v1 preparados para publicación. Su verificación remota se documentará en el acta de entrega.
+Sede publicada y comprobada; LP-AUD-0001/v1 preparado para transmisión humana. Véase [acta de entrega](ENTREGA.md) y [verificación remota](VERIFICACION_PUBLICACION.tsv).
 
 ## Corte y cambio observado
 
@@ -13,11 +13,10 @@ Se conservan [ficha inicial v1](fichas/estado-canonico/v1.md) y [actualización 
 
 ## Pendientes propios
 
-- Publicación y recuperación anónima del commit de entrega.
 - Despliegue HTML pendiente; acceso operativo mediante Markdown en GitHub.
 - Transmisión humana de LP-AUD-0001/v1; ambas revisiones no iniciadas y ambas respuestas ausentes.
 - No existen dictámenes; los productos privados H2/cobertura no fueron consultados.
 
 ## Siguiente actuación permitida
 
-Completar publicación exclusivamente en rama y rutas autorizadas, verificar y entregar enlaces por commit. Después detenerse. La Dirección decide la transmisión y las actuaciones posteriores. Las recepciones posteriores al corte congelado se incorporarán en otra revisión, sin alterar silenciosamente el expediente.
+El arranque se detiene tras entregar los enlaces por commit. La publicación y recuperación anónima inicial están comprobadas. La Dirección decide la transmisión y las actuaciones posteriores. Las recepciones posteriores al corte congelado se incorporarán en otra revisión, sin alterar silenciosamente el expediente.

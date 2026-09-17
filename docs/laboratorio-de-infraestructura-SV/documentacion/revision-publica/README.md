@@ -5,6 +5,8 @@ Repositorio: `juantoniolloretegea/SVcustos-dataset`. Rama exclusiva de publicaci
 
 Sede de síntesis documental y preparación de revisiones externas. Calidad, Sucesos y RETP del Lenguaje conservan la autoridad canónica. Una publicación no acredita seguridad, ejecución ni aceptación de un candidato.
 
+**Arranque publicado y verificado:** [acta de entrega y enlaces fijados](ENTREGA.md).
+
 ## Acceso operativo
 
 - [Estado y siguientes actuaciones](ESTADO.md).

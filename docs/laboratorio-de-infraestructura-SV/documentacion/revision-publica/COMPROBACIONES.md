@@ -12,7 +12,7 @@
 | Fuentes | Diecisiete archivos públicos recuperados sin autenticación con HTTP 200; identidades y fecha en FUENTES.tsv; originales locales conservados |
 | Acceso reservado | No se consultaron repositorios privados. La recepción pública no habilita recuperar sus originales |
 | Revisores | Mismo expediente y rúbrica; diferencias de LEAME limitadas a procedencia y ruta. Ambas respuestas ausentes |
-| Publicación Git | Se comprobará el commit remoto después de escribir. La evidencia de entrega debe identificar el commit y recuperación anónima |
+| Publicación Git | Commit 8e03fc2e0f150dd94d375049909a0980eb7161cc comprobado: 31 archivos con HTTP 200 e identidad SHA-256; tres enlaces GitHub accesibles. Evidencia en ENTREGA.md y VERIFICACION_PUBLICACION.tsv |
 | HTML / Pages | Presentación preparada; despliegue pendiente conforme a A01. Sin cambios de configuración |
 | Controles previos a publicación | Cotejo de rutas, inserción única en índice, enlaces locales, manifiesto, concordancia CSV/Markdown y ausencia de rutas locales en archivos nuevos. Resultado detallado conservado en registro local de comprobación |
 
