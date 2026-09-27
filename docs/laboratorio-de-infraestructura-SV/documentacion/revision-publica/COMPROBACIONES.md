@@ -59,3 +59,7 @@ La revisión se limita a la función documental del portal; no constituye reprod
 | Conservación | Alteración de resultados históricos al añadir el acceso | Índice preparado con una sola sección añadida; contenido anterior íntegro |
 
 Dictamen documental: apto para incorporación de esta edición de consulta. La publicación efectiva y su disponibilidad web requieren comprobación posterior. El acceso público no garantiza que todos los entornos externos permitan navegar o abrir adjuntos.
+
+### Comprobación posterior de publicación
+
+Versión web 62c8752da6d8bee8adb493d4392c7ba3132d3c05, despliegue completado. Los seis archivos recuperados sin autenticación coinciden por SHA-256 con los publicados. Página inspeccionada en navegador: título, navegación, resultados, fuentes y descargas accesibles. La configuración de publicación permanece en su origen anterior. El índice conserva íntegro su contenido previo y añade una sección de acceso.

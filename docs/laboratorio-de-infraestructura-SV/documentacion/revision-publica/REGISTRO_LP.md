@@ -97,9 +97,9 @@ Asientos documentales con sus fechas y alcances. Los estados históricos no se p
 | fuente_autorizacion | Solicitud de operatividad pública del 27/09/2026 |
 | fecha_autorizacion | 2026-09-27; hora no fijada |
 | inicio_observado | 2026-09-27T08:58:04.8884919Z |
-| entrega_observada | Portal preparado; publicación de archivos y despliegue diferenciados |
+| entrega_observada | 2026-09-27T09:18:19.8074966Z; publicación web verificada |
 | cortes_entrada | Laboratorio 5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e |
-| evidencia | consulta/index.html; consulta/orientacion-20260927.zip; consulta/SHA256SUMS.txt |
-| resultado | 32 enlaces públicos comprobados sin autenticación; dossier de cuatro documentos |
-| limites | Sin evidencia privada, transmisión externa ni modificación del despliegue |
-| siguiente_actuacion | Integración acotada en la web pendiente de autorización específica sobre la rama de publicación |
+| evidencia | consulta/index.html; consulta/ORIENTACION.txt; consulta/SHA256SUMS.txt; web 62c8752da6d8bee8adb493d4392c7ba3132d3c05 |
+| resultado | Consulta pública incorporada; 23 destinos externos comprobados y seis archivos web concordantes por SHA-256 |
+| limites | Síntesis documental; fuentes externas no incluidas en el paquete; sin reproducción experimental |
+| siguiente_actuacion | Mantener edición y fuentes mediante nuevas recepciones públicas; conservar antecedentes |

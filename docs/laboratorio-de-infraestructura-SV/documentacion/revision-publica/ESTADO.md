@@ -26,3 +26,7 @@ LP-AUD-0002/v1 permanece congelado en S32 revisión 8. Las respuestas y la nota 
 El índice canónico de continuidad conserva cabeceras históricas que emplean «vigente». Para este corte, la ficha remite a los asientos específicos de Sucesos, TT y actas, con fecha y revisión. No se modifican esas fuentes desde el laboratorio.
 
 La consulta es documental y pública. No acredita el estado actual de servidores, pagos, instalaciones o disponibilidad de servicios. El despliegue de la presentación HTML no se verifica ni modifica en esta actuación.
+
+## Consulta externa · publicación comprobada el 27/09/2026
+
+La [edición de consulta](https://juantoniolloretegea.github.io/SVcustos-dataset/laboratorio-de-infraestructura-SV/documentacion/revision-publica/consulta/index.html) está disponible sin autenticación desde el índice público. Incluye resultados y límites, fuentes fijadas, expedientes y descarga documental. Su versión de publicación es 62c8752da6d8bee8adb493d4392c7ba3132d3c05. Los seis archivos servidos coinciden por SHA-256 con los publicados. Esta recepción sustituye el estado de despliegue pendiente, sin alterar los resultados experimentales ni sus reservas.

@@ -27,8 +27,8 @@ Las respuestas recibidas se encuentran en [su custodia separada](respuestas/READ
 
 La sede conserva síntesis y referencias. Los paquetes experimentales, imágenes y programas permanecen en sus repositorios de origen. La documentación reservada no se reproduce en este laboratorio.
 
-Acceso operativo mediante Markdown en GitHub. [Presentación HTML](index.html) preparada; esta actualización no acredita su despliegue ni modifica Pages, DNS o workflows.
+Acceso mediante este índice y la [consulta web publicada](https://juantoniolloretegea.github.io/SVcustos-dataset/laboratorio-de-infraestructura-SV/documentacion/revision-publica/consulta/index.html). Los expedientes conservan sus versiones originales.
 
-## Acceso externo preparado
+## Acceso externo publicado
 
-[Portal de consulta](consulta/index.html): estado fechado, fuentes públicas completas enlazadas, expedientes y descarga de orientación. La presentación web sigue pendiente de integración en la sede desplegada; su publicación en esta rama no acredita despliegue.
+[Portal de consulta](https://juantoniolloretegea.github.io/SVcustos-dataset/laboratorio-de-infraestructura-SV/documentacion/revision-publica/consulta/index.html): estado fechado, catorce fuentes seleccionadas, expedientes y descarga para lectura sin conexión. Publicación web comprobada el 27/09/2026: seis archivos concordantes por SHA-256 con la versión 62c8752da6d8bee8adb493d4392c7ba3132d3c05. La descarga contiene la síntesis y sus referencias; no incluye las fuentes externas completas.
