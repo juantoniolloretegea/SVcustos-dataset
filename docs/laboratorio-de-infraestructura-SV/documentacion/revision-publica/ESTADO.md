@@ -1,13 +1,28 @@
-# Estado documental · recepción 17/09/2026
+# Estado documental · 27/09/2026
 
-Mandato LP-DOC-0001/v1 + A01 y recepción humana de la respuesta a LP-AUD-0002/v1. Rama exclusiva laboratorio-publico.
+**Actividad:** LP-DOC-0003/v1, actualización documental mediante dos pasadas. Mandato LP-DOC-0001/v1 + A01; rama exclusiva `laboratorio-publico`.
 
-El corte del expediente permanece S32 revisión 8 / RETP-2026-257, bdb094958da5be00d2c24864c333deaa4f0636cc. No se presenta esta recepción como actualización del estado canónico. [Ficha v3](fichas/estado-canonico/v3.md) y expediente congelado conservados.
+## Cortes y alcance
 
-Claude: [respuesta literal](respuestas/LP-AUD-0002/claude/entrega-01/RESPUESTA.md) recibida por la Dirección para depósito mediado. Autorización humana confirmada; bloqueo técnico de sesión declarado por el revisor. [Custodia](respuestas/LP-AUD-0002/claude/README.md) y [nota receptora](dictamenes/LP-AUD-0002/recepcion-claude-01.md).
+- Lenguaje: `f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52`.
+- Motor: `63f5bd5e9b8ef147ba6a92d7beba6f94fb5ea3eb`.
+- Laboratorio antes de actualizar: `7f14a26eaf32f2613a266be61f4daf15b1d2c4bf`.
 
-Grok: respuesta observada en afcfea0502fe66dbe98cbba0baa53e692f5fddc2 y conservada sin modificaciones. [Índice de respuestas](respuestas/README.md). No se emite comparación final ni aceptación material.
+[Estado canónico v4](fichas/estado-canonico/v4.md), [seguimiento EIO v1](fichas/seguimiento-eio/v1.md) y [fuentes v4](fichas/mapa-fuentes/v4.md) sustituyen como entrada actual a las fichas del 17/09, que se conservan íntegramente.
 
-Las referencias privadas no se han consultado. CR08, contención y aceptación íntegra permanecen pendientes en el corte examinado. La falta de independencia declarada por Claude y sus límites de lectura se conservan. Las aclaraciones propuestas no son reparaciones o ensayos autorizados.
+S32 sigue en ejecución, con aceptación parcial de la revisión 9. S39 permanece pendiente en la revisión 24. TT-0013 cierra una campaña; TT-0014 y TT-0015 siguen pendientes. Los cierres de candidatos no cierran S39 ni acreditan aceptación del MCP o del núcleo.
 
-LP-AUD-0001/v1 y fichas anteriores íntegros; ninguna respuesta de aquel expediente se infiere de estas entregas. La Dirección decide eventuales aclaraciones, transmisión y ampliación de corpus. No se han contactado revisores ni otras unidades desde esta custodia. Despliegue HTML pendiente; Pages, protecciones y repositorios canónicos sin modificación.
+## Expedientes externos
+
+LP-AUD-0002/v1 permanece congelado en S32 revisión 8. Las respuestas y la nota receptora conservan su alcance; no se reinterpretan como auditoría del corte del 27/09. LP-AUD-0001/v1 no recibe respuestas por analogía. No se han enviado encargos ni contactado revisores.
+
+## Pendientes diferenciados
+
+1. Recepción técnica del MCP, separada del resultado del candidato Qwen.
+2. Comprobación de viabilidad de GPT-OSS-120B según TT-0015, pendiente en el corte público; esta sede no la ejecuta.
+3. Resolución de las reservas de S32 mediante su circuito canónico, sin declarar integración por la publicación del auxiliar.
+4. Decisión humana sobre eventuales auditorías nuevas, con objeto y fuentes fijados.
+
+El índice canónico de continuidad conserva cabeceras históricas que emplean «vigente». Para este corte, la ficha remite a los asientos específicos de Sucesos, TT y actas, con fecha y revisión. No se modifican esas fuentes desde el laboratorio.
+
+La consulta es documental y pública. No acredita el estado actual de servidores, pagos, instalaciones o disponibilidad de servicios. El despliegue de la presentación HTML no se verifica ni modifica en esta actuación.

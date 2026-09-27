@@ -1,36 +1,30 @@
 # Laboratorio público documental
 
-**U-DOC-PUBLICA · LP-DOC-0001/v1 + A01 · actualización 17/09/2026**
-Único repositorio y rama de escritura: juantoniolloretegea/SVcustos-dataset, **laboratorio-publico**.
+**LP-DOC-0001/v1 + A01 · actualización documental: 27/09/2026.**  
+Sede derivada en `SVcustos-dataset`, rama `laboratorio-publico`. Calidad, Sucesos y RETP mantienen la autoridad canónica.
 
-## Expediente actual · LP-AUD-0002/v1
+## Estado consultado
 
-Auditoría preventiva de Rust/FFI, CR08, contención, permisos por dominio y correspondencia entre pruebas y conclusiones. Corte canónico **S32 revisión 8 / RETP-2026-257**, bdb094958da5be00d2c24864c333deaa4f0636cc.
+- **S32, revisión 9:** aceptación parcial; RCR-01 resuelta para el desajuste de omisión exacta. H2 sigue candidato, S32/BIS-03 abiertos y los 19 TLC sin ejecutar.
+- **S39, revisión 24:** GPT-OSS-20B y Qwen3.8-27B conservan sus cierres experimentales. GPT-OSS-120B está en preparación documental, sin aptitud acreditada.
+- **MCP documental:** software 0.1.2 publicado; TT-0014 mantiene pendiente su recepción. Publicación, ensayo y aceptación son hechos diferentes.
 
-- [Abrir expediente actualizado](encargos/LP-AUD-0002/v1/README.md).
-- [Encargo Claude, destinatario prioritario propuesto](encargos/LP-AUD-0002/v1/claude/LEAME.md).
-- [Encargo equivalente Grok](encargos/LP-AUD-0002/v1/grok/LEAME.md).
-- [Análisis preparatorio y límites](encargos/LP-AUD-0002/v1/ANALISIS_PREPARATORIO.md).
-- [Rama, permisos y declaración de imposibilidad de escritura](encargos/LP-AUD-0002/v1/PROTOCOLO_ENTREGA.md).
+[Estado canónico, ficha v4](fichas/estado-canonico/v4.md) · [Seguimiento del ensayo, ficha v1](fichas/seguimiento-eio/v1.md) · [Mapa de fuentes v4](fichas/mapa-fuentes/v4.md).
 
-**Claude recibido mediante la Dirección; entrega de Grok observada en la rama.** [Custodia de respuestas](respuestas/README.md) y [nota receptora sobre Claude](dictamenes/LP-AUD-0002/recepcion-claude-01.md). U-DOC-PUBLICA no ha invocado revisores. La evidencia privada no examinada no puede convertirse en conformidad. Sin escritura autorizada y disponible, el revisor debe declararlo expresamente y entregar su respuesta a la Dirección.
+## Auditorías conservadas
 
-## Estado, fuentes y continuidad
+[LP-AUD-0002/v1](encargos/LP-AUD-0002/v1/README.md) conserva el corte S32 revisión 8 / RETP-2026-257. Sus fuentes y preguntas no se actualizan retrospectivamente con la ficha v4.
 
-- [Estado y siguientes actuaciones](ESTADO.md).
-- [Ficha canónica v3](fichas/estado-canonico/v3.md) y [mapa de fuentes v3](fichas/mapa-fuentes/v3.md).
-- [Registro](REGISTRO_LP.md) · [CSV](REGISTRO_LP.csv) · [Historial](HISTORIAL_LP.csv).
-- [Mandato público derivado](MANDATO_PUBLICO.md) · [A01](ADENDA_A01.md).
-- [Inicio y recuperación](LEAME_PRIMERO.md) · [Procedimiento](PROCEDIMIENTO.md).
+Las respuestas recibidas se encuentran en [su custodia separada](respuestas/README.md), junto con la [nota receptora](dictamenes/LP-AUD-0002/recepcion-claude-01.md). No existe aquí un dictamen comparativo final ni aceptación material. No se inicia otra revisión externa mediante esta actualización.
 
-## Antecedente conservado · LP-AUD-0001/v1
+[LP-AUD-0001/v1](encargos/LP-AUD-0001/v1/ENCARGO_COMUN.md) conserva el corte anterior y sus entregas ausentes; no se le atribuyen respuestas de otro expediente.
 
-[Expediente anterior](encargos/LP-AUD-0001/v1/ENCARGO_COMUN.md), corte S32 revisión 6. Sus fuentes, manifiesto y dos encargos se conservan íntegros. [Entrega de arranque](ENTREGA.md). No se atribuye a ese corte el estado canónico actual. Ambas respuestas siguen ausentes en esta custodia.
+## Registro y continuidad
 
-## Publicación y alcance
+[Estado y pendientes](ESTADO.md) · [Registro](REGISTRO_LP.md) · [CSV](REGISTRO_LP.csv) · [Historial](HISTORIAL_LP.csv) · [Comprobaciones](COMPROBACIONES.md).
 
-Acceso operativo mediante Markdown en GitHub. [HTML preparado](index.html); **despliegue web pendiente**. No se modifican Pages, DNS, workflows, otras ramas ni el playground.
+[Inicio y recuperación](LEAME_PRIMERO.md) · [Mandato](MANDATO_PUBLICO.md) · [Adenda A01](ADENDA_A01.md) · [Procedimiento](PROCEDIMIENTO.md).
 
-Calidad, Sucesos y RETP mantienen la autoridad canónica. Una publicación o una huella no demuestra seguridad, ejecución ni aceptación de un candidato. [Respuestas](respuestas/README.md) y [dictámenes](dictamenes/README.md) se custodian por separado.
+La sede conserva síntesis y referencias. Los paquetes experimentales, imágenes y programas permanecen en sus repositorios de origen. La documentación reservada no se reproduce en este laboratorio.
 
-[Entrega verificada de LP-AUD-0002/v1 y enlaces inmutables](entregas/LP-DOC-0002/ENTREGA.md).
+Acceso operativo mediante Markdown en GitHub. [Presentación HTML](index.html) preparada; esta actualización no acredita su despliegue ni modifica Pages, DNS o workflows.

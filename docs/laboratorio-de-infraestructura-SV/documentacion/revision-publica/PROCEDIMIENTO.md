@@ -6,7 +6,7 @@ Fijar fuentes y preguntas antes de publicar. Verificar un mismo expediente y una
 
 ## Respuestas y custodia
 
-Cada procedencia conserva una ruta distinta bajo `respuestas/LP-AUD-0001/`. La carpeta `entrega-01` está reservada y no contiene una respuesta ficticia. Sin escritura autorizada, la Dirección aporta el texto o archivo; U-DOC-PUBLICA registra recepción, procedencia, versión, fecha observada y SHA-256 antes de depositarlo. No se simula acceso directo del revisor.
+Cada procedencia conserva una ruta distinta bajo el identificador de su expediente en `respuestas/`. La carpeta `entrega-01` está reservada y no contiene una respuesta ficticia. Sin escritura autorizada, la Dirección aporta el texto o archivo; U-DOC-PUBLICA registra recepción, procedencia, versión, fecha observada y SHA-256 antes de depositarlo. No se simula acceso directo del revisor.
 
 Si existe permiso humano de escritura, sólo se pueden añadir archivos propios en la entrega asignada. No se modifican encargos, fuentes, registros, otra respuesta ni dictámenes. Las correcciones van a `entrega-02`, preservando la primera entrega.
 
@@ -16,7 +16,7 @@ El original permanece separado del resumen. No mostrar deliberadamente la respue
 
 ## Dictamen documental
 
-Sólo con respuestas reales se crea `dictamenes/LP-AUD-0001/revision-01.md`. Separar afirmaciones, evidencia, objeciones, acuerdos, desacuerdos y límites. No decidir por mayoría. «No comprobable con el expediente» no significa conforme ni defectuoso. La entrega productora, revisión y aceptación receptora son actos distintos.
+Sólo con respuestas reales se crea una revisión numerada en `dictamenes/`, dentro del identificador del expediente correspondiente. Separar afirmaciones, evidencia, objeciones, acuerdos, desacuerdos y límites. No decidir por mayoría. «No comprobable con el expediente» no significa conforme ni defectuoso. La entrega productora, revisión y aceptación receptora son actos distintos.
 
 ## Criterios de elevación a la Dirección
 
@@ -29,3 +29,7 @@ Sólo con respuestas reales se crea `dictamenes/LP-AUD-0001/revision-01.md`. Sep
 | Mejora opcional sin defecto acreditado | Registrar propuesta sin bloqueo ni encargo automático. |
 
 La nota indicará hallazgo, comprobación, incertidumbre, decisión afectada, urgencia motivada, evidencia enlazada y pregunta concreta para recepción. Recomendación no equivale a aceptación ni a traslado efectuado. La Dirección conserva la decisión; esta unidad no contacta automáticamente a coordinación ni ejecución privada.
+
+## Mantenimiento de fichas
+
+Distinguir el estado de una ficha viva del corte congelado de una auditoría. Cada revisión nueva fija fuentes, fecha, motivo del cambio y límites; mantiene accesibles las versiones anteriores. Actualizar conjuntamente README, ESTADO, presentación HTML y registro propio. Un enlace a una entrega experimental no exige copiarla al laboratorio. Una recepción técnica, un resultado del candidato y una aceptación canónica no se intercambian.

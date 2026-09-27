@@ -1,3 +1,24 @@
+# Comprobaciones documentales · 27/09/2026
+
+**Actividad:** LP-DOC-0003/v1. Revisión en dos pasadas, sin ejecución experimental.
+
+| Pasada | Comprobación | Resultado |
+|---|---|---|
+| Primera | Organización, mandato y rama | Se mantienen fichas versionadas, expedientes congelados y publicación exclusiva en laboratorio-publico |
+| Primera | Fuentes públicas | Veinte documentos fijados por commit, recuperados sin autenticación y con SHA-256 y tamaño conservados |
+| Primera | Cambios de estado | S32 revisión 9; S39 revisión 24; cierres de candidatos, recepción MCP y preparación del 120B separados |
+| Segunda | Sucesos CSV/Markdown | Resultados S32/S39 concordantes; sin promover el estado de ningún registro canónico |
+| Segunda | Alcance editorial | Sin cambios en encargos, respuestas, dictámenes ni fichas anteriores; sin contenido privado ni rutas personales en los documentos nuevos |
+| Segunda | Estructura y enlaces | Enlaces locales comprobados; referencias públicas de conservación accesibles; secciones HTML equilibradas |
+| Segunda | Registro | CSV y Markdown concordantes; historial ampliado sin sustituir asientos previos |
+
+Los controles del verificador documental comprueban rutas, enlaces, manifiestos y concordancia. No son ensayos de software ni acreditación de seguridad. La presentación HTML conserva sus estilos y su estado de despliegue no se modifica.
+
+La entrada de lectura se actualiza; LP-AUD-0002 permanece congelado en S32 revisión 8. La referencia a GPT-OSS-120B acredita únicamente su preparación documental en el corte consultado.
+
+---
+
+
 # Comprobaciones del arranque
 
 **Fecha:** 17/09/2026. **Método:** inspección documental, Git, recuperación HTTP anónima y cálculo SHA-256. No ejecución de código SV ni de terceros.

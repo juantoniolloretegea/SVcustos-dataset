@@ -1,6 +1,6 @@
 # Inicio y recuperación
 
-**Mandato vigente:** LP-DOC-0001/v1 + A01. Leer [mandato público](MANDATO_PUBLICO.md), [A01](ADENDA_A01.md), [registro](REGISTRO_LP.md), [estado](ESTADO.md) y [encargo activo LP-AUD-0002/v1](encargos/LP-AUD-0002/v1/ENCARGO_COMUN.md).
+**Mandato vigente:** LP-DOC-0001/v1 + A01. Leer [mandato público](MANDATO_PUBLICO.md), [A01](ADENDA_A01.md), [registro](REGISTRO_LP.md), [estado](ESTADO.md) y [expediente conservado LP-AUD-0002/v1](encargos/LP-AUD-0002/v1/ENCARGO_COMUN.md).
 
 ## Competencia y permisos
 
@@ -30,3 +30,7 @@ Aplicar [el procedimiento](PROCEDIMIENTO.md) para respuestas, aptitud pública y
 ## Precisión de entrega vigente
 
 Aplicar el [protocolo de LP-AUD-0002](encargos/LP-AUD-0002/v1/PROTOCOLO_ENTREGA.md): rama laboratorio-publico y carpeta propia; declaración expresa de imposibilidad de escritura y de evidencia privada no examinada. Si la herramienta sólo escribe en main o exige otra rama/PR, no usarla para publicar. LP-AUD-0001 y sus fichas permanecen íntegros.
+
+## Actualización documental del 27/09/2026
+
+Consultar primero las fichas [v4 de estado](fichas/estado-canonico/v4.md) y [v1 de seguimiento EIO](fichas/seguimiento-eio/v1.md). Las fichas previas y los expedientes de auditoría son cortes conservados. La siguiente actualización parte de sus fuentes verificadas, añade una revisión y actualiza las entradas de lectura sin modificar encargos ni respuestas anteriores.

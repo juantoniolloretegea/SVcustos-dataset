@@ -1,6 +1,6 @@
 # Registro propio LP
 
-Cierre del arranque: publicación comprobada; revisiones externas no iniciadas. Fechas no observadas permanecen vacías. Presentación concordante con el CSV; transiciones en HISTORIAL_LP.csv.
+Asientos documentales con sus fechas y alcances. Los estados históricos no se presentan como estado actual; consultar ESTADO.md. Presentación concordante con el CSV; transiciones conservadas en HISTORIAL_LP.csv.
 
 ## LP-DOC-0001
 
@@ -69,3 +69,20 @@ Cierre del arranque: publicación comprobada; revisiones externas no iniciadas. 
 | resultado | Claude recibido con identidad cotejada; Grok observado en remoto y conservado; sin aceptación material |
 | limites | Bloqueo de sesión Claude declarado, no reproducido; no independencia declarada; evidencia privada no examinada |
 | siguiente_actuacion | Decisión humana sobre aclaraciones documentales y eventual corpus delimitado; sin transmisión automática |
+
+## LP-DOC-0003
+
+| Campo | Valor |
+|---|---|
+| id | LP-DOC-0003 |
+| objeto | Actualización de fichas y seguimiento documental mediante dos pasadas |
+| version | v1 |
+| fuente_autorizacion | Solicitud humana de 27/09/2026 bajo LP-DOC-0001/v1 + A01 |
+| fecha_autorizacion | 2026-09-27; hora de autorización no registrada |
+| inicio_observado | 2026-09-27T08:35:37.6636345Z |
+| entrega_observada |  |
+| cortes_entrada | Lenguaje f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52; Motor 63f5bd5e9b8ef147ba6a92d7beba6f94fb5ea3eb; laboratorio 7f14a26eaf32f2613a266be61f4daf15b1d2c4bf |
+| evidencia | fichas/estado-canonico/v4.md; fichas/mapa-fuentes/v4-fuentes.tsv; fichas/seguimiento-eio/v1.md; COMPROBACIONES.md |
+| resultado | Actualización documental de S32 revisión 9, S39 revisión 24 y seguimiento diferenciado de candidatos y MCP |
+| limites | Lectura pública; sin ejecución, acceso privado, auditoría externa ni despliegue web; expedientes anteriores íntegros |
+| siguiente_actuacion | Mantener fichas mediante recepciones públicas verificadas; revisiones externas sólo por solicitud humana |
