@@ -1,0 +1,118 @@
+Saltar al contenidoDocumentación de laboratorios SV [https://juantoniolloretegea.github.io/SVcustos-dataset/laboratorio-de-infraestructura-SV/documentacion/]CONSULTA PÚBLICA
+
+ESTADO DOCUMENTAL · 27 DE SEPTIEMBRE DE 2026
+
+Estado, evidencia y revisión externa
+
+Documentación para comprender los resultados del laboratorio, consultar sus fuentes públicas y delimitar una revisión sin acceso a repositorios privados.
+
+La fecha delimita la información.Esta edición describe las versiones documentales citadas. No se actualiza automáticamente ni certifica el estado actual de servicios o instalaciones. La publicación de un componente, su comprobación experimental y su aceptación son hechos diferentes.
+
+Cómo consultarResultados y límitesFuentes verificablesRevisión documentalLectura sin conexiónContinuidad
+Cómo consultar esta edición
+
+Identificar el componente y leer conjuntamente su resultado y sus límites.
+
+Contrastar la afirmación con la fuente pública y la versión citadas.
+
+Si se revisa un expediente, utilizar sus preguntas y su conjunto documental originales. Las actualizaciones posteriores no forman parte retrospectivamente de aquel ensayo.
+
+Términos de referencia. S32 y S39 identifican entradas del registro de sucesos; TT identifica un tique técnico. MCP designa el protocolo de contexto de modelos utilizado por el servicio documental. «Pendiente» indica que la aceptación correspondiente no está acreditada en las fuentes de esta edición.
+
+Resultados y límites
+
+Componente auxiliar · S32, revisión 9
+
+Aceptación parcial. Se resolvió el desajuste concreto de omisión de registros identificado como RCR-01; ello no acredita la detección universal de omisiones ni la privacidad integral. Permanecen pendientes comprobaciones de contención, durabilidad y el conjunto de 19 pruebas identificado en la fuente como TLC.
+
+Ensayo de inteligencia artificial · S39, revisión 24
+
+El seguimiento general continúa pendiente. El cierre de una campaña de modelos no supone la aceptación del conjunto del sistema.
+
+Servicio documental · MCP 0.1.2
+
+Publicado, con recepción integral pendiente según TT-0014. Su cliente mínimo admite una petición textual local y no proporciona herramientas al modelo. No debe confundirse con los recorridos experimentales anteriores de búsqueda y lectura.
+
+Resultados de los candidatos en las versiones consultadasCandidato | Resultado documentado | Límite de la conclusión | 
+
+Qwen3-0.6B | Campaña nativa cerrada como realización parcial. | No acredita conformidad integral ni aptitud clínica. | 
+
+GPT-OSS-20B | Configuración retirada de la función médica prevista; resultado experimental conservado. | Cuatro casos y diecinueve condiciones no permiten estimar una tasa general de error médico. | 
+
+Qwen3.8-27B | No supera la selección mínima: respuesta final completa con omisión material e incumplimiento documental. | Conclusión sobre el caso y la configuración ensayados; no sobre toda la familia de modelos. Los fallos instrumentales previos no equivalen por sí solos a errores clínicos. | 
+
+GPT-OSS-120B | Preparación documental vinculada a TT-0015. | Sin viabilidad material, inferencia ni aptitud acreditadas en este corte. | 
+
+Ficha de estado y referencias por apartado [https://github.com/juantoniolloretegea/SVcustos-dataset/blob/5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e/docs/laboratorio-de-infraestructura-SV/documentacion/revision-publica/fichas/estado-canonico/v4.md] · Ficha de resultados y límites de los modelos [https://github.com/juantoniolloretegea/SVcustos-dataset/blob/5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e/docs/laboratorio-de-infraestructura-SV/documentacion/revision-publica/fichas/seguimiento-eio/v1.md]. Ninguno de estos resultados acredita aptitud clínica.
+
+Fuentes públicas verificables
+
+Selección de catorce referencias para esta consulta. Cada enlace identifica una versión fija del documento. La lectura completa de las fuentes permite distinguir la síntesis de sus antecedentes y condiciones experimentales.
+
+Pilares y restricciones del lenguaje SV [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/calidad/PILARES_Y_RESTRICCIONES_DE_DISENO_DEL_LENGUAJE_DE_COMPUTACION_SV_2026_09_05.md]
+
+Perfiles, contratos y ensamblaje [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/calidad/ACTA_TECNICA_DE_PERFILES_CONTRATOS_Y_ENSAMBLAJE_DEL_LENGUAJE_SV_2026_09_06.md]
+
+Transición y secuencia de validación [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/dominios/inmunologia/ACTA_DE_CONFORMIDAD_DE_TRANSICION_SECUENCIAL_DESDE_OP-IMM-001_AL_LENGUAJE_SV_2026_09_03.md]
+
+Registro de sucesos: S32 y S39 [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/calidad/Inventario-sv/sucesos/SUCESOS_SV.md]
+
+TT-0013: cierre experimental de GPT-OSS-20B [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/calidad/Inventario-sv/tiques-tecnicos/TT-0013.md]
+
+TT-0014: recepción del servicio documental [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/calidad/Inventario-sv/tiques-tecnicos/TT-0014.md]
+
+TT-0015: estudio preliminar de GPT-OSS-120B [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/calidad/Inventario-sv/tiques-tecnicos/TT-0015.md]
+
+Finalidad y alcance del ensayo de inteligencia artificial [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/calidad/tuberias-ia/continuacion-15-09-2026/ACTA_004_FINALIDAD_ALCANCE_Y_CONTINUIDAD_EIO_2026_09_22.md]
+
+Alcance de privacidad y seguridad del componente auxiliar [https://raw.githubusercontent.com/juantoniolloretegea/SV-lenguaje-de-computacion/f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52/docs/calidad/tuberias-ia/continuacion-15-09-2026/PARTE_ALCANCE_PRIVACIDAD_SEGURIDAD_Y_OP_CYB_001_2026_09_15.md]
+
+Qwen3-0.6B: resultado conservado [https://raw.githubusercontent.com/juantoniolloretegea/SV-motor/63f5bd5e9b8ef147ba6a92d7beba6f94fb5ea3eb/laboratorio/ensayo-ia-y-observabilidad/modelos-de-ia/qwen/qwen3-0.6b/README.md]
+
+Qwen3.8-27B: selección y documentación [https://raw.githubusercontent.com/juantoniolloretegea/SV-motor/63f5bd5e9b8ef147ba6a92d7beba6f94fb5ea3eb/laboratorio/ensayo-ia-y-observabilidad/modelos-de-ia/qwen/qwen3.8-27b/README.md]
+
+GPT-OSS-20B: dictamen de cierre [https://raw.githubusercontent.com/juantoniolloretegea/SV-motor/63f5bd5e9b8ef147ba6a92d7beba6f94fb5ea3eb/laboratorio/ensayo-ia-y-observabilidad/modelos-de-ia/openai/gpt-oss-20b/imagen-onecloud/cierre-20260926/DICTAMEN-CIERRE.md]
+
+GPT-OSS-120B: preparación documental [https://raw.githubusercontent.com/juantoniolloretegea/SV-motor/63f5bd5e9b8ef147ba6a92d7beba6f94fb5ea3eb/laboratorio/ensayo-ia-y-observabilidad/modelos-de-ia/openai/gpt-oss-120b/README.md]
+
+Servicio documental MCP 0.1.2 [https://raw.githubusercontent.com/juantoniolloretegea/SV-motor/63f5bd5e9b8ef147ba6a92d7beba6f94fb5ea3eb/laboratorio/ensayo-ia-y-observabilidad/modelos-de-ia/model-context-protocol/0.1.2/LEAME.md]
+
+El inventario de procedencia de las fichas [https://github.com/juantoniolloretegea/SVcustos-dataset/blob/5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e/docs/laboratorio-de-infraestructura-SV/documentacion/revision-publica/fichas/mapa-fuentes/v4-fuentes.tsv] conserva las veinte referencias utilizadas en su elaboración, con versión, fecha y huella SHA-256. La huella identifica el contenido; no acredita por sí misma su veracidad.
+
+Revisión documental externa
+
+El expediente LP-AUD-0002/v1 examina el componente auxiliar con las fuentes de S32, revisión 8. Se conserva como objeto histórico, separado del estado posterior descrito en esta página.
+
+Objeto, preguntas y criterios de revisión [https://github.com/juantoniolloretegea/SVcustos-dataset/blob/5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e/docs/laboratorio-de-infraestructura-SV/documentacion/revision-publica/encargos/LP-AUD-0002/v1/ENCARGO_COMUN.md].
+
+Fuentes públicas del expediente [https://github.com/juantoniolloretegea/SVcustos-dataset/blob/5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e/docs/laboratorio-de-infraestructura-SV/documentacion/revision-publica/encargos/LP-AUD-0002/v1/FUENTES.tsv] y manifiesto de integridad [https://github.com/juantoniolloretegea/SVcustos-dataset/blob/5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e/docs/laboratorio-de-infraestructura-SV/documentacion/revision-publica/encargos/LP-AUD-0002/v1/MANIFIESTO_SHA256.tsv].
+
+Estructura de una respuesta trazable [https://github.com/juantoniolloretegea/SVcustos-dataset/blob/5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e/docs/laboratorio-de-infraestructura-SV/documentacion/revision-publica/encargos/LP-AUD-0002/v1/PLANTILLA_RESPUESTA.md] y respuestas conservadas [https://github.com/juantoniolloretegea/SVcustos-dataset/blob/5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e/docs/laboratorio-de-infraestructura-SV/documentacion/revision-publica/respuestas/README.md].
+
+Hay respuestas recibidas, sin dictamen comparativo final ni aceptación material. Las menciones de respuestas pendientes dentro de los documentos originales describen su estado al prepararse; no sustituyen el registro posterior de recepción.
+
+Qué puede comprobarse desde fuera
+
+Es posible revisar la coherencia de las afirmaciones públicas, sus referencias, los resultados publicados y los límites declarados. Para cada conclusión debe indicarse qué documento se examinó y dónde se encuentra el fundamento.
+
+Qué permanece fuera del alcance
+
+Los registros experimentales y componentes mantenidos en repositorios restringidos no se incluyen en esta publicación. No puede certificarse su ejecución, integridad o comportamiento mediante la sola lectura de una síntesis pública. La indisponibilidad para un revisor no demuestra que una evidencia no exista.
+
+Una revisión material requiere un conjunto documental público suficiente o acceso expresamente autorizado a las evidencias necesarias. Si falta, el dictamen debe acotar la conclusión o declarar el impedimento. Una revisión documental no sustituye una validación clínica.
+
+Lectura sin conexión
+
+Descargar esta edición de consulta · Descargar texto para lectura o adjunto · Huellas SHA-256.
+
+El paquete contiene esta página y su estilo, una versión textual con referencias, el inventario de las catorce fuentes seleccionadas y un manifiesto de integridad. La página y el texto se leen sin conexión; los documentos externos enlazados requieren acceso a Internet y no están incluidos. No es un paquete completo de evidencia experimental.
+
+Continuidad documental
+
+Una nueva recepción pública que cambie un resultado exige una edición identificada de las fichas, del inventario y de esta consulta. Las versiones anteriores conservan su fecha y alcance. Hasta que exista una nueva edición comprobada, esta fecha sigue siendo el límite temporal de la información.
+
+Las observaciones externas deben identificar el documento, versión, apartado, hallazgo, evidencia y límites. Su recepción y evaluación se registran antes de atribuirles efectos sobre el estado del componente. La publicación de un expediente no inicia automáticamente una auditoría.
+
+Los ensayos de infraestructura de septiembre conservados en el índice de documentación [https://juantoniolloretegea.github.io/SVcustos-dataset/laboratorio-de-infraestructura-SV/documentacion/] son antecedentes distintos de las campañas de modelos aquí descritas.
+
+Edición de consulta 1 · 27/09/2026. Síntesis derivada de fuentes públicas fijadas. La autoridad de los estados permanece en los registros canónicos citados.
