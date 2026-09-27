@@ -42,3 +42,20 @@ El diff desde el corte de base debe contener únicamente la sede y el acceso añ
 ## Acceso externo · 27/09/2026
 
 Portal preparado bajo consulta/. Los 32 enlaces externos respondieron HTTP 200 sin autenticación. La descarga contiene cuatro originales públicos, aviso de alcance y manifiesto; no contiene las veinte fuentes completas ni los expedientes privados. Los documentos congelados conservan sus estados históricos, diferenciados de la recepción posterior. Integración en la web pendiente; no se ha cambiado su rama de publicación.
+## Revisión adversarial de la consulta externa · 27/09/2026
+
+La revisión se limita a la función documental del portal; no constituye reproducción experimental ni evaluación clínica.
+
+| Criterio | Objeción o riesgo examinado | Resultado |
+|---|---|---|
+| Comprensión externa | Siglas y rutas técnicas sin explicación | Términos definidos y catorce referencias tituladas |
+| Alcance temporal | Interpretar una fecha de publicación como estado en tiempo real | Edición fechada y ausencia de actualización automática explícitas |
+| Evidencia | Confundir síntesis pública con acceso a registros restringidos | Alcance documental y límites materiales separados |
+| Expedientes | Confundir respuestas recibidas con documentos históricos pendientes | Estado de recepción diferenciado del expediente original |
+| Descarga | Dependencias relativas ausentes del paquete anterior | Página, estilo y texto de consulta incluidos; referencias externas expresamente excluidas |
+| Integridad | Diferencias entre ficheros del paquete y manifiesto | Cuatro huellas internas concordantes; descarga y texto con huellas exteriores |
+| Acceso | Documentos que exijan autenticación | Veintitrés destinos externos del portal respondieron HTTP 200 sin autenticación |
+| Redacción | Datos personales, operativos o económicos ajenos a la consulta | Ausentes de la redacción de la nueva página y del texto descargable; los documentos históricos enlazados conservan su procedencia |
+| Conservación | Alteración de resultados históricos al añadir el acceso | Índice preparado con una sola sección añadida; contenido anterior íntegro |
+
+Dictamen documental: apto para incorporación de esta edición de consulta. La publicación efectiva y su disponibilidad web requieren comprobación posterior. El acceso público no garantiza que todos los entornos externos permitan navegar o abrir adjuntos.
