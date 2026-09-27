@@ -80,9 +80,9 @@ Asientos documentales con sus fechas y alcances. Los estados históricos no se p
 | fuente_autorizacion | Solicitud humana de 27/09/2026 bajo LP-DOC-0001/v1 + A01 |
 | fecha_autorizacion | 2026-09-27; hora de autorización no registrada |
 | inicio_observado | 2026-09-27T08:35:37.6636345Z |
-| entrega_observada |  |
+| entrega_observada | 2026-09-27T08:44:42.2504446Z; trece archivos publicados y verificados sin autenticación |
 | cortes_entrada | Lenguaje f8577f869e9e0bed85da9b6ce7b8e7b3b2cefa52; Motor 63f5bd5e9b8ef147ba6a92d7beba6f94fb5ea3eb; laboratorio 7f14a26eaf32f2613a266be61f4daf15b1d2c4bf |
-| evidencia | fichas/estado-canonico/v4.md; fichas/mapa-fuentes/v4-fuentes.tsv; fichas/seguimiento-eio/v1.md; COMPROBACIONES.md |
-| resultado | Actualización documental de S32 revisión 9, S39 revisión 24 y seguimiento diferenciado de candidatos y MCP |
+| evidencia | fichas/estado-canonico/v4.md; fichas/mapa-fuentes/v4-fuentes.tsv; fichas/seguimiento-eio/v1.md; COMPROBACIONES.md; commit 9ca9b645ead6aa94d890cef40217239d6d6b4ede |
+| resultado | Actualización documental publicada y verificada: S32 revisión 9, S39 revisión 24 y seguimiento diferenciado de candidatos y MCP |
 | limites | Lectura pública; sin ejecución, acceso privado, auditoría externa ni despliegue web; expedientes anteriores íntegros |
 | siguiente_actuacion | Mantener fichas mediante recepciones públicas verificadas; revisiones externas sólo por solicitud humana |
