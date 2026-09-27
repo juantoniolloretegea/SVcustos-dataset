@@ -38,3 +38,7 @@ La entrada de lectura se actualiza; LP-AUD-0002 permanece congelado en S32 revis
 | Controles previos a publicación | Cotejo de rutas, inserción única en índice, enlaces locales, manifiesto, concordancia CSV/Markdown y ausencia de rutas locales en archivos nuevos. Resultado detallado conservado en registro local de comprobación |
 
 El diff desde el corte de base debe contener únicamente la sede y el acceso añadido al índice padre. Los controles documentales no son acreditación de seguridad ni reproducción de las evidencias receptoras. Un fallo de acceso futuro se registra sin inferir inexistencia del objeto.
+
+## Acceso externo · 27/09/2026
+
+Portal preparado bajo consulta/. Los 32 enlaces externos respondieron HTTP 200 sin autenticación. La descarga contiene cuatro originales públicos, aviso de alcance y manifiesto; no contiene las veinte fuentes completas ni los expedientes privados. Los documentos congelados conservan sus estados históricos, diferenciados de la recepción posterior. Integración en la web pendiente; no se ha cambiado su rama de publicación.

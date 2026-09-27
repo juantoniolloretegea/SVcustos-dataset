@@ -28,3 +28,7 @@ Las respuestas recibidas se encuentran en [su custodia separada](respuestas/READ
 La sede conserva síntesis y referencias. Los paquetes experimentales, imágenes y programas permanecen en sus repositorios de origen. La documentación reservada no se reproduce en este laboratorio.
 
 Acceso operativo mediante Markdown en GitHub. [Presentación HTML](index.html) preparada; esta actualización no acredita su despliegue ni modifica Pages, DNS o workflows.
+
+## Acceso externo preparado
+
+[Portal de consulta](consulta/index.html): estado fechado, fuentes públicas completas enlazadas, expedientes y descarga de orientación. La presentación web sigue pendiente de integración en la sede desplegada; su publicación en esta rama no acredita despliegue.

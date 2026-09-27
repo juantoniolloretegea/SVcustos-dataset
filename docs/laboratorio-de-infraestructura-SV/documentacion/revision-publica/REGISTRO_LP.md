@@ -86,3 +86,20 @@ Asientos documentales con sus fechas y alcances. Los estados históricos no se p
 | resultado | Actualización documental publicada y verificada: S32 revisión 9, S39 revisión 24 y seguimiento diferenciado de candidatos y MCP |
 | limites | Lectura pública; sin ejecución, acceso privado, auditoría externa ni despliegue web; expedientes anteriores íntegros |
 | siguiente_actuacion | Mantener fichas mediante recepciones públicas verificadas; revisiones externas sólo por solicitud humana |
+
+## LP-DOC-0004
+
+| Campo | Valor |
+|---|---|
+| id | LP-DOC-0004 |
+| objeto | Preparación del acceso documental externo |
+| version | v1 |
+| fuente_autorizacion | Solicitud de operatividad pública del 27/09/2026 |
+| fecha_autorizacion | 2026-09-27; hora no fijada |
+| inicio_observado | 2026-09-27T08:58:04.8884919Z |
+| entrega_observada | Portal preparado; publicación de archivos y despliegue diferenciados |
+| cortes_entrada | Laboratorio 5e586fdc43c74c2564c00c73c7e1e9db7c3f4d9e |
+| evidencia | consulta/index.html; consulta/orientacion-20260927.zip; consulta/SHA256SUMS.txt |
+| resultado | 32 enlaces públicos comprobados sin autenticación; dossier de cuatro documentos |
+| limites | Sin evidencia privada, transmisión externa ni modificación del despliegue |
+| siguiente_actuacion | Integración acotada en la web pendiente de autorización específica sobre la rama de publicación |
